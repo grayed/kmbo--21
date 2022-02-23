@@ -1,5 +1,4 @@
-﻿#include "animal.h"
-#include "lab2.h"
+﻿#include "lab2.h"
 #include "vehicle.h"
 using namespace std;
 

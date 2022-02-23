@@ -6,14 +6,18 @@
 class Automobile;
 
 class Vehicle {
-protected:
+private:
 	int wheelCount;
-	
+
+protected:
 	Vehicle(int wheelCount_);
 	virtual ~Vehicle();
 
 public:
 	Automobile* truck;
+
+	int  getWheelCount() const		 { return wheelCount; }
+	void setWheelCount(int newValue) { wheelCount = newValue; }
 
 	virtual std::string about() const;
 };
@@ -25,7 +29,6 @@ public:
 	Automobile(int wheelCount_, float zeroTo100Time_);
 	Automobile(float zeroTo100Time_);
 
-	void setWheelCount(int newValue) { wheelCount = newValue; }
 	virtual std::string about() const;
 };
 
