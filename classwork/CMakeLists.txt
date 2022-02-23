@@ -1,4 +1,4 @@
-﻿# CMakeList.txt : CMake project for lab2, include source and define
+﻿# CMakeList.txt : CMake project for classwork, include source and define
 # project specific logic here.
 #
 cmake_minimum_required (VERSION 3.8)

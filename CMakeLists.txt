@@ -7,5 +7,4 @@ project ("kmbo--21")
 
 # Include sub-projects.
 add_subdirectory ("classwork")
-
 add_subdirectory ("animals")
