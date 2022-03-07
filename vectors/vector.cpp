@@ -13,6 +13,7 @@ public:
 
 	float  operator [](int index) const { return data[index]; }
 	float& operator [](int index)       { return data[index]; }
+
 };
 
 vector3d operator+ (const vector3d& v1, const vector3d& v2) {
