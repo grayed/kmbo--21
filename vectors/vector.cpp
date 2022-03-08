@@ -4,7 +4,7 @@
 
 using namespace std;
 
-
+   
 int main() {
 	vector3d v1, v2(12), v3(1, 3, 8);
 	v1[2] = 54;
