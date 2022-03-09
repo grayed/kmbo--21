@@ -1,0 +1,131 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "classwork",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "classwork",
+					"targetIndexes" : 
+					[
+						1,
+						3
+					]
+				},
+				{
+					"build" : "animals",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "animals",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "vectors",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "vectors",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"name" : "kmbo--21",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "animals::@d3e6509ec9da81b9182b",
+					"jsonFile" : "target-animals-Debug-2c2ac09486392ade0f60.json",
+					"name" : "animals",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "classwork::@3de3d43671564998e741",
+					"jsonFile" : "target-classwork-Debug-54829f6eed31ca6676a9.json",
+					"name" : "classwork",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "vectors::@bafb03b3c093a7eafa7a",
+					"jsonFile" : "target-vectors-Debug-008a97c6561af8aadd6a.json",
+					"name" : "vectors",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "vehicles::@3de3d43671564998e741",
+					"jsonFile" : "target-vehicles-Debug-21c4461d26899ebfdcec.json",
+					"name" : "vehicles",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/timofey/projects/kmbo--21/build",
+		"source" : "/home/timofey/projects/kmbo--21"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

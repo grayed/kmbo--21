@@ -1,0 +1,12 @@
+/home/timofey/projects/kmbo--21/build/CMakeFiles/rebuild_cache.dir
+/home/timofey/projects/kmbo--21/build/CMakeFiles/edit_cache.dir
+/home/timofey/projects/kmbo--21/build/classwork/CMakeFiles/rebuild_cache.dir
+/home/timofey/projects/kmbo--21/build/classwork/CMakeFiles/vehicles.dir
+/home/timofey/projects/kmbo--21/build/classwork/CMakeFiles/edit_cache.dir
+/home/timofey/projects/kmbo--21/build/classwork/CMakeFiles/classwork.dir
+/home/timofey/projects/kmbo--21/build/animals/CMakeFiles/rebuild_cache.dir
+/home/timofey/projects/kmbo--21/build/animals/CMakeFiles/edit_cache.dir
+/home/timofey/projects/kmbo--21/build/animals/CMakeFiles/animals.dir
+/home/timofey/projects/kmbo--21/build/vectors/CMakeFiles/rebuild_cache.dir
+/home/timofey/projects/kmbo--21/build/vectors/CMakeFiles/edit_cache.dir
+/home/timofey/projects/kmbo--21/build/vectors/CMakeFiles/vectors.dir

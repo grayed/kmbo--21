@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/timofey/projects/kmbo--21/classwork/main.cpp
+iostream
+-
+main.h
+/home/timofey/projects/kmbo--21/classwork/main.h
+
+/home/timofey/projects/kmbo--21/classwork/main.h
+
