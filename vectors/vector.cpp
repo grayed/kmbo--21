@@ -117,7 +117,7 @@ bool test_vector3d(vector <vector3d> Vec, vector3d v1, vector3d v2, float v3) {
 }
 
 int main(int x, char** y) {
-    vector3d v1(2, 7, 4), v2(-2, -9, 5), v4, v5, v6, v7, v8, v9, v10;
+    vector3d v1(12), v2(3, -4, 2), v3, v4, v5, v6, v7, v8, v9, v10;
     vector <vector3d> Vect;
     float v3 = 0.5;
     v4 = v1 + v2; Vect.push_back(v4);
