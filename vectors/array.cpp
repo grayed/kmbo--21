@@ -1,6 +1,23 @@
-#include "array.h"
-
+#include <iostream>
 using namespace std;
+
+class Vector3d {
+    float data[3];
+public:
+    Vector3d() { data[2] = data[1] = data[0] = 0; }
+    Vector3d(float value) { data[2] = data[1] = data[0] = value; }
+    float  operator[] (int index) const { cerr << "const" << index << endl; return data[index]; }
+    float& operator[] (int index)       { cerr << "non-const" << index << endl; return data[index]; }
+};
+
+template<size_t Dimensions>
+class Vector {
+    float data[Dimensions];
+public:
+    Vector(float value = 0) { for (size_t i = 0; i < Dimensions; i++) data[i] = value;  }
+    float  operator[] (size_t index) const { return data[index]; }
+    float& operator[] (size_t index)       { return data[index]; }
+};
 
 // Написать шаблонные функции:
 //   1. operator + (реализация внутри класса)
