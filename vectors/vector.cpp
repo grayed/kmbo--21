@@ -4,7 +4,7 @@
 using namespace std;
 
 class vector3d {
-	float data[3];
+    float data[3];
 public:
 	vector3d() { data[2] = data[1] = data[0] = 0; }
 	vector3d(float value) { data[2] = data[1] = data[0] = value; }
