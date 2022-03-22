@@ -9,15 +9,17 @@ public:
 	vector3d(float value) { data[2] = data[1] = data[0] = value; }
 	vector3d(float a1, float a2, float a3) { data[0] = a1;  data[1] = a2; data[2] = a3; }
 	// lvalue = rvalue
-	float  operator[](int idx) const { return data[idx]; }
-	float& operator[](int idx)       { return data[idx]; }
-	//vector3d operator +(const vector3d& other) const { return vector3d(data[0] + other.data[0], /* ... */); }
+	float  operator[] (int idx) const { return data[idx]; }
+	float& operator[] (int idx)       { return data[idx]; } // подразумевает изменение
+	vector3d operator +(const vector3d& other) const { 
+		return vector3d(data[0] + other.data[0], data[1] + other.data[1], other.data[2] + data[2]);
+	}
 	//friend ostream& operator <<(ostream& os, const vector3d& v);
 };
 
-//vector3d operator -(const vector3d& v1, const vector3d& v2) {
-//	return vector3d(v1[0] - v2[0], /* ... */);
-//}
+vector3d operator -(const vector3d& v1, const vector3d& v2) {
+	return vector3d(v1[0] - v2[0], v1[1] - v2[1], v1[2] - v2[2]);
+}
 
 ostream& operator <<(ostream& os, const vector3d& v) {
 	return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }";
