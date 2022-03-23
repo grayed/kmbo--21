@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ostream>
+
 class vector3d {
 	float data[3];
 
