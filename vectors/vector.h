@@ -16,4 +16,4 @@ public:
 	friend int main(int argc, char** argv);
 };
 
-ostream& operator <<(ostream& os, const vector3d& v);
+std::ostream& operator <<(std::ostream& os, const vector3d& v);
