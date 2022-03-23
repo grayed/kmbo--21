@@ -1,7 +1,5 @@
 #pragma once
 
-#include <ostream>
-
 class vector3d {
 	float data[3];
 
@@ -16,4 +14,4 @@ public:
 	friend int main(int argc, char** argv);
 };
 
-std::ostream& operator <<(std::ostream& os, const vector3d& v);
+ostream& operator <<(ostream& os, const vector3d& v);
