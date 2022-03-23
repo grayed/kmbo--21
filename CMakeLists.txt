@@ -8,5 +8,6 @@ project ("kmbo--21")
 # Include sub-projects.
 add_subdirectory ("classwork")
 add_subdirectory ("animals")
+add_subdirectory ("memhacks")
 add_subdirectory ("electricity")
 add_subdirectory ("vectors")
