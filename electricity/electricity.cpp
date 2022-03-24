@@ -3,6 +3,25 @@
 
 using namespace std;
 
+bool Object::isConnectedTo(const Object& other) const
+{
+    // TODO
+    return false;
+}
+
+bool Object::connect(const std::string& poleName, const Object& other, const std::string& otherPoleName)
+{
+    // TODO
+    return false;
+}
+
+Switch::Switch(const std::string& name)
+    : Object(name)
+    , a1("A1")
+    , a2("A2")
+{
+}
+
 const Pole* Switch::getPole(const string& name) const
 {
     if (name == a1.name)
@@ -16,13 +35,6 @@ const Pole* Switch::getPole(size_t idx) const
 {
     // TODO
     return nullptr;
-}
-
-Switch::Switch(const std::string& name)
-    : Object(name)
-    , a1("A1")
-    , a2("A2")
-{
 }
 
 int main()

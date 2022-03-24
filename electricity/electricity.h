@@ -87,7 +87,7 @@ public:
     /// </summary>
     /// <param name="other">Устройство, наличие прямой связи с которым проверяется.</param>
     /// <returns><c>true</c> если устройства связаны напрямую, <c>false</c> в противном случае.</returns>
-    bool isConnectedTo(const Object& other) const { /* TODO */ return false; }
+    bool isConnectedTo(const Object& other) const;
 
     /// <summary>
     /// Соединяет указанные полюса текущего и указанного устройства.
@@ -101,7 +101,7 @@ public:
     /// В этом случае в качестве <paramref name="other"/> следует передать то же устройство,
     /// для которого вызывается этот метод.
     /// </remarks>
-    bool connect(const std::string& poleName, const Object& other, const std::string& otherPoleName) { /* TODO */ }
+    bool connect(const std::string& poleName, const Object& other, const std::string& otherPoleName);
 };
 
 /// <summary>
