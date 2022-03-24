@@ -31,7 +31,7 @@ struct Pole {
     /// </summary>
     std::string connectedObjectPole;
 
-    Pole(const string& name_) : name(name_), connectedObject(nullptr) {}
+    Pole(const std::string& name_) : name(name_), connectedObject(nullptr) {}
 };
 
 /// <summary>
@@ -43,7 +43,7 @@ class Object {
     std::string name;
 
 protected:
-    Object(const string& name_) : name(name_) {}
+    Object(const std::string& name_) : name(name_) {}
 
     /// <summary>
     /// Возвращает полюс по внутреннему индексу устройства.
@@ -115,7 +115,7 @@ public:
 
     virtual size_t getPoleCount() const { return 2; }
 
-    virtual const Pole* getPole(const string& name) const;
+    virtual const Pole* getPole(const std::string& name) const;
 
 protected:
     virtual const Pole* getPole(size_t idx) const;
