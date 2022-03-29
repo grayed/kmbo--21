@@ -14,7 +14,7 @@ public:
 };
 string Animal::about() const {
 	stringstream ss;
-	ss << "heterotrophic? " << heterotrophic << endl;
+	ss << "heterotrophic ? " << heterotrophic << endl;
 	return ss.str();
 };
 
@@ -25,7 +25,7 @@ public:
 };
 string Mammal::about() const {
 	stringstream ss;
-	ss << "lactation? " << lactation << endl;
+	ss << "lactation ? " << lactation << endl;
 	return ss.str();
 };
 
@@ -36,7 +36,7 @@ public:
 };
 string Crustacean::about() const {
 	stringstream ss;
-	ss << "claw_number? " << claw_number << endl;
+	ss << "claw_number ? " << claw_number << endl;
 	return ss.str();
 };
 
@@ -47,7 +47,7 @@ public:
 };
 string Capybara::about() const {
 	stringstream ss;
-	ss << "the_biggest_rodent? " << the_biggest_rodent << endl;
+	ss << "the_biggest_rodent ? " << the_biggest_rodent << endl;
 	return ss.str();
 };
 
@@ -58,7 +58,7 @@ public:
 };
 string Rat::about() const {
 	stringstream ss;
-	ss << "cute_af? " << cute_af << endl;
+	ss << "cute_af ? " << cute_af << endl;
 	return ss.str();
 };
 
@@ -69,7 +69,7 @@ public:
 };
 string Langoustine::about() const {
 	stringstream ss;
-	ss << "is_spikes? " << is_spikes << endl;
+	ss << "is_spikes ? " << is_spikes << endl;
 	return ss.str();
 };
 
@@ -80,7 +80,7 @@ public:
 };
 string Crab::about() const {
 	stringstream ss;
-	ss << "is_shell? " << is_shell << endl;
+	ss << "is_shell ? " << is_shell << endl;
 	return ss.str();
 };
 
@@ -114,6 +114,3 @@ int main()
 	cout << Crabsburger;
 	cout << Marcus;
 }
-// 1. Как сделать так, чтобы выводилась не 1, а true/false?
-// 2. Как вывести все поля через about, а не только последнее? (иначе не очень понятно, зачем писать about для промежуточных классов)
-// 3. Зачем в этих файлах использовать директиву #pragma once ?
