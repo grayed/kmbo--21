@@ -21,66 +21,66 @@ string Animal::about() const {
 class Mammal : public Animal {
 public:
 	bool lactation;
-	string about() const;
+	virtual string about() const;
 };
 string Mammal::about() const {
 	stringstream ss;
-	ss << "lactation ? " << lactation << endl;
+	ss << Animal::about() << " " << "lactation ? " << lactation << endl;
 	return ss.str();
 };
 
 class Crustacean : public Animal {
 public:
 	int claw_number;
-	string about() const;
+	virtual string about() const;
 };
 string Crustacean::about() const {
 	stringstream ss;
-	ss << "claw_number ? " << claw_number << endl;
+	ss << Animal::about() << " " << "claw_number ? " << claw_number << endl;
 	return ss.str();
 };
 
 class Capybara : public Mammal {
 public:
 	bool the_biggest_rodent;
-	string about() const;
+	virtual string about() const;
 };
 string Capybara::about() const {
 	stringstream ss;
-	ss << "the_biggest_rodent ? " << the_biggest_rodent << endl;
+	ss << Mammal::about() << " " << "the_biggest_rodent ? " << the_biggest_rodent << endl;
 	return ss.str();
 };
 
 class Rat : public Mammal {
 public:
 	bool cute_af;
-	string about() const;
+	virtual string about() const;
 };
 string Rat::about() const {
 	stringstream ss;
-	ss << "cute_af ? " << cute_af << endl;
+	ss << Mammal::about() << " " << "cute_af ? " << cute_af << endl;
 	return ss.str();
 };
 
 class Langoustine : public Crustacean {
 public:
 	bool is_spikes;
-	string about() const;
+	virtual string about() const;
 };
 string Langoustine::about() const {
 	stringstream ss;
-	ss << "is_spikes ? " << is_spikes << endl;
+	ss << Crustacean::about() << " " << "is_spikes ? " << is_spikes << endl;
 	return ss.str();
 };
 
 class Crab : public Crustacean {
 public:
 	bool is_shell;
-	string about() const;
+	virtual string about() const;
 };
 string Crab::about() const {
 	stringstream ss;
-	ss << "is_shell ? " << is_shell << endl;
+	ss << Crustacean::about() << " " << "is_shell ? " << is_shell << endl;
 	return ss.str();
 };
 
@@ -88,8 +88,7 @@ inline ostream& operator <<(ostream& os, const Animal& animal) {
 	return os << animal.about();
 }
 
-int main()
-{
+int main() {
 	Capybara	 Marcus;
 	Rat			 Mickey;
 	Langoustine	 Anton;
