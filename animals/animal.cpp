@@ -19,4 +19,8 @@ int main() {
 	sparrow.setfearthLength(0.1);
 	sparrow.setrazorLength(0.02);
 	sparrow.setweight(0.5);
+	cout << dog << endl;
+	cout << cat << endl;
+	cout << sparrow << endl;
+	cout << raven << endl;
 }
