@@ -7,7 +7,7 @@ using namespace std;
 
 class Animal {
 private:
-    float mass;
+    float mass; // в килограммах
     float age;
     int lags;
 public:
@@ -61,7 +61,7 @@ public:
         haveSpine = HaveSpine;
     }
 
-    void setSex(float Sex) {sex = Sex;}
+    void setSex(string Sex) {sex = Sex;}
     void setHaveWings(bool HaveSpine) {haveSpine = HaveSpine;}
 
     string getSex() {return sex;}
@@ -76,7 +76,7 @@ public:
 
 class Cockroach : public Insects {
 private:
-    float length;
+    float length;   // в сантиметрах
     bool haveWings;
 public:
     Cockroach(float Length, bool HaveWings, bool DoFly, float Mass, float Age, float Lags) : Insects(DoFly, Mass, Age, Lags) {

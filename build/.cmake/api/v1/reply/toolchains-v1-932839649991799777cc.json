@@ -1,0 +1,131 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/Users/Ilya/gcc/lib/gcc/x86_64-w64-mingw32/11.1.0/include",
+						"C:/Users/Ilya/gcc/lib/gcc/x86_64-w64-mingw32/11.1.0/include-fixed",
+						"C:/Users/Ilya/gcc/x86_64-w64-mingw32/include"
+					],
+					"linkDirectories" : 
+					[
+						"C:/Users/Ilya/gcc/lib/gcc/x86_64-w64-mingw32/11.1.0",
+						"C:/Users/Ilya/gcc/lib/gcc",
+						"C:/Users/Ilya/gcc/x86_64-w64-mingw32/lib",
+						"C:/Users/Ilya/gcc/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"mingw32",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32",
+						"advapi32",
+						"shell32",
+						"user32",
+						"kernel32",
+						"mingw32",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32"
+					]
+				},
+				"path" : "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-gcc.exe",
+				"version" : "11.1.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/Users/Ilya/gcc/include/c++/11.1.0",
+						"C:/Users/Ilya/gcc/include/c++/11.1.0/x86_64-w64-mingw32",
+						"C:/Users/Ilya/gcc/include/c++/11.1.0/backward",
+						"C:/Users/Ilya/gcc/lib/gcc/x86_64-w64-mingw32/11.1.0/include",
+						"C:/Users/Ilya/gcc/lib/gcc/x86_64-w64-mingw32/11.1.0/include-fixed",
+						"C:/Users/Ilya/gcc/x86_64-w64-mingw32/include"
+					],
+					"linkDirectories" : 
+					[
+						"C:/Users/Ilya/gcc/lib/gcc/x86_64-w64-mingw32/11.1.0",
+						"C:/Users/Ilya/gcc/lib/gcc",
+						"C:/Users/Ilya/gcc/x86_64-w64-mingw32/lib",
+						"C:/Users/Ilya/gcc/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"stdc++",
+						"mingw32",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32",
+						"advapi32",
+						"shell32",
+						"user32",
+						"kernel32",
+						"mingw32",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"kernel32"
+					]
+				},
+				"path" : "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe",
+				"version" : "11.1.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"implicit" : {},
+				"path" : "x86_64-w64-mingw32-windres"
+			},
+			"language" : "RC",
+			"sourceFileExtensions" : 
+			[
+				"rc",
+				"RC"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

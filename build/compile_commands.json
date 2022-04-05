@@ -1,0 +1,27 @@
+[
+{
+  "directory": "D:/Programms/C++/kmbo--21/build/classwork",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/classwork.dir/main.cpp.obj -c D:/Programms/C++/kmbo--21/classwork/main.cpp",
+  "file": "D:/Programms/C++/kmbo--21/classwork/main.cpp"
+},
+{
+  "directory": "D:/Programms/C++/kmbo--21/build/classwork",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/vehicles.dir/vehicle.cpp.obj -c D:/Programms/C++/kmbo--21/classwork/vehicle.cpp",
+  "file": "D:/Programms/C++/kmbo--21/classwork/vehicle.cpp"
+},
+{
+  "directory": "D:/Programms/C++/kmbo--21/build/classwork",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/memarith.dir/memarith.cpp.obj -c D:/Programms/C++/kmbo--21/classwork/memarith.cpp",
+  "file": "D:/Programms/C++/kmbo--21/classwork/memarith.cpp"
+},
+{
+  "directory": "D:/Programms/C++/kmbo--21/build/animals",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/animals.dir/animal.cpp.obj -c D:/Programms/C++/kmbo--21/animals/animal.cpp",
+  "file": "D:/Programms/C++/kmbo--21/animals/animal.cpp"
+},
+{
+  "directory": "D:/Programms/C++/kmbo--21/build/vectors",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/vectors.dir/vector.cpp.obj -c D:/Programms/C++/kmbo--21/vectors/vector.cpp",
+  "file": "D:/Programms/C++/kmbo--21/vectors/vector.cpp"
+}
+]

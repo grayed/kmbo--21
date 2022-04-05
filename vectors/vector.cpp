@@ -1,48 +1,4 @@
-#include <iostream>
-
-using namespace std;
-
-class Vector3d {
-private:
-    float data[3];
-public:
-    Vector3d() {
-        data[2] = data[1] = data[0] = 0;
-    }
-    Vector3d(float value) {
-        data[2] = data[1] = data[0] = value;
-    }
-    Vector3d(float a1, float a2, float a3) {
-        data[0] = a1;
-        data[1] = a2;
-        data[2] = a3;
-    }
-    float operator[](int index) const {return data[index];}
-    float& operator[](int index)  {return data[index];}
-    Vector3d operator+(const Vector3d& other) {
-        return Vector3d(data[0] + other[0], data[1] + other[1], data[2] + other[2]);
-    }
-    Vector3d operator-(const Vector3d& other) {
-        return Vector3d(data[0] - other[0], data[1] - other[1], data[2] - other[2]);
-    }
-    Vector3d operator*(const float value) {
-        return Vector3d(data[0] * value, data[1] * value, data[2] * value);
-    }
-    Vector3d operator/(const float value) {
-        return Vector3d(data[0] / value, data[1] / value, data[2] / value);
-    }
-
-    Vector3d operator-() {
-        return Vector3d(-data[0], -data[1], -data[2]);
-    }
-    Vector3d operator!() {
-        return Vector3d(!data[0], !data[1], !data[2]);
-    }
-};
-
-ostream& operator<<(ostream& os, const Vector3d& v) {
-    return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }";
-}
+#include "vector.h"
 
 bool test_vector3d() {
     Vector3d vec1(2), vec2(1.5);
@@ -65,6 +21,12 @@ bool test_vector3d() {
     cout << vec1 * 4 << endl;
     if (vec1[0] * 4 != (vec1 * 4)[0] || vec1[1] * 4 != (vec1 * 4)[1] || vec1[2] * 4 != (vec1 * 4)[2]) {
         cerr << "Должно быть: " << "{ " << vec1[0] * 4 << ", " << vec1[1] * 4 << ", " << vec1[2] * 4 << " }" << endl; 
+        error = true;
+    }
+
+    cout << 3 * vec1 << endl;
+    if (3 * vec1[0] != (3 * vec1)[0] || 3 * vec1[1] != (3 * vec1)[1] || 3 * vec1[2] != (3 * vec1)[2]) {
+        cerr << "Должно быть: " << "{ " << 3 * vec1[0] << ", " << 3 * vec1[1] << ", " << 3 * vec1[2] << " }" << endl; 
         error = true;
     }
 
@@ -91,4 +53,12 @@ bool test_vector3d() {
 
 int main() {
     cout << test_vector3d() << endl;
+
+    Vector3d v1(3), v2(4);
+    cout << average(v1, v2);
+
+    if (test_vector3d()) 
+        return 0;
+    else    
+        return 1;
 }

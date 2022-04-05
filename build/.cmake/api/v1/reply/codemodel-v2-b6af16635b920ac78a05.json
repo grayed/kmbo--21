@@ -1,0 +1,140 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "classwork",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "classwork",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						4
+					]
+				},
+				{
+					"build" : "animals",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "animals",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "vectors",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "vectors",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"name" : "kmbo--21",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "animals::@d3e6509ec9da81b9182b",
+					"jsonFile" : "target-animals-Debug-85966083efa53b50d0fb.json",
+					"name" : "animals",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "classwork::@3de3d43671564998e741",
+					"jsonFile" : "target-classwork-Debug-2291b331bd2e14b9049f.json",
+					"name" : "classwork",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "memarith::@3de3d43671564998e741",
+					"jsonFile" : "target-memarith-Debug-bc3ca43c43c1f4e1a0ff.json",
+					"name" : "memarith",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "vectors::@bafb03b3c093a7eafa7a",
+					"jsonFile" : "target-vectors-Debug-e0d7682ae398b6b66185.json",
+					"name" : "vectors",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "vehicles::@3de3d43671564998e741",
+					"jsonFile" : "target-vehicles-Debug-eb5815f2ac7e5abbca60.json",
+					"name" : "vehicles",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Programms/C++/kmbo--21/build",
+		"source" : "D:/Programms/C++/kmbo--21"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}
