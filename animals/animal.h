@@ -9,7 +9,11 @@ using namespace std;
 class Animal {
 private:
 	float weight;				// kg
-
+protected:
+	Animal(){}
+	Animal(float newweight) {
+		weight = newweight;
+	}
 public:
 	float getweight() {return weight;}
 	void setweight(float newweight) {weight = newweight;}
@@ -23,6 +27,12 @@ public:
 class Mammal : public Animal {
 private:
 	float pregnancyDuration;	// days
+protected:
+	Mammal() {}
+	Mammal(float newweight, float newpregnancyDuration) {
+		pregnancyDuration = newpregnancyDuration;
+		setweight(newweight);
+	}
 public:
 	float getpregnancyDuration() { return pregnancyDuration; }
 	void setpregnancyDuration(float newpregnancyDuration) { pregnancyDuration = newpregnancyDuration; }
@@ -44,6 +54,12 @@ public:
 		ss << Mammal::about() << " Vibrissa Length = " << vibrissaLength;
 		return ss.str();
 	}
+	Cat() {}
+	Cat(float newweight, float newpregnancyDuration, float newvibrissaLength) {
+		vibrissaLength = newvibrissaLength;
+		setpregnancyDuration(newpregnancyDuration);
+		setweight(newweight);
+	}
 };
 inline ostream& operator<<(ostream& os, const Cat& cat) {
 	return os << cat.about();
@@ -61,6 +77,12 @@ public:
 		ss << Mammal::about() << " Razor Length = " << razorLength;
 		return ss.str();
 	}
+	Dog() {}
+	Dog(float newweight, float newpregnancyDuration, float newrazorlength) {
+		razorLength = newrazorlength;
+		setpregnancyDuration(newpregnancyDuration);
+		setweight(newweight);
+	}
 };
 inline ostream& operator<<(ostream& os, const Dog& dog) {
 	return os << dog.about();
@@ -70,6 +92,12 @@ inline ostream& operator<<(ostream& os, const Dog& dog) {
 class Bird : public Animal {
 private:
 	float fearthLength;	// meters
+protected:
+	Bird() {}
+	Bird(float newweight, float newfearthlength) {
+		fearthLength = newfearthlength;
+		setweight(newweight);
+	}
 public:
 	float getfearthLength() { return fearthLength; }
 	void setfearthLength(float newfearthLength) { fearthLength = newfearthLength; }
@@ -91,6 +119,12 @@ public:
 		ss << Bird::about() << " Razor Length = " << razorLength;
 		return ss.str();
 	}
+	Sparrow() {}
+	Sparrow(float newweight, float newfearthlength, float newrazorlength) {
+		razorLength = newrazorlength;
+		setfearthLength(newfearthlength);
+		setweight(newweight);
+	}
 };
 inline ostream& operator<<(ostream& os, const Sparrow& sparrow) {
 	return os << sparrow.about();
@@ -106,6 +140,12 @@ public:
 		stringstream ss;
 		ss << Bird::about() << " Height = " << height;
 		return ss.str();
+	}
+	Raven() {}
+	Raven(float newweight, float newfearthlength, float newheight) {
+		height = newheight;
+		setfearthLength(newfearthlength);
+		setweight(newweight);
 	}
 };
 inline ostream& operator<<(ostream& os, const Raven& raven) {
