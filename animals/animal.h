@@ -40,11 +40,11 @@ public:
 
 class Horse :public Mammal {
 private:
-    int kilometresRun;
+    float kilometresRun;
 public:
-    Horse(int distance) { kilometresRun = distance; }
-    void setkilometresRun(int distance) { kilometresRun = distance; }
-    int get_kilometresRun() const { return kilometresRun; }
+    Horse(float distance) { kilometresRun = distance; }
+    void setkilometresRun(float distance) { kilometresRun = distance; }
+    float get_kilometresRun() const { return kilometresRun; }
     virtual string about() const { return (stringstream() << Animal::about() << ", " << Mammal::about() << ", " << "kilometresRun =" << kilometresRun).str(); }
 };
 
@@ -70,10 +70,10 @@ public:
 };
 class Caliber :public Birds {
 private:
-    int WingBeatSpeed;
+    int WingBeatSpeedPerSecond;
 public:
-    Caliber(int BeatCounter) { WingBeatSpeed = BeatCounter; }
-    int get_WingBeatSpeed() const { return WingBeatSpeed; }
-    void setWingBeatSpeed(int BeatCounter) { WingBeatSpeed = BeatCounter; }
-    virtual string about() const { return (stringstream() << Animal::about() << ", " << Birds::about() << ", " << "WingBeatSpeed =" << WingBeatSpeed).str(); }
+    Caliber(int BeatCounter) { WingBeatSpeedPerSecond = BeatCounter; }
+    int get_WingBeatSpeedPerSecond() const { return WingBeatSpeedPerSecond; }
+    void setWingBeatSpeedPerSecond(int BeatCounter) { WingBeatSpeedPerSecond = BeatCounter; }
+    virtual string about() const { return (stringstream() << Animal::about() << ", " << Birds::about() << ", " << "WingBeatSpeed =" << WingBeatSpeedPerSecond).str(); }
 };

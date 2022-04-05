@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include <cmath>
 using namespace std;
 class vector3d {
 public:
@@ -38,19 +37,19 @@ bool test_vector3d()
 	vector3d v3;
 	vector3d v4(0, 0, 0);
 	v3 = v1 + v2;
-	if ((v3.data[0] != 6) || (v3.data[1] != 6) || (v3.data[2] != 6)) { cout << "Операция сложения не работает. Данные проверки v1(5,5,5), v2(1,1,1)"; return false; }
+	if ((v3.data[0] != 6) || (v3.data[1] != 6) || (v3.data[2] != 6)) { cout << "The addition operation does not work. Check Data v1(5,5,5), v2(1,1,1)"; return 1; }
 	v3 = v1 - v2;
-	if ((v3.data[0] != 4) || (v3.data[1] != 4) || (v3.data[2] != 4)) { cout << "Операция вычитания не работает. Данные проверки v1(5,5,5), v2(1,1,1)"; return false; }
+	if ((v3.data[0] != 4) || (v3.data[1] != 4) || (v3.data[2] != 4)) { cout << "The subtraction operation does not work. Check Data v1(5,5,5), v2(1,1,1)"; return 1; }
 	v3 = v1 * 3;
-	if ((v3.data[0] != 15) || (v3.data[1] != 15) || (v3.data[2] != 15)) { cout << "Операция умножения на скаляр не работает. Данные проверки v1(5,5,5), 3"; return false; }
+	if ((v3.data[0] != 15) || (v3.data[1] != 15) || (v3.data[2] != 15)) { cout << "The multiplication operation does not work. Check Data v1(5,5,5), 3"; return 1; }
 	v3 = v1 / 5;
-	if ((v3.data[0] != 1) || (v3.data[1] != 1) || (v3.data[2] != 1)) { cout << "Операция деления на скаляр не работает. Данные проверки v1(5,5,5), 5"; return false; }
+	if ((v3.data[0] != 1) || (v3.data[1] != 1) || (v3.data[2] != 1)) { cout << "The division operation by a scalar does not work. Check Data v1(5,5,5), 5"; return 1; }
 	v3 = -v1;
-	if ((v3.data[0] != -5) || (v3.data[1] != -5) || (v3.data[2] != -5)) { cout << "Операция инверсии не работает. Данные проверки v1(5,5,5)"; return false; }
+	if ((v3.data[0] != -5) || (v3.data[1] != -5) || (v3.data[2] != -5)) { cout << "The invert operation does not work. Check Data v1(5,5,5)"; return 1; }
 	v3 = !v1;
-	if ((v3.data[0] != 0) || (v3.data[1] != 0) || (v3.data[2] != 0)) { cout << "Операция ! не работает. Данные проверки v4(0,0,0)"; return false; }
+	if ((v3.data[0] != 0) || (v3.data[1] != 0) || (v3.data[2] != 0)) { cout << "Operation ! does not work. Check Data v4(0,0,0)"; return 1; }
 	v3 = !v4;
-	if ((v3.data[0] != 1) || (v3.data[1] != 1) || (v3.data[2] != 1)) { cout << "Операция ! не работает. Данные проверки v1(1,1,1)"; return false; }
-	return true;
+	if ((v3.data[0] != 1) || (v3.data[1] != 1) || (v3.data[2] != 1)) { cout << "Operation ! does not work. Check Data v1(1,1,1)"; return 1; }
+	return 0;
 }
 
