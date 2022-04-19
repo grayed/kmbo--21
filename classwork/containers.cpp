@@ -3,7 +3,7 @@
 #include <cstring>          // for memcpy()
 #include <forward_list>		// use push_front() and pop_front() for it
 #include <iostream>
-include <list>
+#include <list>
 #include <vector>
 
 using namespace std;
