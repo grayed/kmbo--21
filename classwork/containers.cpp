@@ -33,7 +33,7 @@ int main() {
         auto t = new item[i+1];
         memcpy(t, numbers_c, sizeof(*t) * i);
         t[i] = item();
-        delete numbers_c;
+        delete[] numbers_c;
         numbers_c = t;
     }
     auto time_c = high_resolution_clock::now();
