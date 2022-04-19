@@ -8,15 +8,15 @@
 
 using namespace std;
 
-const size_t cont_size = 1000;
+const size_t cont_size = 100000;
 
-struct large_item { char data[10000]; };
+struct item { char data[4]; };
 
-large_item *numbers_c;
-array<large_item, cont_size> *numbers_a;
-vector<large_item> numbers_v;
-list<large_item> numbers_l;
-forward_list<large_item> numbers_f;
+static item *numbers_c;
+static array<item, cont_size> *numbers_a;
+static vector<item> numbers_v;
+static list<item> numbers_l;
+static forward_list<item> numbers_f;
 
 time_t timediff(const timeval &from, const timeval &till) {
 	auto delta = till.tv_usec - from.tv_usec;
@@ -24,29 +24,29 @@ time_t timediff(const timeval &from, const timeval &till) {
 	return delta;
 }
 
-int main(int argc, char **argv) {
+int main() {
 	timeval start, time_c, time_a, time_v, time_l;
 
 	gettimeofday(&start, nullptr);
-	numbers_c = new large_item[cont_size];
+    numbers_c = new item[cont_size];
 	for (size_t i = 0; i < cont_size; i++) {
-		auto t = new large_item[i+1];
+        auto t = new item[i+1];
 		memcpy(t, numbers_c, sizeof(*t) * i);
-		t[i] = large_item();
+        t[i] = item();
 		delete numbers_c;
 		numbers_c = t;
 	}
 	gettimeofday(&time_c, nullptr);
-	numbers_a = new array<large_item, cont_size>;
+    numbers_a = new array<item, cont_size>;
 	for (size_t i = 0; i < cont_size; i++) {
-		(*numbers_a)[i] = large_item();
+        (*numbers_a)[i] = item();
 	}
 	gettimeofday(&time_a, nullptr);
 	for (size_t i = 0; i < cont_size; i++)
-		numbers_v.push_back(large_item());
+        numbers_v.push_back(item());
 	gettimeofday(&time_v, nullptr);
 	for (size_t i = 0; i < cont_size; i++)
-		numbers_l.push_back(large_item());
+        numbers_l.push_back(item());
 	gettimeofday(&time_l, nullptr);
 
 	cout << "Addition:" << endl;
