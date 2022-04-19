@@ -1,9 +1,9 @@
 #include <array>
 #include <chrono>
 #include <cstring>          // for memcpy()
-#include <iostream>
 #include <forward_list>		// use push_front() and pop_front() for it
-#include <list>
+#include <iostream>
+include <list>
 #include <vector>
 
 using namespace std;
