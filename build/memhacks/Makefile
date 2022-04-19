@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles D:/Programms/C++/kmbo--21/build/vectors//CMakeFiles/progress.marks
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/all
+	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles D:/Programms/C++/kmbo--21/build/memhacks//CMakeFiles/progress.marks
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/clean
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,12 +103,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/preinstall
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/preinstall
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -117,80 +117,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-vectors/CMakeFiles/vectors.dir/rule:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/CMakeFiles/vectors.dir/rule
-.PHONY : vectors/CMakeFiles/vectors.dir/rule
+memhacks/CMakeFiles/memhacks.dir/rule:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/CMakeFiles/memhacks.dir/rule
+.PHONY : memhacks/CMakeFiles/memhacks.dir/rule
 
 # Convenience name for target.
-vectors: vectors/CMakeFiles/vectors.dir/rule
-.PHONY : vectors
+memhacks: memhacks/CMakeFiles/memhacks.dir/rule
+.PHONY : memhacks
 
 # fast build rule for target.
-vectors/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/build
-.PHONY : vectors/fast
+memhacks/fast:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/build
+.PHONY : memhacks/fast
 
-# Convenience name for target.
-vectors/CMakeFiles/arrays.dir/rule:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/CMakeFiles/arrays.dir/rule
-.PHONY : vectors/CMakeFiles/arrays.dir/rule
-
-# Convenience name for target.
-arrays: vectors/CMakeFiles/arrays.dir/rule
-.PHONY : arrays
-
-# fast build rule for target.
-arrays/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/build
-.PHONY : arrays/fast
-
-array.obj: array.cpp.obj
-.PHONY : array.obj
+memhacks.obj: memhacks.cpp.obj
+.PHONY : memhacks.obj
 
 # target to build an object file
-array.cpp.obj:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/array.cpp.obj
-.PHONY : array.cpp.obj
+memhacks.cpp.obj:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.obj
+.PHONY : memhacks.cpp.obj
 
-array.i: array.cpp.i
-.PHONY : array.i
-
-# target to preprocess a source file
-array.cpp.i:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/array.cpp.i
-.PHONY : array.cpp.i
-
-array.s: array.cpp.s
-.PHONY : array.s
-
-# target to generate assembly for a file
-array.cpp.s:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/array.cpp.s
-.PHONY : array.cpp.s
-
-vector.obj: vector.cpp.obj
-.PHONY : vector.obj
-
-# target to build an object file
-vector.cpp.obj:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/vector.cpp.obj
-.PHONY : vector.cpp.obj
-
-vector.i: vector.cpp.i
-.PHONY : vector.i
+memhacks.i: memhacks.cpp.i
+.PHONY : memhacks.i
 
 # target to preprocess a source file
-vector.cpp.i:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/vector.cpp.i
-.PHONY : vector.cpp.i
+memhacks.cpp.i:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.i
+.PHONY : memhacks.cpp.i
 
-vector.s: vector.cpp.s
-.PHONY : vector.s
+memhacks.s: memhacks.cpp.s
+.PHONY : memhacks.s
 
 # target to generate assembly for a file
-vector.cpp.s:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/vector.cpp.s
-.PHONY : vector.cpp.s
+memhacks.cpp.s:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.s
+.PHONY : memhacks.cpp.s
 
 # Help Target
 help:
@@ -200,14 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... arrays"
-	@echo "... vectors"
-	@echo "... array.obj"
-	@echo "... array.i"
-	@echo "... array.s"
-	@echo "... vector.obj"
-	@echo "... vector.i"
-	@echo "... vector.s"
+	@echo "... memhacks"
+	@echo "... memhacks.obj"
+	@echo "... memhacks.i"
+	@echo "... memhacks.s"
 .PHONY : help
 
 

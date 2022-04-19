@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named newdemo
+
+# Build rule for target.
+newdemo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 newdemo
+.PHONY : newdemo
+
+# fast build rule for target.
+newdemo/fast:
+	$(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/build
+.PHONY : newdemo/fast
+
+#=============================================================================
 # Target rules for targets named classwork
 
 # Build rule for target.
@@ -169,6 +182,32 @@ animals/fast:
 .PHONY : animals/fast
 
 #=============================================================================
+# Target rules for targets named memhacks
+
+# Build rule for target.
+memhacks: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks
+.PHONY : memhacks
+
+# fast build rule for target.
+memhacks/fast:
+	$(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/build
+.PHONY : memhacks/fast
+
+#=============================================================================
+# Target rules for targets named electricity
+
+# Build rule for target.
+electricity: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 electricity
+.PHONY : electricity
+
+# fast build rule for target.
+electricity/fast:
+	$(MAKE) $(MAKESILENT) -f electricity/CMakeFiles/electricity.dir/build.make electricity/CMakeFiles/electricity.dir/build
+.PHONY : electricity/fast
+
+#=============================================================================
 # Target rules for targets named vectors
 
 # Build rule for target.
@@ -181,6 +220,19 @@ vectors/fast:
 	$(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/build
 .PHONY : vectors/fast
 
+#=============================================================================
+# Target rules for targets named arrays
+
+# Build rule for target.
+arrays: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arrays
+.PHONY : arrays
+
+# fast build rule for target.
+arrays/fast:
+	$(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/build
+.PHONY : arrays/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -190,8 +242,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... animals"
+	@echo "... arrays"
 	@echo "... classwork"
+	@echo "... electricity"
 	@echo "... memarith"
+	@echo "... memhacks"
+	@echo "... newdemo"
 	@echo "... vectors"
 	@echo "... vehicles"
 .PHONY : help

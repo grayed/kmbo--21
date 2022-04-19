@@ -65,18 +65,24 @@ CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21/build
 # The main recursive "all" target.
 all: classwork/all
 all: animals/all
+all: memhacks/all
+all: electricity/all
 all: vectors/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: classwork/preinstall
 preinstall: animals/preinstall
+preinstall: memhacks/preinstall
+preinstall: electricity/preinstall
 preinstall: vectors/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: classwork/clean
 clean: animals/clean
+clean: memhacks/clean
+clean: electricity/clean
 clean: vectors/clean
 .PHONY : clean
 
@@ -99,6 +105,7 @@ animals/clean: animals/CMakeFiles/animals.dir/clean
 # Directory level rules for directory classwork
 
 # Recursive "all" directory target.
+classwork/all: classwork/CMakeFiles/newdemo.dir/all
 classwork/all: classwork/CMakeFiles/classwork.dir/all
 classwork/all: classwork/CMakeFiles/vehicles.dir/all
 classwork/all: classwork/CMakeFiles/memarith.dir/all
@@ -109,16 +116,48 @@ classwork/preinstall:
 .PHONY : classwork/preinstall
 
 # Recursive "clean" directory target.
+classwork/clean: classwork/CMakeFiles/newdemo.dir/clean
 classwork/clean: classwork/CMakeFiles/classwork.dir/clean
 classwork/clean: classwork/CMakeFiles/vehicles.dir/clean
 classwork/clean: classwork/CMakeFiles/memarith.dir/clean
 .PHONY : classwork/clean
 
 #=============================================================================
+# Directory level rules for directory electricity
+
+# Recursive "all" directory target.
+electricity/all: electricity/CMakeFiles/electricity.dir/all
+.PHONY : electricity/all
+
+# Recursive "preinstall" directory target.
+electricity/preinstall:
+.PHONY : electricity/preinstall
+
+# Recursive "clean" directory target.
+electricity/clean: electricity/CMakeFiles/electricity.dir/clean
+.PHONY : electricity/clean
+
+#=============================================================================
+# Directory level rules for directory memhacks
+
+# Recursive "all" directory target.
+memhacks/all: memhacks/CMakeFiles/memhacks.dir/all
+.PHONY : memhacks/all
+
+# Recursive "preinstall" directory target.
+memhacks/preinstall:
+.PHONY : memhacks/preinstall
+
+# Recursive "clean" directory target.
+memhacks/clean: memhacks/CMakeFiles/memhacks.dir/clean
+.PHONY : memhacks/clean
+
+#=============================================================================
 # Directory level rules for directory vectors
 
 # Recursive "all" directory target.
 vectors/all: vectors/CMakeFiles/vectors.dir/all
+vectors/all: vectors/CMakeFiles/arrays.dir/all
 .PHONY : vectors/all
 
 # Recursive "preinstall" directory target.
@@ -127,7 +166,34 @@ vectors/preinstall:
 
 # Recursive "clean" directory target.
 vectors/clean: vectors/CMakeFiles/vectors.dir/clean
+vectors/clean: vectors/CMakeFiles/arrays.dir/clean
 .PHONY : vectors/clean
+
+#=============================================================================
+# Target rules for target classwork/CMakeFiles/newdemo.dir
+
+# All Build rule for target.
+classwork/CMakeFiles/newdemo.dir/all:
+	$(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/depend
+	$(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=13,14 "Built target newdemo"
+.PHONY : classwork/CMakeFiles/newdemo.dir/all
+
+# Build rule for subdir invocation for target.
+classwork/CMakeFiles/newdemo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/newdemo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 0
+.PHONY : classwork/CMakeFiles/newdemo.dir/rule
+
+# Convenience name for target.
+newdemo: classwork/CMakeFiles/newdemo.dir/rule
+.PHONY : newdemo
+
+# clean rule for target.
+classwork/CMakeFiles/newdemo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/clean
+.PHONY : classwork/CMakeFiles/newdemo.dir/clean
 
 #=============================================================================
 # Target rules for target classwork/CMakeFiles/classwork.dir
@@ -136,7 +202,7 @@ vectors/clean: vectors/CMakeFiles/vectors.dir/clean
 classwork/CMakeFiles/classwork.dir/all:
 	$(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/classwork.dir/build.make classwork/CMakeFiles/classwork.dir/depend
 	$(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/classwork.dir/build.make classwork/CMakeFiles/classwork.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=3,4 "Built target classwork"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=5,6 "Built target classwork"
 .PHONY : classwork/CMakeFiles/classwork.dir/all
 
 # Build rule for subdir invocation for target.
@@ -162,7 +228,7 @@ classwork/CMakeFiles/classwork.dir/clean:
 classwork/CMakeFiles/vehicles.dir/all:
 	$(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/vehicles.dir/build.make classwork/CMakeFiles/vehicles.dir/depend
 	$(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/vehicles.dir/build.make classwork/CMakeFiles/vehicles.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=9,10 "Built target vehicles"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=17,18 "Built target vehicles"
 .PHONY : classwork/CMakeFiles/vehicles.dir/all
 
 # Build rule for subdir invocation for target.
@@ -188,7 +254,7 @@ classwork/CMakeFiles/vehicles.dir/clean:
 classwork/CMakeFiles/memarith.dir/all:
 	$(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/depend
 	$(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=5,6 "Built target memarith"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=9,10 "Built target memarith"
 .PHONY : classwork/CMakeFiles/memarith.dir/all
 
 # Build rule for subdir invocation for target.
@@ -234,13 +300,65 @@ animals/CMakeFiles/animals.dir/clean:
 .PHONY : animals/CMakeFiles/animals.dir/clean
 
 #=============================================================================
+# Target rules for target memhacks/CMakeFiles/memhacks.dir
+
+# All Build rule for target.
+memhacks/CMakeFiles/memhacks.dir/all:
+	$(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/depend
+	$(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=11,12 "Built target memhacks"
+.PHONY : memhacks/CMakeFiles/memhacks.dir/all
+
+# Build rule for subdir invocation for target.
+memhacks/CMakeFiles/memhacks.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/CMakeFiles/memhacks.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 0
+.PHONY : memhacks/CMakeFiles/memhacks.dir/rule
+
+# Convenience name for target.
+memhacks: memhacks/CMakeFiles/memhacks.dir/rule
+.PHONY : memhacks
+
+# clean rule for target.
+memhacks/CMakeFiles/memhacks.dir/clean:
+	$(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/clean
+.PHONY : memhacks/CMakeFiles/memhacks.dir/clean
+
+#=============================================================================
+# Target rules for target electricity/CMakeFiles/electricity.dir
+
+# All Build rule for target.
+electricity/CMakeFiles/electricity.dir/all:
+	$(MAKE) $(MAKESILENT) -f electricity/CMakeFiles/electricity.dir/build.make electricity/CMakeFiles/electricity.dir/depend
+	$(MAKE) $(MAKESILENT) -f electricity/CMakeFiles/electricity.dir/build.make electricity/CMakeFiles/electricity.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=7,8 "Built target electricity"
+.PHONY : electricity/CMakeFiles/electricity.dir/all
+
+# Build rule for subdir invocation for target.
+electricity/CMakeFiles/electricity.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 electricity/CMakeFiles/electricity.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 0
+.PHONY : electricity/CMakeFiles/electricity.dir/rule
+
+# Convenience name for target.
+electricity: electricity/CMakeFiles/electricity.dir/rule
+.PHONY : electricity
+
+# clean rule for target.
+electricity/CMakeFiles/electricity.dir/clean:
+	$(MAKE) $(MAKESILENT) -f electricity/CMakeFiles/electricity.dir/build.make electricity/CMakeFiles/electricity.dir/clean
+.PHONY : electricity/CMakeFiles/electricity.dir/clean
+
+#=============================================================================
 # Target rules for target vectors/CMakeFiles/vectors.dir
 
 # All Build rule for target.
 vectors/CMakeFiles/vectors.dir/all:
 	$(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/depend
 	$(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=7,8 "Built target vectors"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=15,16 "Built target vectors"
 .PHONY : vectors/CMakeFiles/vectors.dir/all
 
 # Build rule for subdir invocation for target.
@@ -258,6 +376,32 @@ vectors: vectors/CMakeFiles/vectors.dir/rule
 vectors/CMakeFiles/vectors.dir/clean:
 	$(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/clean
 .PHONY : vectors/CMakeFiles/vectors.dir/clean
+
+#=============================================================================
+# Target rules for target vectors/CMakeFiles/arrays.dir
+
+# All Build rule for target.
+vectors/CMakeFiles/arrays.dir/all:
+	$(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/depend
+	$(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=3,4 "Built target arrays"
+.PHONY : vectors/CMakeFiles/arrays.dir/all
+
+# Build rule for subdir invocation for target.
+vectors/CMakeFiles/arrays.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/CMakeFiles/arrays.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 0
+.PHONY : vectors/CMakeFiles/arrays.dir/rule
+
+# Convenience name for target.
+arrays: vectors/CMakeFiles/arrays.dir/rule
+.PHONY : arrays
+
+# clean rule for target.
+vectors/CMakeFiles/arrays.dir/clean:
+	$(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/clean
+.PHONY : vectors/CMakeFiles/arrays.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

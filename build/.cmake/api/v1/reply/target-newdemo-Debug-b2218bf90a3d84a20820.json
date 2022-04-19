@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "classwork/vehicles.exe"
+			"path" : "classwork/newdemo.exe"
 		},
 		{
-			"path" : "classwork/vehicles.pdb"
+			"path" : "classwork/newdemo.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -48,7 +48,7 @@
 			]
 		}
 	],
-	"id" : "vehicles::@3de3d43671564998e741",
+	"id" : "newdemo::@3de3d43671564998e741",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -68,8 +68,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "vehicles",
-	"nameOnDisk" : "vehicles.exe",
+	"name" : "newdemo",
+	"nameOnDisk" : "newdemo.exe",
 	"paths" : 
 	{
 		"build" : "classwork",
@@ -97,12 +97,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "classwork/vehicle.cpp",
+			"path" : "classwork/newdemo.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "classwork/vehicle.h",
+			"path" : "classwork/newdemo.h",
 			"sourceGroupIndex" : 1
 		}
 	],

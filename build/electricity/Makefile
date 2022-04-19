@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles D:/Programms/C++/kmbo--21/build/vectors//CMakeFiles/progress.marks
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/all
+	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles D:/Programms/C++/kmbo--21/build/electricity//CMakeFiles/progress.marks
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 electricity/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/clean
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 electricity/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,12 +103,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/preinstall
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 electricity/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/preinstall
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 electricity/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -117,80 +117,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-vectors/CMakeFiles/vectors.dir/rule:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/CMakeFiles/vectors.dir/rule
-.PHONY : vectors/CMakeFiles/vectors.dir/rule
+electricity/CMakeFiles/electricity.dir/rule:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 electricity/CMakeFiles/electricity.dir/rule
+.PHONY : electricity/CMakeFiles/electricity.dir/rule
 
 # Convenience name for target.
-vectors: vectors/CMakeFiles/vectors.dir/rule
-.PHONY : vectors
+electricity: electricity/CMakeFiles/electricity.dir/rule
+.PHONY : electricity
 
 # fast build rule for target.
-vectors/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/build
-.PHONY : vectors/fast
+electricity/fast:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f electricity/CMakeFiles/electricity.dir/build.make electricity/CMakeFiles/electricity.dir/build
+.PHONY : electricity/fast
 
-# Convenience name for target.
-vectors/CMakeFiles/arrays.dir/rule:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vectors/CMakeFiles/arrays.dir/rule
-.PHONY : vectors/CMakeFiles/arrays.dir/rule
-
-# Convenience name for target.
-arrays: vectors/CMakeFiles/arrays.dir/rule
-.PHONY : arrays
-
-# fast build rule for target.
-arrays/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/build
-.PHONY : arrays/fast
-
-array.obj: array.cpp.obj
-.PHONY : array.obj
+electricity.obj: electricity.cpp.obj
+.PHONY : electricity.obj
 
 # target to build an object file
-array.cpp.obj:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/array.cpp.obj
-.PHONY : array.cpp.obj
+electricity.cpp.obj:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f electricity/CMakeFiles/electricity.dir/build.make electricity/CMakeFiles/electricity.dir/electricity.cpp.obj
+.PHONY : electricity.cpp.obj
 
-array.i: array.cpp.i
-.PHONY : array.i
-
-# target to preprocess a source file
-array.cpp.i:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/array.cpp.i
-.PHONY : array.cpp.i
-
-array.s: array.cpp.s
-.PHONY : array.s
-
-# target to generate assembly for a file
-array.cpp.s:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/arrays.dir/build.make vectors/CMakeFiles/arrays.dir/array.cpp.s
-.PHONY : array.cpp.s
-
-vector.obj: vector.cpp.obj
-.PHONY : vector.obj
-
-# target to build an object file
-vector.cpp.obj:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/vector.cpp.obj
-.PHONY : vector.cpp.obj
-
-vector.i: vector.cpp.i
-.PHONY : vector.i
+electricity.i: electricity.cpp.i
+.PHONY : electricity.i
 
 # target to preprocess a source file
-vector.cpp.i:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/vector.cpp.i
-.PHONY : vector.cpp.i
+electricity.cpp.i:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f electricity/CMakeFiles/electricity.dir/build.make electricity/CMakeFiles/electricity.dir/electricity.cpp.i
+.PHONY : electricity.cpp.i
 
-vector.s: vector.cpp.s
-.PHONY : vector.s
+electricity.s: electricity.cpp.s
+.PHONY : electricity.s
 
 # target to generate assembly for a file
-vector.cpp.s:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f vectors/CMakeFiles/vectors.dir/build.make vectors/CMakeFiles/vectors.dir/vector.cpp.s
-.PHONY : vector.cpp.s
+electricity.cpp.s:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f electricity/CMakeFiles/electricity.dir/build.make electricity/CMakeFiles/electricity.dir/electricity.cpp.s
+.PHONY : electricity.cpp.s
 
 # Help Target
 help:
@@ -200,14 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... arrays"
-	@echo "... vectors"
-	@echo "... array.obj"
-	@echo "... array.i"
-	@echo "... array.s"
-	@echo "... vector.obj"
-	@echo "... vector.i"
-	@echo "... vector.s"
+	@echo "... electricity"
+	@echo "... electricity.obj"
+	@echo "... electricity.i"
+	@echo "... electricity.s"
 .PHONY : help
 
 

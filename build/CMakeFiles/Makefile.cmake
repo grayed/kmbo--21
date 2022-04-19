@@ -35,6 +35,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.20.21032501-MSVC_2/CMakeRCCompiler.cmake"
   "CMakeFiles/3.20.21032501-MSVC_2/CMakeSystem.cmake"
   "../classwork/CMakeLists.txt"
+  "../electricity/CMakeLists.txt"
+  "../memhacks/CMakeLists.txt"
   "../vectors/CMakeLists.txt"
   )
 
@@ -49,14 +51,20 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "classwork/CMakeFiles/CMakeDirectoryInformation.cmake"
   "animals/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "memhacks/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "electricity/CMakeFiles/CMakeDirectoryInformation.cmake"
   "vectors/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "classwork/CMakeFiles/newdemo.dir/DependInfo.cmake"
   "classwork/CMakeFiles/classwork.dir/DependInfo.cmake"
   "classwork/CMakeFiles/vehicles.dir/DependInfo.cmake"
   "classwork/CMakeFiles/memarith.dir/DependInfo.cmake"
   "animals/CMakeFiles/animals.dir/DependInfo.cmake"
+  "memhacks/CMakeFiles/memhacks.dir/DependInfo.cmake"
+  "electricity/CMakeFiles/electricity.dir/DependInfo.cmake"
   "vectors/CMakeFiles/vectors.dir/DependInfo.cmake"
+  "vectors/CMakeFiles/arrays.dir/DependInfo.cmake"
   )

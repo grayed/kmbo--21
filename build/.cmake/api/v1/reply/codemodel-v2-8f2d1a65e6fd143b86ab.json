@@ -10,7 +10,9 @@
 					[
 						1,
 						2,
-						3
+						3,
+						4,
+						5
 					],
 					"minimumCMakeVersion" : 
 					{
@@ -30,9 +32,10 @@
 					"source" : "classwork",
 					"targetIndexes" : 
 					[
-						1,
 						2,
-						4
+						4,
+						6,
+						8
 					]
 				},
 				{
@@ -50,6 +53,34 @@
 					]
 				},
 				{
+					"build" : "memhacks",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "memhacks",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "electricity",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "electricity",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
 					"build" : "vectors",
 					"minimumCMakeVersion" : 
 					{
@@ -60,7 +91,8 @@
 					"source" : "vectors",
 					"targetIndexes" : 
 					[
-						3
+						1,
+						7
 					]
 				}
 			],
@@ -73,7 +105,9 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4,
+						5
 					],
 					"name" : "kmbo--21",
 					"targetIndexes" : 
@@ -82,7 +116,11 @@
 						1,
 						2,
 						3,
-						4
+						4,
+						5,
+						6,
+						7,
+						8
 					]
 				}
 			],
@@ -96,6 +134,13 @@
 					"projectIndex" : 0
 				},
 				{
+					"directoryIndex" : 5,
+					"id" : "arrays::@bafb03b3c093a7eafa7a",
+					"jsonFile" : "target-arrays-Debug-e35101fbee77ec7772d3.json",
+					"name" : "arrays",
+					"projectIndex" : 0
+				},
+				{
 					"directoryIndex" : 1,
 					"id" : "classwork::@3de3d43671564998e741",
 					"jsonFile" : "target-classwork-Debug-2291b331bd2e14b9049f.json",
@@ -103,14 +148,35 @@
 					"projectIndex" : 0
 				},
 				{
+					"directoryIndex" : 4,
+					"id" : "electricity::@24281a5fc2138595488b",
+					"jsonFile" : "target-electricity-Debug-31b49d9109c1e306f289.json",
+					"name" : "electricity",
+					"projectIndex" : 0
+				},
+				{
 					"directoryIndex" : 1,
 					"id" : "memarith::@3de3d43671564998e741",
-					"jsonFile" : "target-memarith-Debug-bc3ca43c43c1f4e1a0ff.json",
+					"jsonFile" : "target-memarith-Debug-e4d610ca80d35d3ae502.json",
 					"name" : "memarith",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
+					"id" : "memhacks::@e97f5161fd860b2aedc3",
+					"jsonFile" : "target-memhacks-Debug-f915adf210c318a3c648.json",
+					"name" : "memhacks",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "newdemo::@3de3d43671564998e741",
+					"jsonFile" : "target-newdemo-Debug-b2218bf90a3d84a20820.json",
+					"name" : "newdemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
 					"id" : "vectors::@bafb03b3c093a7eafa7a",
 					"jsonFile" : "target-vectors-Debug-e0d7682ae398b6b66185.json",
 					"name" : "vectors",
@@ -119,7 +185,7 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "vehicles::@3de3d43671564998e741",
-					"jsonFile" : "target-vehicles-Debug-eb5815f2ac7e5abbca60.json",
+					"jsonFile" : "target-vehicles-Debug-ab2157ea0c0a8cc46a61.json",
 					"name" : "vehicles",
 					"projectIndex" : 0
 				}

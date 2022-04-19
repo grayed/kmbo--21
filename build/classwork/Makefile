@@ -117,6 +117,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+classwork/CMakeFiles/newdemo.dir/rule:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/newdemo.dir/rule
+.PHONY : classwork/CMakeFiles/newdemo.dir/rule
+
+# Convenience name for target.
+newdemo: classwork/CMakeFiles/newdemo.dir/rule
+.PHONY : newdemo
+
+# fast build rule for target.
+newdemo/fast:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/build
+.PHONY : newdemo/fast
+
+# Convenience name for target.
 classwork/CMakeFiles/classwork.dir/rule:
 	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/classwork.dir/rule
 .PHONY : classwork/CMakeFiles/classwork.dir/rule
@@ -206,6 +220,30 @@ memarith.cpp.s:
 	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/memarith.cpp.s
 .PHONY : memarith.cpp.s
 
+newdemo.obj: newdemo.cpp.obj
+.PHONY : newdemo.obj
+
+# target to build an object file
+newdemo.cpp.obj:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/newdemo.cpp.obj
+.PHONY : newdemo.cpp.obj
+
+newdemo.i: newdemo.cpp.i
+.PHONY : newdemo.i
+
+# target to preprocess a source file
+newdemo.cpp.i:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/newdemo.cpp.i
+.PHONY : newdemo.cpp.i
+
+newdemo.s: newdemo.cpp.s
+.PHONY : newdemo.s
+
+# target to generate assembly for a file
+newdemo.cpp.s:
+	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/newdemo.cpp.s
+.PHONY : newdemo.cpp.s
+
 vehicle.obj: vehicle.cpp.obj
 .PHONY : vehicle.obj
 
@@ -240,6 +278,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... classwork"
 	@echo "... memarith"
+	@echo "... newdemo"
 	@echo "... vehicles"
 	@echo "... main.obj"
 	@echo "... main.i"
@@ -247,6 +286,9 @@ help:
 	@echo "... memarith.obj"
 	@echo "... memarith.i"
 	@echo "... memarith.s"
+	@echo "... newdemo.obj"
+	@echo "... newdemo.i"
+	@echo "... newdemo.s"
 	@echo "... vehicle.obj"
 	@echo "... vehicle.i"
 	@echo "... vehicle.s"
