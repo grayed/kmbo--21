@@ -1,6 +1,6 @@
-#include <sys/time.h>
 #include <array>
-#include <cstring>
+#include <chrono>
+#include <cstring>          //
 #include <iostream>
 #include <forward_list>		// push_front(), pop_front()
 #include <list>
@@ -18,16 +18,13 @@ static vector<item> numbers_v;
 static list<item> numbers_l;
 static forward_list<item> numbers_f;
 
-time_t timediff(const timeval &from, const timeval &till) {
-	auto delta = till.tv_usec - from.tv_usec;
-	delta += (till.tv_sec - from.tv_sec) * 1000000;
-	return delta;
+double timediff(const chrono::time_point<chrono::high_resolution_clock> &till, const chrono::time_point<chrono::high_resolution_clock> &from) {
+    std::chrono::duration<double> d(till - from);
+    return d.count();
 }
 
 int main() {
-	timeval start, time_c, time_a, time_v, time_l;
-
-	gettimeofday(&start, nullptr);
+    auto start = chrono::high_resolution_clock::now();
     numbers_c = new item[cont_size];
 	for (size_t i = 0; i < cont_size; i++) {
         auto t = new item[i+1];
@@ -36,37 +33,37 @@ int main() {
 		delete numbers_c;
 		numbers_c = t;
 	}
-	gettimeofday(&time_c, nullptr);
+    auto time_c = chrono::high_resolution_clock::now();
     numbers_a = new array<item, cont_size>;
 	for (size_t i = 0; i < cont_size; i++) {
         (*numbers_a)[i] = item();
 	}
-	gettimeofday(&time_a, nullptr);
-	for (size_t i = 0; i < cont_size; i++)
+    auto time_a = chrono::high_resolution_clock::now();
+    for (size_t i = 0; i < cont_size; i++)
         numbers_v.push_back(item());
-	gettimeofday(&time_v, nullptr);
-	for (size_t i = 0; i < cont_size; i++)
+    auto time_v = chrono::high_resolution_clock::now();
+    for (size_t i = 0; i < cont_size; i++)
         numbers_l.push_back(item());
-	gettimeofday(&time_l, nullptr);
+    auto time_l = chrono::high_resolution_clock::now();
 
 	cout << "Addition:" << endl;
-	cout << "C array: " << timediff(start, time_c) << endl;
-	cout << "array: " << timediff(time_c, time_a) << endl;
-	cout << "vector: " << timediff(time_a, time_v) << endl;
-	cout << "list: " << timediff(time_v, time_l) << endl;
+    cout << "C array: " << timediff(time_c, start ) << endl;
+    cout << "array: "   << timediff(time_a, time_c) << endl;
+    cout << "vector: "  << timediff(time_v, time_a) << endl;
+    cout << "list: "    << timediff(time_l, time_v) << endl;
 
-	gettimeofday(&start, nullptr);
-	for (size_t i = 0; i < cont_size; i++)
+    start = chrono::high_resolution_clock::now();
+    for (size_t i = 0; i < cont_size; i++)
 		numbers_v.pop_back();
-	gettimeofday(&time_v, nullptr);
-	for (size_t i = 0; i < cont_size; i++)
+    time_v = chrono::high_resolution_clock::now();
+    for (size_t i = 0; i < cont_size; i++)
 		numbers_l.pop_back();
-	gettimeofday(&time_l, nullptr);
+    time_l = chrono::high_resolution_clock::now();
 
 	cout << endl;
 	cout << "Removal:" << endl;
-	cout << "vector removal: " << timediff(start, time_v) << endl;
-	cout << "list removal: " << timediff(time_v, time_l) << endl;
+    cout << "vector removal: " << timediff(time_v, start ) << " secs" << endl;
+    cout << "list removal: "   << timediff(time_l, time_v) << " secs" << endl;
 
 	return 0;
 }
