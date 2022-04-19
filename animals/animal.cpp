@@ -2,6 +2,10 @@
 
 using namespace std;
 
-int main() {
-	return 0;
+void main() {
+	int a = 0;
+	int b = 0;
+	int c = 0;
 }
+
+void function() {}
