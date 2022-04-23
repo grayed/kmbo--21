@@ -30,7 +30,7 @@ bool test_vector3() {
         std::cerr << "Invalid result of the operator- (vector3 v), v value: " << vec_3 << std::endl;
     if (!check_6)
         std::cerr << "Invalid result of the operator! (vector3 v), v value: " << vec_4 << std::endl;
-    if (!check_6)
+    if (!check_7)
         std::cerr << "Invalid result of the operator! (vector3 v), v value: " << vec_1 << std::endl;
 
     return check_1 && check_2 && check_3 && check_4 && check_5 && check_6 && check_7;
