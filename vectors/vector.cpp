@@ -1,25 +1,41 @@
-#include <iostream>
 #include "vector.h"
 
-using namespace std;
+bool test_vector3() {
+    auto vec_1 = vector3(1, 2, 3);
+    auto vec_2 = vector3(3, 2, 1);
 
-ostream& operator <<(ostream& os, const vector3d& v) {
-	return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }";
+    bool check_1 = (vec_1 + vec_2) == vector3(4);
+    bool check_2 = (vec_2 - vec_1) == vector3(2, 0, -2);
+
+    auto vec_3 = vector3(3);
+
+    bool check_3 = (vec_3 * 3) == vector3(9);
+    bool check_4 = (vec_3 / 3) == vector3(1);
+    bool check_5 = -vec_3 == vector3(-3);
+
+    auto vec_4 = vector3(0);
+
+    bool check_6 = !vec_4 == vector3(1);
+    bool check_7 = !vec_1 == vector3(0);
+
+    if (!check_1)
+        std::cerr << "Invalid result of the operator+ (vector3 lhs, vector3 rhs), lhs value: " << vec_1 << ", rhs value: " << vec_2 << std::endl;
+    if (!check_2)
+        std::cerr << "Invalid result of the operator- (vector3 lhs, vector3 rhs), lhs value: " << vec_2 << ", rhs value: " << vec_1 << std::endl;
+    if (!check_3)
+        std::cerr << "Invalid result of the operator* (vector3 lhs, float rhs), lhs value: " << vec_3 << ", rhs value: " << 3 << std::endl;
+    if (!check_4)
+        std::cerr << "Invalid result of the operator/ (vector3 lhs, float rhs), lhs value: " << vec_3 << ", rhs value: " << 3 << std::endl;
+    if (!check_5)
+        std::cerr << "Invalid result of the operator- (vector3 v), v value: " << vec_3 << std::endl;
+    if (!check_6)
+        std::cerr << "Invalid result of the operator! (vector3 v), v value: " << vec_4 << std::endl;
+    if (!check_6)
+        std::cerr << "Invalid result of the operator! (vector3 v), v value: " << vec_1 << std::endl;
+
+    return check_1 && check_2 && check_3 && check_4 && check_5 && check_6 && check_7;
 }
 
-int main(int argc, char** argv) {
-	vector3d v1, v2(12), v3(1, 3, 8);
-	v1[2] = 54;
-	//vector3d v4 = v1 + v2, v5 = v1 - v2, v6 = v1 * 0.5f;
-	//cout << "v4: " << v4 << endl << "v5: " << v5 << endl << "v6: " << v6 << endl;
-
-	printf("address of v1:             0x%p, size: %zu bytes\n", &v1, sizeof(v1));
-	printf("address of v1.data:        0x%p, size: %zu bytes\n", &v1.data, sizeof(v1.data));
-	printf("address of v1.data[-1]:    0x%p, size: %zu bytes\n", &v1.data[-1], sizeof(v1.data[-1]));
-	printf("address of v1.data[0]:     0x%p, size: %zu bytes\n", &v1.data[0], sizeof(v1.data[0]));
-	printf("address of v1.data[1]:     0x%p, size: %zu bytes\n", &v1.data[1], sizeof(v1.data[1]));
-	printf("address of v1.data[2]:     0x%p, size: %zu bytes\n", &v1.data[2], sizeof(v1.data[2]));
-	printf("address of v1.data[2000]:  0x%p, size: %zu bytes\n", &v1.data[2000], sizeof(v1.data[2000]));
-
-	return 0;
+int main() {
+    return !test_vector3();
 }
