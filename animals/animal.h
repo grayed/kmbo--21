@@ -46,8 +46,8 @@ class Amphibia : public Animal {
 private:
     bool Virulence;  //poisonous or not
 public:
-    Mammal(){};
-	Mammal(bool Virulence)
+    Amphibia(){};
+	Amphibia(bool Virulence)
 	{
 		toxic = Virulence;
 	}
