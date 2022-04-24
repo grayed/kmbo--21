@@ -17,3 +17,22 @@ public:
 };
 
 std::ostream& operator <<(std::ostream& os, const vector3d& v);
+
+
+vector3d operator-(const vector3d& v);
+
+vector3d operator +(const vector3d& v1, const vector3d& v2);
+
+vector3d operator -(const vector3d& v1, const vector3d& v2);
+
+vector3d operator *(const vector3d& v, float n);
+
+vector3d operator * (float n, const vector3d& v);
+
+vector3d operator /(const vector3d& v, float n);
+
+vector3d operator /(float n, const vector3d& v);
+
+vector3d operator !(const vector3d& v);
+
+bool test_vector3d();
