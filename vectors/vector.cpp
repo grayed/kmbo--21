@@ -15,10 +15,8 @@ int main(int argc, char** argv) {
 	cout << "res1 = " << res1 << '\n' << "res2 = " << res2 << '\n' << "res3 = " << res3 << '\n'
 		<< "res4 = " << res4 << '\n' << "res5 = " << res5 << '\n' << "res6 = " << res6 << '\n';
  
-	test_vector3d();
-	
+	if (test_vector3d())
+		return 0;
 
-	
-
-	return 0;
+	return 1;
 }
