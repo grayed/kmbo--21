@@ -16,13 +16,40 @@ int main()
 {
 	Capybara	 Marcus;
 	Rat			 Mickey;
-	Langoustine	 Anton;
+	Langoustine	 Anton(1, false, 1);
 	Crab		 Crabsburger;
 
-	Marcus.heterotrophic = true;
-	Marcus.lactation = true;
-	Marcus.the_biggest_rodent = true;
+	cout << "--- Marcus the Capybara ---" << endl << Marcus;
 
+	Marcus.set_the_biggest_rodent(false);
+	Marcus.set_lactation(false);
+	Marcus.set_heterotrophic(false);
+
+	cout << "--- Marcus the Imposter ---" << endl << Marcus;
+
+	cout << "--- Mickey the Rat ---" << endl << Mickey;
+
+	Mickey.set_cute_af(false);
+	Mickey.set_heterotrophic(false);
+	Mickey.set_lactation(false);
+
+	cout << "--- Mickey the Imposter ---" << endl << Mickey;
+
+	cout << "--- Anton the Demi-Imposter ---" << endl << Anton;
+
+	Anton.set_claw_number(2);
+
+	cout << "--- Anton the Crab ---" << endl << Anton;
+
+	cout << "--- Crabsburger the Crab ---" << endl << Crabsburger;
+
+	cout << "--- Crabsburger the Imposter ---" << endl;
+
+	cout << "claw_number ? " << Crabsburger.get_claw_number() << endl;
+	cout << "heterotrophic ? " << Crabsburger.get_heterotrophic() << endl;
+	cout << "is_shell ? " << Crabsburger.get_is_shell() << endl;
+
+	/*
 	Mickey.heterotrophic = true;
 	Mickey.lactation = true;
 	Mickey.cute_af = true;
@@ -34,7 +61,8 @@ int main()
 	Crabsburger.heterotrophic = true;
 	Crabsburger.claw_number = 2;
 	Crabsburger.is_shell = true;
+	*/
 
-	cout << "Crabsburger the Crab" << endl << Crabsburger << endl;
-	cout << "Marcus the Capybara" << endl << Marcus << endl;
+	//cout << "Crabsburger the Crab" << endl << Crabsburger << endl;
+	//cout << "Marcus the Capybara" << endl << Marcus << endl;
 }
