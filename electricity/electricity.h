@@ -50,7 +50,11 @@ protected:
     /// </summary>
     /// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
     /// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
-    Pole* getPole(size_t idx) { /* TODO */ return nullptr; }
+    Pole* getPole(size_t idx) {
+        if (getPole("A" + std::to_string(idx)))
+            return getPole("A" + std::to_string(idx));
+        return nullptr;
+    }
 
     /// <summary>
     /// Возвращает полюс по внутреннему индексу устройства.
@@ -60,17 +64,17 @@ protected:
     virtual const Pole* getPole(size_t idx) const = 0;
 
 public:
-    virtual ~Object() {}
+    virtual ~Object() = default;
 
     const std::string& getName() const { return name; }
-    void getName(const std::string &newName) { name = newName; }
+    void setName(const std::string &newName) { name = newName; }
 
     /// <summary>
     /// Возвращает полюс по имени.
     /// </summary>
-    /// <param name="name">Имя полюса.</param>
+    /// <param _name="_name">Имя полюса.</param>
     /// <returns>Полюс с указанным именем, или <c>nullptr</c>, если такой полюс не существует.</returns>
-    Pole* getPole(const std::string& name) { return const_cast<Pole*>(const_cast<const Object*>(this)->getPole(name)); }
+    Pole* getPole(const std::string& _name) { return const_cast<Pole*>(const_cast<const Object*>(this)->getPole(_name)); }
 
     /// <summary>
     /// Возвращает полюс по имени.
@@ -113,14 +117,38 @@ public:
 
     Switch(const std::string& name = "");
 
-    virtual size_t getPoleCount() const { return 2; }
+    size_t getPoleCount() const override { return 2; }
 
-    virtual const Pole* getPole(const std::string& name) const;
+    const Pole* getPole(const std::string& name) const override;
 
 protected:
-    virtual const Pole* getPole(size_t idx) const;
+    const Pole* getPole(size_t idx) const override;
 };
 
-// TODO: класс светильника с двумя полюсами
+class Light : public Object {
+public:
+    Pole a1, a2;
 
-// TODO: класс генератора с тремя полюсами (фаза, нейтраль, земпя).
+    Light(const std::string& name = "");
+
+    size_t getPoleCount() const override { return 2; }
+
+    const Pole* getPole(const std::string& name) const override;
+
+protected:
+    const Pole* getPole(size_t idx) const override;
+};
+
+class Generator : public Object {
+public:
+    Pole a1, a2, a3;
+
+    Generator(const std::string& name = "");
+
+    size_t getPoleCount() const override { return 3; }
+
+    const Pole* getPole(const std::string& name) const override;
+
+protected:
+    const Pole* getPole(size_t idx) const override;
+};

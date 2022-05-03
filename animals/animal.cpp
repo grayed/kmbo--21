@@ -13,7 +13,7 @@ std::string Animal::about() const {
 }
 
 std::ostream &operator<<(std::ostream &out, const Animal &a) {
-    return out << a.weight << " : " << a.age;
+    return out << a.about();
 }
 
 Mammal::Mammal(float weight, int age, int pregnancyDuration) : Animal(weight, age) {
@@ -22,7 +22,8 @@ Mammal::Mammal(float weight, int age, int pregnancyDuration) : Animal(weight, ag
 
 std::string Mammal::about() const {
     std::stringstream ss;
-    ss << "Pregnancy duration is " << pregnancyDuration << " days";
+    ss << Animal::about();
+    ss << ", pregnancy duration is " << pregnancyDuration << " days";
     return ss.str();
 }
 
@@ -32,7 +33,8 @@ Reptile::Reptile(float weight, int age, float eggDiameter) : Animal(weight, age)
 
 std::string Reptile::about() const {
     std::stringstream ss;
-    ss << "Egg diameter is " << eggDiameter << " centimeters";
+    ss << Animal::about();
+    ss << ", egg diameter is " << eggDiameter << " centimeters";
     return ss.str();
 }
 
@@ -42,7 +44,8 @@ Dog::Dog(float weight, int age, int pregnancyDuration, std::string&& breed) : Ma
 
 std::string Dog::about() const {
     std::stringstream ss;
-    ss << "Breed is " << breed;
+    ss << Mammal::about();
+    ss << ", breed is " << breed;
     return ss.str();
 }
 
@@ -52,7 +55,8 @@ Cat::Cat(float weight, int age, int pregnancyDuration, float vibrissaLength) : M
 
 std::string Cat::about() const {
     std::stringstream ss;
-    ss << "Vibrissa length is " << vibrissaLength << " centimeters";
+    ss << Mammal::about();
+    ss << ", vibrissa length is " << vibrissaLength << " centimeters";
     return ss.str();
 }
 
@@ -62,7 +66,8 @@ Turtle::Turtle(float weight, int age, float eggDiameter, float shellSize) : Rept
 
 std::string Turtle::about() const {
     std::stringstream ss;
-    ss << "Shell size is " << shellSize << " meters";
+    ss << Reptile::about();
+    ss << ", shell size is " << shellSize << " meters";
     return ss.str();
 }
 
@@ -72,7 +77,8 @@ Snake::Snake(float weight, int age, float eggDiameter, float length) : Reptile(w
 
 std::string Snake::about() const {
     std::stringstream ss;
-    ss << "Length is " << length << " meters";
+    ss << Reptile::about();
+    ss << ", length is " << length << " meters";
     return ss.str();
 }
 
