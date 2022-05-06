@@ -1,10 +1,7 @@
 #include <sstream>
 #include "animal.h"
 
-Animal::Animal(float weight, int age) {
-    this->weight = weight;
-    this->age = age;
-}
+Animal::Animal(float weight, int age) : weight(weight), age(age) {}
 
 std::string Animal::about() const {
     std::stringstream ss;
@@ -16,9 +13,7 @@ std::ostream &operator<<(std::ostream &out, const Animal &a) {
     return out << a.about();
 }
 
-Mammal::Mammal(float weight, int age, int pregnancyDuration) : Animal(weight, age) {
-    this->pregnancyDuration = pregnancyDuration;
-}
+Mammal::Mammal(float weight, int age, int pregnancyDuration) : Animal(weight, age), pregnancyDuration(pregnancyDuration) {}
 
 std::string Mammal::about() const {
     std::stringstream ss;
@@ -27,9 +22,7 @@ std::string Mammal::about() const {
     return ss.str();
 }
 
-Reptile::Reptile(float weight, int age, float eggDiameter) : Animal(weight, age) {
-    this->eggDiameter = eggDiameter;
-}
+Reptile::Reptile(float weight, int age, float eggDiameter) : Animal(weight, age), eggDiameter(eggDiameter) {}
 
 std::string Reptile::about() const {
     std::stringstream ss;
@@ -38,9 +31,7 @@ std::string Reptile::about() const {
     return ss.str();
 }
 
-Dog::Dog(float weight, int age, int pregnancyDuration, std::string&& breed) : Mammal(weight, age, pregnancyDuration) {
-    this->breed = breed;
-}
+Dog::Dog(float weight, int age, int pregnancyDuration, std::string&& breed) : Mammal(weight, age, pregnancyDuration), breed(breed) {}
 
 std::string Dog::about() const {
     std::stringstream ss;
@@ -49,9 +40,7 @@ std::string Dog::about() const {
     return ss.str();
 }
 
-Cat::Cat(float weight, int age, int pregnancyDuration, float vibrissaLength) : Mammal(weight, age, pregnancyDuration) {
-    this->vibrissaLength = vibrissaLength;
-}
+Cat::Cat(float weight, int age, int pregnancyDuration, float vibrissaLength) : Mammal(weight, age, pregnancyDuration), vibrissaLength(vibrissaLength) {}
 
 std::string Cat::about() const {
     std::stringstream ss;
@@ -60,9 +49,7 @@ std::string Cat::about() const {
     return ss.str();
 }
 
-Turtle::Turtle(float weight, int age, float eggDiameter, float shellSize) : Reptile(weight, age, eggDiameter) {
-    this->shellSize = shellSize;
-}
+Turtle::Turtle(float weight, int age, float eggDiameter, float shellSize) : Reptile(weight, age, eggDiameter), shellSize(shellSize) {}
 
 std::string Turtle::about() const {
     std::stringstream ss;
@@ -71,9 +58,7 @@ std::string Turtle::about() const {
     return ss.str();
 }
 
-Snake::Snake(float weight, int age, float eggDiameter, float length) : Reptile(weight, age, eggDiameter) {
-    this->length = length;
-}
+Snake::Snake(float weight, int age, float eggDiameter, float length) : Reptile(weight, age, eggDiameter), length(length) {}
 
 std::string Snake::about() const {
     std::stringstream ss;
