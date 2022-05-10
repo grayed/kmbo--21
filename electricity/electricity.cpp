@@ -5,8 +5,12 @@ using namespace std;
 
 bool Object::isConnectedTo(const Object& other) const
 {
-    // TODO
-    return false;
+    if (other.getPoleCount() > 1) {
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 bool Object::connect(const std::string& poleName, const Object& other, const std::string& otherPoleName)
@@ -33,7 +37,10 @@ const Pole* Switch::getPole(const string& name) const
 
 const Pole* Switch::getPole(size_t idx) const
 {
-    // TODO
+    for (size_t i = 0; i < getPoleCount();i++)
+        if (i==idx) {
+            return getPole(idx);
+        }
     return nullptr;
 }
 
