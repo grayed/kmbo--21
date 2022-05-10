@@ -1,24 +1,22 @@
 #include "animal.h"
-
+#include <sstream>
+#include <iostream>
+#include <string>
 using namespace std;
 
+inline ostream& operator <<(ostream& os, const Animal& animal) {
+	return os << animal.about();
+}
+
 int main() {
-	Amphibia amphibia;
-	amphibia.setNumber_of_limbs(4);
-	cout << amphibia.getNumber_of_limbs() << "\n";
-
-	Wolf wolf;
-	wolf.setAverage_life_expectancy(17);
-	cout << wolf.getAverage_life_expectancy() << "\n";
-
-	Frog frog;
-	frog.setNumber_of_offspring(4);
-	cout << frog.getNumber_of_offspring() << "\n";
-
-	Hare hare;
-	hare.setRunning_speed_km_ch(12);
-	cout << hare.getRunning_speed_km_ch() << "\n";
-	return 0;
-
-	cout << amphibia.about();
+	Wolf v1(4, 5, 8);
+	//v1.setAverage_life_expectancy(10);
+	//v1.setFirst_beasts_count(11);
+	//v1.setNumber_of_species(5);
+	cout << v1.about() << endl;
+	Hare h1;
+	h1.setRunning_speed_km_ch(5);
+	h1.setFirst_beasts_count(10);
+	h1.setNumber_of_species(99);
+	cout << h1.about() << endl;
 }

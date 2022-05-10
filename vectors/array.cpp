@@ -1,4 +1,5 @@
 #include "array.h"
+#include<iostream>
 
 using namespace std;
 
@@ -11,18 +12,18 @@ ostream& operator <<(ostream& os, const Vector3d& v) {
     return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }";
 }
 
-template<size_t Dimensions>
-ostream& operator <<(ostream& os, const Vector<Dimensions>& v) {
-    os << "{ " << v[0];
-    for (size_t i = 1; i < Dimensions; i++)
-        os << ", " << v[i];
-    return os << " }";
-}
-
 int main() {
-    Vector<12> v1;
-    v1[1] = v1[2] = 54;
-    Vector<12> v2 = v1;
-    cout << v2 << endl;
+    Vector3d v(1, 1, 1), v1(4), v2 = v1+v, v3(-4, 2, 6);
+    double n = 1.5;
+    cout << v2 << " " << n * v2 << " " << -v3;
+    cout << "\n";
+    cout << !v;
+    //Vector3d b(1, 1, 1), b1(1, 1, 1), otv(0, 0, 0);
+    //cout << test_vector3d(b, b1, otv,  '-');
+    cout << "\n";
+    Vector3d c(1, 1, 1), otv1(0, 0, 0);
+    int d = 5;
+    //cout << test_vector3d(c, otv1, '!');
+    //cout << v - v1;
 	return 0;
 }
