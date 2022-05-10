@@ -3,7 +3,15 @@
 
 using namespace std;
 
-class Object;
+bool Object::isConnectedTo(const Object& other) const
+{
+    if (other.getPoleCount() > 1) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 struct Pole {
     string name;
@@ -30,19 +38,14 @@ public:
     void connect(const string &poleName, const Object &other, const string &otherPoleName) { /* TODO */ }
 };
 
-class Switch : public Object {
-public:
-    Pole a1, a2;
-    Switch(const string &name = "") : Object(name), a1("A1"), a2("A2") {}
-    virtual size_t getPoleCount() const { return 2; }
-    virtual const Pole* getPole(const string &name) const {
-        if (name == a1.name) return &a1;
-        else if (name == a2.name) return &a2;
-        else return nullptr;
-    }
-protected:
-    virtual const Pole* getPole(size_t idx) const { /* TODO */ return nullptr; }
-};
+const Pole* Switch::getPole(size_t idx) const
+{
+    for (size_t i = 0; i < getPoleCount();i++)
+        if (i==idx) {
+            return getPole(idx);
+        }
+    return nullptr;
+}
 
 int main()
 {
