@@ -39,13 +39,15 @@ void FinishSmth(Cls *objs) {
 
 int main() {
     // testing new/delete
-    Cls *obj = new Cls, *obj2 = new Cls;
+    Cls *obj = new Cls, *obj2 = new Cls; // в динамической памяти
     delete obj;
     delete obj2;
-    obj = new Cls;
+    obj = new Cls; // in stack
     obj2 = new Cls;
     delete obj2;
     delete obj;
+    ///int a = 2;
+    ///a = new int(2);
 
     // testing new[]/delete[]
     Cls *objs = DoSmth(10);
