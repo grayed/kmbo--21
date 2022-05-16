@@ -79,7 +79,7 @@ void Bar::operator delete[](void* p)
 }
 
 int main() {
-    cerr << ". . . start programming . . ." << endl;
+    cerr << ". . . start executing . . ." << endl;
     //Foo
     Foo* obj = new Foo, * obj2 = new Foo; 
     delete obj;
