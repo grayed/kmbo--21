@@ -4,8 +4,9 @@
 using namespace std;
 
 B::B() : b_s("It's b!") {
-	for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++)
-		data[i] = i * 2;
+	for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++) {
+		data[i] = i*2;
+	}
 }
 
 /// <summary>
@@ -13,21 +14,21 @@ B::B() : b_s("It's b!") {
 /// Можно модифицировать для собственных отладочных целей.
 /// </summary>
 /// <param name="b">Изучаемый объект</param>
-void printInternals(const B& b) {
-	const A* a = &b, * a2 = a + 1;
-	cout << "Address of b is 0x" << &b << ", address of b.a_s is 0x" << &b.a_s << ", address of b.b_s is 0x" << &b.b_s << endl;
-	cout << "Size of A is " << sizeof(A) << ", size of B is " << sizeof(B) << endl;
-	cout << "B string is '" << b.getBString() << "'" << endl;
-	//cout << "B data: "; b.printData(cout); cout << endl;
+void printInternals(B& b) {
+	A* a = &b;
+	b.printData2(cout);
+	cout << endl;
+	b.printData(cout);
+	cout << endl;
 }
 
 /// <summary>
-/// Извлекает значение <see cref="B::b_s"/> из текущего объекта.
+/// Извлекает значение <see cref="B	::b_s"/> из текущего объекта.
 /// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 /// </summary>
 /// <returns>Значение B::b_s</returns>
 std::string A::getBString() const {
-	// TODO
+	return *(const string*)(this + 1);
 }
 
 /// <summary>
@@ -37,7 +38,12 @@ std::string A::getBString() const {
 /// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 /// </summary>
 void A::printData(std::ostream& os) {
-	// TODO
+	string b_s = getBString();
+	os << a_s << ", " << foo << ",  " << b_s << ", ";
+	const float * first = (const float*)((const string*)(this + 1) + 1);
+	for (int i = 0; i < 7; i++) {
+		os << (first[i]) << ", ";
+	}
 }
 
 /// <summary>
@@ -46,7 +52,11 @@ void A::printData(std::ostream& os) {
 /// с помощью виртуальных функций, предусмотренных в классе <see cref="A"/>.
 /// </summary>
 void A::printData2(std::ostream& os) {
-	// TODO
+	os << a_s << ", " << foo << ", " << getBs() << ", ";
+	float* data = getBData();
+	for (int i = 0; i < 7; i++ ) {
+		os << data[i] << ", ";
+	}
 }
 
 int main()
