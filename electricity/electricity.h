@@ -102,12 +102,13 @@ public:
     /// <param name="poleName">Название подключаемого полюса текущего устройства</param>
     /// <param name="other">Устройство, которое связывается с текущим.</param>
     /// <param name="otherPoleName">Название подключаемого полюса другого устройства</param>
+    /// <returns><c>true</c> если устройства удалось связать, <c>false</c> в противном случае.</returns>
     /// <remarks>
     /// Может использоваться для связи устройства с самим собой.
     /// В этом случае в качестве <paramref name="other"/> следует передать то же устройство,
     /// для которого вызывается этот метод.
     /// </remarks>
-    bool connect(const std::string& poleName, const Object& other, const std::string& otherPoleName);
+    bool connect(const std::string& poleName, Object& other, const std::string& otherPoleName);
 };
 
 /// <summary>
