@@ -9,7 +9,7 @@ bool Object::isConnectedTo(const Object& other) const
     return false;
 }
 
-bool Object::connect(const std::string& poleName, const Object& other, const std::string& otherPoleName)
+bool Object::connect(const std::string& poleName, Object& other, const std::string& otherPoleName)
 {
     // TODO
     return false;
