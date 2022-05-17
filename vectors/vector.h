@@ -22,14 +22,14 @@ public:
         return data[idx];
     }
 
-    vector3 operator+ (const vector3 &v);
-    vector3 operator- (const vector3 &v);
+    vector3 operator+ (const vector3 &v) const;
+    vector3 operator- (const vector3 &v) const;
 
-    vector3 operator* (const float &f);
-    vector3 operator/ (const float &f);
+    vector3 operator* (const float &f) const;
+    vector3 operator/ (const float &f) const;
 
-    vector3 operator- ();
-    vector3 operator! ();
+    vector3 operator- () const;
+    vector3 operator! () const;
 
     bool operator ==(const vector3 &v) const;
 };
@@ -38,27 +38,27 @@ std::ostream& operator <<(std::ostream& os, const vector3& v) {
     return os << "{" << v[0] << ", " << v[1] << ", " << v[2] << "}";
 }
 
-vector3 vector3::operator+(const vector3 &v) {
+vector3 vector3::operator+(const vector3 &v) const {
     return { data[0] + v[0], data[1] + v[1], data[2] + v[2] };
 }
 
-vector3 vector3::operator-(const vector3 &v) {
+vector3 vector3::operator-(const vector3 &v) const {
     return { data[0] - v[0], data[1] - v[1], data[2] - v[2] };
 }
 
-vector3 vector3::operator*(const float &f) {
+vector3 vector3::operator*(const float &f) const {
     return { data[0] * f, data[1] * f, data[2] * f };
 }
 
-vector3 vector3::operator/(const float &f) {
+vector3 vector3::operator/(const float &f) const {
     return { data[0] / f, data[1] / f, data[2] / f };
 }
 
-vector3 vector3::operator-() {
+vector3 vector3::operator-() const {
     return { -data[0], -data[1], -data[2] };
 }
 
-vector3 vector3::operator!() {
+vector3 vector3::operator!() const {
     return { float(!data[0] && !data[1] && !data[2]) };
 }
 

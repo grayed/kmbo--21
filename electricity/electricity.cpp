@@ -68,9 +68,9 @@ const Pole *Generator::getPole(size_t idx) const {
 }
 
 int main() {
-    Generator gen;
-    Switch sw;
-    Light light;
+    Generator gen = Generator("Generator 1");
+    Switch sw = Switch("Switch 1");
+    Light light = Light("Light 1");
 
     gen.connect("A1", sw, "A1");
     sw.connect("A2", light, "A1");
