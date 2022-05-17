@@ -15,6 +15,12 @@ bool Object::connect(const std::string& poleName, Object& other, const std::stri
     return false;
 }
 
+bool Object::disconnect(const std::string& poleName)
+{
+    // TODO
+    return false;
+}
+
 Switch::Switch(const std::string& name)
     : Object(name)
     , a1("A1")
