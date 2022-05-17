@@ -5,10 +5,11 @@ using namespace std;
 
 class Object;
 
-struct Pole {
-    string name;
-    Object *connectedObject;
-    string connectedObjectPole;
+bool Object::connect(const std::string& poleName, Object& other, const std::string& otherPoleName)
+{
+    // TODO
+    return false;
+}
 
     Pole(const string &name_) : name(name_), connectedObject(nullptr) {}
 };
