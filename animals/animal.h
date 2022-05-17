@@ -6,64 +6,81 @@
 using namespace std;
 
 class Animal {
-public:
+private:
 	float weight;				// kg
 	int numof_limbs;
-
-	virtual std::string about() const;
+protected:
+	Animal(float weight_ ,int numof_limbs_);
+	virtual ~Animal();
+public:
+			 float  getWeight() const       { return weight; }
+			 void setWeight(float newValue) { weight = newValue; }
+			 int  getNumofLimbs() const       { return numof_limbs; }
+			 void setNumofLimbs(int newValue) { numof_limbs = newValue; }
+			 virtual std::string about() const;
 };
 
 class Insects : public Animal{
-public:
+private:
 	int numof_wings;
-
-	virtual std::string about() const;
+protected:
+	Insects(float weight_ ,int numof_limbs_, int numof_wings_);
+public:
+			 int  getNumofWings() const       { return numof_wings; }
+			 void 	setNumofWings(int newValue) { numof_wings = newValue; }
+			 virtual std::string about() const;
 
 };
 
 class Reptilies : public Animal{
-public:
+private:
 	bool isShell;
 	float tongueLength; //meters
 };
 
 class Mammal : public Animal {
-public:
+private:
 	float pregnancyDuration;	// days
 	 int numof_niples;
 };
 
 class Beatle : public Insects{
+private:
+	int numof_mustache;
 public:
-	string numof_mustache;
-
-	virtual std::string about() const;
+			 int  getNumofMustache() const       { return numof_mustache; }
+			 void 	setNumofMustache(int newValue) { numof_mustache = newValue; }
+			 virtual std::string about() const;
+			 Beatle(float weight_,int numof_limbs_,int numof_wings_,int numof_mustache_);
 };
 
 class ButterFly : public Insects{
-public:
+private:
 	string colorof_wings;
-
-	virtual std::string about() const;
+public:
+			 string getColorofWings() const       { return colorof_wings; }
+			 void setColorofWings(string newValue) { colorof_wings = newValue; }
+			 virtual std::string about() const;
+			 ButterFly(float weight_,int numof_limbs_,int numof_wings_,string colorof_wings_);
 };
 
 class Snake : public Reptilies{
-public:
+private:
 		bool isPoisonous;
 };
 
 class Turtle : public Reptilies{
-public:
+private:
 	 float shellStrength; //kg
 };
 
 class Cat : public Mammal{
-public:
+private:
 	float vibrissaLength;		// meters
 };
 
 class Dog : public Mammal{
-public:
+private:
 	float dobermanLength; // meters
 };
 

@@ -2,6 +2,22 @@
 
 using namespace std;
 
+Animal::Animal(float weight_ ,int numof_limbs_) {
+	weight = weight_;
+	numof_limbs = numof_limbs_;
+}
+Insects::Insects(float weight_ ,int numof_limbs_, int numof_wings_) : Animal(weight_ ,numof_limbs_){
+		numof_wings = numof_wings_;
+}
+Beatle::Beatle(float weight_,int numof_limbs_,int numof_wings_,int numof_mustache_) : Insects(weight_ ,numof_limbs_,numof_wings_){
+		numof_mustache = numof_mustache_;
+}
+ButterFly::ButterFly(float weight_,int numof_limbs_,int numof_wings_,string colorof_wings_) : Insects(weight_ ,numof_limbs_,numof_wings_){
+		colorof_wings = colorof_wings_;
+}
+
+Animal::~Animal() {}
+
 string Animal::about() const {
 	stringstream ss;
 	ss << "Weight = " << weight << '\n' << "Number of Limbs = " << numof_limbs;
@@ -27,40 +43,8 @@ string ButterFly::about() const {
 }
 
 int main() {
-	Beatle dungbeetle;
-	dungbeetle.weight = 0.002;
-	dungbeetle.numof_limbs = 6;
-	dungbeetle.numof_wings = 4;
-	dungbeetle.numof_mustache = 2;
-	ButterFly cupidinidae;
-	cupidinidae.weight = 0.000001;
-	cupidinidae.numof_limbs = 6;
-	cupidinidae.numof_wings = 4;
-	cupidinidae.colorof_wings = "Blue";
-	Snake grass_snake;
-	grass_snake.weight = 0.15;
-	grass_snake.numof_limbs = 0;
-	grass_snake.isShell = false;
-	grass_snake.tongueLength = 0.01;
-	grass_snake.isPoisonous = false;
-	Turtle sea_turtle;
-	sea_turtle.weight = 100;
-	sea_turtle.numof_limbs = 4;
-	sea_turtle.isShell = true;
-	sea_turtle.tongueLength = 0.05;
-	sea_turtle.shellStrength = 80;
-	Cat vibrissa;
-	vibrissa.weight = 6;
-	vibrissa.numof_limbs = 4;
-	vibrissa.pregnancyDuration = 60;
-	vibrissa.numof_niples = 6;
-	vibrissa.vibrissaLength = 0.4;
-	Dog doberman;
-	doberman.weight = 40;
-	doberman.numof_limbs = 4;
-	doberman.pregnancyDuration = 60;
-	doberman.numof_niples = 8;
-  doberman.dobermanLength = 1;
+	Beatle dungbeetle(0.002,6,4,2);
+	ButterFly cupidinidae(0.000001,6,4,"Blue");
 	cout << "Cupidinidae:" << '\n' << cupidinidae.about();
 	cout << '\n';
 	cout << "Dungbeatle:" << '\n' <<dungbeetle;
