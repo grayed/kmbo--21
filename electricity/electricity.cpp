@@ -12,15 +12,30 @@ bool Object::isConnectedTo(const Object& other) const {
     return false;
 }
 
-bool Object::connect(const std::string& poleName, const Object& other, const std::string& otherPoleName) {
-    auto pole = getPole(poleName);
-    pole->connectedObject = const_cast<Object*>(&other);
-    pole->connectedObjectPole = otherPoleName;
+bool Object::connect(const std::string& poleName, Object& other, const std::string& otherPoleName) {
+    try {
+        auto pole = getPole(poleName);
+        pole->connectedObject = (Object*)(&other);
+        pole->connectedObjectPole = otherPoleName;
 
-    auto otherPole = const_cast<Pole*>(other.getPole(otherPoleName));
-    otherPole->connectedObject = this;
-    otherPole->connectedObjectPole = poleName;
-    return false;
+        auto otherPole = (Pole*)(other.getPole(otherPoleName));
+        otherPole->connectedObject = this;
+        otherPole->connectedObjectPole = poleName;
+    } catch (const char* exception) {
+        cerr << exception << endl;
+        return false;
+    }
+    return true;
+}
+
+bool Object::disconnect(const std::string &poleName) {
+    auto pole = getPole(poleName);
+    if (pole->connectedObjectPole.empty())
+        return false;
+    else {
+        pole->connectedObjectPole = "";
+        return true;
+    }
 }
 
 Switch::Switch(const std::string& name) : Object(name), a1("A1"), a2("A2") {}
