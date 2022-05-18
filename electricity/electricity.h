@@ -50,7 +50,9 @@ protected:
     /// </summary>
     /// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
     /// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
-    Pole* getPole(size_t idx) { /* TODO */ return nullptr; }
+    Pole* getPole(size_t idx) { 
+        return const_cast<Pole*>(const_cast<const Object*>(this)->getPole(idx)); 
+    }
 
     /// <summary>
     /// Возвращает полюс по внутреннему индексу устройства.
@@ -63,7 +65,7 @@ public:
     virtual ~Object() {}
 
     const std::string& getName() const { return name; }
-    void getName(const std::string &newName) { name = newName; }
+    void setName(const std::string &newName) { name = newName; }
 
     /// <summary>
     /// Возвращает полюс по имени.
@@ -133,5 +135,51 @@ protected:
 };
 
 // TODO: класс светильника с двумя полюсами
+class Light : public Object {
+    public:
+        Pole a1, a2;
+
+        Light(const std::string& name = "") : Object(name), a1("A1"), a2("A2") {}
+
+        virtual size_t getPoleCount() const { return 2; }
+
+        virtual const Pole* getPole(const std::string& name) const {
+            if (name == a1.name) return &a1;
+            else if (name == a2.name) return &a2;
+            
+            return nullptr;
+        }
+    protected:
+        virtual const Pole* getPole(size_t idx) const {
+            if (idx == 0) return &a1;
+            else if (idx == 1)return &a2;
+            
+            return nullptr;
+        }
+};
 
 // TODO: класс генератора с тремя полюсами (фаза, нейтраль, земпя).
+class Generator : public Object {
+    public:
+        Pole phase, neural, earth;
+
+        Generator(const std::string& name = "") : Object(name), phase("p"), neural("n"), earth("e") {}
+
+        virtual size_t getPoleCount() const { return 3; }
+
+        virtual const Pole* getPole(const std::string& name) const {
+            if (name == phase.name) return &phase;
+            else if (name == neural.name) return &neural;
+            else if (name == earth.name) return &earth;
+            
+            return nullptr;
+        }
+    protected:
+        virtual const Pole* getPole(size_t idx) const {
+            if (idx == 0) return &phase;
+            else if (idx == 1)return &neural;
+            else if (idx == 2)return &earth;
+            
+            return nullptr;
+        }
+};

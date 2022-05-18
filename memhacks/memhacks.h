@@ -9,7 +9,7 @@ class A {
 	std::string a_s;
 	int foo;
 
-	friend void printInternals(const B&);
+	friend void printInternals( B&);
 
 public:
 	A();
@@ -25,7 +25,7 @@ class B : public A {
 	std::string b_s;
 	float data[7];
 
-	friend void printInternals(const B&);
+	friend void printInternals( B&);
 
 public:
 	B();
@@ -34,4 +34,4 @@ public:
 	virtual const float* getBData() const { return data; }
 };
 
-void printInternals(const B& b);
+void printInternals( B& b);

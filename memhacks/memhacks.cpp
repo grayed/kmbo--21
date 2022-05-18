@@ -4,8 +4,9 @@
 A::A() : foo(42), a_s("It's a!") {}
 
 B::B() : b_s("It's b!") {
-	for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++)
-		data[i] = i * 2;
+	for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++) {
+		data[i] = i*2;
+	}
 }
 
 /// <summary>
@@ -22,7 +23,7 @@ void printInternals(const B& b) {
 }
 
 /// <summary>
-/// Извлекает значение <see cref="B::b_s"/> из текущего объекта.
+/// Извлекает значение <see cref="B	::b_s"/> из текущего объекта.
 /// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 /// </summary>
 /// <returns>Значение B::b_s</returns>
