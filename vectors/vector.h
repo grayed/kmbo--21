@@ -1,19 +1,117 @@
 #pragma once
 
-#include <ostream>
-
-class vector3d {
-	float data[3];
-
+template<size_t Dimensions>
+class Vector {
+    float data[Dimensions];
 public:
-	vector3d() { data[2] = data[1] = data[0] = 0; }
-	vector3d(float value) { data[2] = data[1] = data[0] = value; }
-	vector3d(float a1, float a2, float a3) { data[0] = a1;  data[1] = a2; data[2] = a3; }
+    Vector() { for (size_t i = 0; i < Dimensions; i++) data[i] = 0; }
+    Vector(float value) { for (size_t i = 0; i < Dimensions; i++) data[i] = value; }
+    float  operator[] (size_t index) const { return data[index]; }
+    float& operator[] (size_t index) { return data[index]; }
 
-	float& operator[](int idx)       { return data[idx]; }
-	float  operator[](int idx) const { return data[idx]; }
+    Vector<Dimensions> operator+ (Vector<Dimensions> v)
+    {
+        Vector<Dimensions> Res;
+        for (size_t i = 0; i < Dimensions; i++)
+        {
+            Res[i] = data[i] + v.data[i];
+        }
 
-	friend int main(int argc, char** argv);
+        return Res;
+    }
+
+    Vector<Dimensions> operator- (Vector<Dimensions> v)
+    {
+        Vector<Dimensions> Res;
+        for (size_t i = 0; i < Dimensions; i++)
+        {
+            Res[i] = data[i] - v.data[i];
+        }
+
+        return Res;
+    }
+
+    Vector<Dimensions> operator* (float n)
+    {
+        Vector<Dimensions> Res;
+        for (size_t i = 0; i < Dimensions; i++)
+        {
+            Res[i] = data[i] * n;
+        }
+
+        return Res;
+    }
+
+    friend Vector<Dimensions> operator* (float n, Vector<Dimensions> v)
+    {
+        Vector<Dimensions> Res;
+        for (size_t i = 0; i < Dimensions; i++)
+        {
+            Res[i] = v.data[i] * n;
+        }
+
+        return Res;
+    }
+
+    Vector<Dimensions> operator/ (float n)
+    {
+        Vector<Dimensions> Res;
+        for (size_t i = 0; i < Dimensions; i++)
+        {
+            Res[i] = data[i] / n;
+        }
+
+        return Res;
+    }
+
+    friend Vector<Dimensions> operator/ (float n, Vector<Dimensions> v)
+    {
+        Vector<Dimensions> Res;
+        for (size_t i = 0; i < Dimensions; i++)
+        {
+            Res[i] = v.data[i] / n;
+        }
+
+        return Res;
+    }
+
+    Vector<Dimensions> operator- ()
+    {
+        Vector<Dimensions> Res;
+        for (size_t i = 0; i < Dimensions; i++)
+        {
+            Res[i] = -data[i];
+        }
+
+        return Res;
+    }
+
+    Vector<Dimensions> operator! ()
+    {
+        for (size_t i = 0; i < Dimensions; i++)
+        {
+            if (data[i] != 0)
+            {
+                Vector<Dimensions> Res;
+                return Res;
+            }
+        }
+
+        Vector<Dimensions> Res(1);
+        return Res;
+    }
+
+    friend Vector<Dimensions> average_value(Vector<Dimensions> v1, Vector<Dimensions> v2)
+    {
+        Vector<Dimensions> Res;
+
+        for (size_t i = 0; i < Dimensions; i++)
+        {
+            Res.data[i] = (v1.data[i] + v2.data[i]) / 2;
+        }
+
+        return Res;
+    }
+
+
 };
-
-std::ostream& operator <<(std::ostream& os, const vector3d& v);
