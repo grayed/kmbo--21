@@ -17,9 +17,8 @@ public:
 
 private:
     inline static uint32_t _lastId = 0;
-    float _data;
-protected:
     uint32_t _id;
+    float _data;
 };
 
 class Bar : public Foo
