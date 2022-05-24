@@ -23,8 +23,6 @@ public:
 
     void getCommand(const std::string& command);
 
-    void onUpdate();
-
     void setCallback(std::function<void(const std::string& command)> callback);
 
 private:
