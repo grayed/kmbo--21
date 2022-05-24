@@ -89,22 +89,63 @@ class Tree {
             else {lower ->parent -> right = lower;}
         }
     }
-	
+
 public:
+    class iterator {
+        Node *node;
+        iterator(Node *n) : node(n) {}
+
+    public:
+        T operator *() { return node->data; }
+
+        iterator& operator++() {        // ++a  lvalue
+            if (node->right) {
+                node = node->right;
+                while (node->left)
+                    node = node->left;
+            } else {
+                while (node->parent && node->parent->right == node)
+                    node = node->parent;
+                node = node->parent;
+            }
+        }
+
+        iterator operator++(int) {      // a++  rvalue
+            iterator prev = *this;
+            ++(*this);
+            return prev;
+        }
+
+        // int a = 1, b = 5;
+        // cout << a++;         1
+        // cout << ++b;         6
+        // cout << a++(2) + ++b(7);   9
+    };
+
     Tree() : root(nullptr) {}
 
-	bool Find(KeyT what, T &result) const {
+    iterator begin() {
+        if (root == nullptr)
+            return end();
+        auto node = root;
+        while (node->left)
+            node = node->left;
+        return iterator(node);
+    }
+
+    iterator end() { return iterator(nullptr); }
+
+    iterator Find(KeyT what) const {
 		for (Node *node = root; node != nullptr;) {
             if (node->key == what) {
-				result = node->data;
-				return true;
+                return iterator(node);
 			} else if (what > node->key) {
 				node = node->right;
 			} else {
 				node = node->left;
 			}
 		}
-		return false;
+        return iterator(nullptr);
 	}
 	
 	bool Insert(KeyT key, const T &elm) {
@@ -133,38 +174,42 @@ public:
 		return true;
 	}
 
-	bool Remove(KeyT key) {
-		if (root == nullptr)
+    void Remove(iterator iter) {
+        Node *node = iter->node;
+repeat_delete:
+        // удаляем; last != nullptr
+        if (node->left == nullptr && node->right == nullptr) {
+            // тривиальный случай, удаляем лист
+            if (node->parent->left == node)
+                node->parent->left = nullptr;
+            else
+                node->parent->right = nullptr;
+            delete node;
+        } else if (node->left != nullptr) {
+            // подтягиваем крайний правый элемент из левого поддерева
+            Node *switch_node;
+            for (switch_node = node->left; switch_node->right != nullptr;
+                 switch_node = switch_node->right);
+            SwapNodes(switch_node, node);
+            goto repeat_delete;
+        } else /*if (node->right != nullptr)*/ {
+            // подтягиваем крайний левый элемент из правого поддерева
+            Node *switch_node;
+            for (switch_node = node->right; switch_node->left != nullptr;
+                 switch_node = switch_node->left);
+            SwapNodes(switch_node, node);
+            goto repeat_delete;
+        }
+    }
+
+    bool Remove(KeyT key) {
+        if (root == nullptr)
 			return false;
 		Node *last = nullptr;
 		for (Node *node = root; node != nullptr;) {
 			last = node;
 			if (node->key == key) {
-repeat_delete:
-				// удаляем; last != nullptr
-				if (node->left == nullptr && node->right == nullptr) {
-					// тривиальный случай, удаляем лист
-					if (last->left == node)
-						last->left = nullptr;
-					else
-						last->right = nullptr;
-					delete node;
-					return true;
-				} else if (node->left != nullptr) {
-					// подтягиваем крайний правый элемент из левого поддерева
-					Node *switch_node;
-					for (switch_node = node->left; switch_node->right != nullptr;
-					     switch_node = switch_node->right);
-					SwapNodes(switch_node, node);
-					goto repeat_delete;
-				} else /*if (node->right != nullptr)*/ {
-					// подтягиваем крайний левый элемент из правого поддерева
-					Node *switch_node;
-					for (switch_node = node->right; switch_node->left != nullptr;
-					     switch_node = switch_node->left);
-					SwapNodes(switch_node, node);
-					goto repeat_delete;
-				}
+                Remove(iterator(node));
 				return true;
 			} else if (key > node->key) {
 				node = node->right;
@@ -217,6 +262,9 @@ err:
 }
 */
 
+#include <forward_list>
+#include <list>
+#include <vector>
 
 int main() {
 	Tree<int, std::string> tree;
@@ -227,6 +275,29 @@ int main() {
     tree.Insert(043, "CooKoo");
     std::cout << "Printing tree:" << std::endl;
 	tree.Walk<std::ostream&>(PrintNodeToFile, std::cout);
+
+    cout << "Vector:" << endl;
+    std::vector<int> myvector { 121, 443, 565, 323 };
+    for (size_t i = 0; i != myvector.size(); i++) {
+        cout << myvector[i] << endl;
+    }
+    for (auto it = myvector.begin(); it != myvector.end(); it++) {
+        cout << *it << endl;
+    }
+
+    cout << "List:" << endl;
+    std::list<int> mylist { 121, 443, 565, 323 };
+    for (auto it = mylist.begin(); it != mylist.end(); it++) {
+        cout << *it << endl;
+    }
+
+    cout << "Forward list:" << endl;
+    std::list<int> myflist { 121, 443, 565, 323 };
+    for (auto it = myflist.begin(); it != myflist.end(); it++) {
+        cout << *it << endl;
+    }
+
+
 
 	return 0;
 }
