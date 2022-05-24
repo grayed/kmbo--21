@@ -11,17 +11,12 @@ class A {
 protected:
 	std::string a_s;
 	int foo;
+	friend void printInternals(const B&);
 public:
 	A() : a_s("It's a!") { }
 	
-	std::string getAString() const { return *((const std::string*)(this+1)+2); }
+	std::string getAString() const {  return *((const std::string*)(this + 1)); }
 
-	/// <summary>
-	/// Извлекает значение <see cref="B::b_s"/> из текущего объекта.
-	/// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
-	/// </summary>
-	/// <returns>Значение B::b_s</returns>
-	std::string getBString() const { return *((const std::string*)(this+1)); } //string 4 bytes
 
 	float getdataFloat(int i) const { return *((const float*)(this+1)-i); }
 
@@ -39,11 +34,12 @@ public:
 class B : public A {
 protected:
 	std::string b_s;
-	int data[7];
+	float data[7];
+	friend void printInternals(const B&); // Дружественный метод класса
 public:
 	B() : b_s("It's b!") {
 		for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++)
-			data[i] = i * 2;
+			data[i] = (float)i * 2;
 	}
 
 	virtual std::string str_B() {
@@ -57,13 +53,19 @@ public:
 		return ss.str();
 	}
 
-	
+	/// <summary>
+	/// Извлекает значение <see cref="B::b_s"/> из текущего объекта.
+	/// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
+	/// </summary>
+	/// <returns>Значение B::b_s</returns>
+	std::string getBString() const {
+		//cerr << "\n1234" << "\n";
+		return *((const std::string*)(this + 1));
+	} //string 4 bytes
+
+	void printData(std::ostream& os);
 
 	void printData2(std::ostream& os);
-	
-	
-
-	friend void printInternals(const B&); // Дружественный метод класса
 };
 
 /// <summary>
@@ -83,12 +85,14 @@ void B::printData2(std::ostream& os) {
 /// Можно модифицировать для собственных отладочных целей.
 /// </summary>
 /// <param name="b">Изучаемый объект</param>
-void printInternals(const B& b) { //
-	const A* a = &b, * a2 = a + 1;
-	std::cout << "Address of b is 0x" << &b << ", address of b.a_s is 0x" << &b.a_s << ", address of b.b_s is 0x" << &b.b_s << std::endl;
+void printInternals(B& b) { 
+	const A* a = &b, *a2 = a + 1; // указатель А* сомтрит на объект производного класса
+	std::cout << "umpa lumpa" << "\n";
+	std::cout  << "Address of b is 0x" << &b << ", address of b.a_s is 0x" << &b.a_s << ", address of b.b_s is 0x" << &b.b_s << std::endl;
 	std::cout << "Size of A is " << sizeof(A) << ", size of B is " << sizeof(B) << std::endl;
 	std::cout << "B string is '" << b.getBString() << "'" << std::endl;
-	//std::cout << "B data: "; b.printData(std::cout); std::cout << std::endl;
+	std::cout << "B data: "; b.printData(std::cout); std::cout << std::endl;
+	std::cout << "B data: "; b.printData2(std::cout); std::cout << std::endl;
 }
 
 
@@ -98,14 +102,12 @@ void printInternals(const B& b) { //
 	/// с помощью адресной арифметики.
 	/// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 	/// </summary>
-void printData(std::ostream& os, const A& a, const B& b) {
-	os << "A string is '" << a.getAString() << "'" << std::endl;
-	os << "B string is '" << b.getBString() << "'" << std::endl;
-	os << "Data: ";
-	for (int i = 0;i < 7;i++) {
-		os << b.getdataFloat(i) << "; "; // почему именно 7?? это ведь метод класса А
+void B::printData(std::ostream & os)  {
+		// TODO
+		os << "A string is '" << a_s << "', B string is '" << getBString() << "'" << std::endl;
+		for (int i = 0; i < 7; ++i) os << getdataFloat(i) << " ";
 	}
-}
+
 
 
 

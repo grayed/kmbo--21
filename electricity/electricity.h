@@ -41,7 +41,6 @@ struct Pole {
 /// </summary>
 class Object {
     std::string name;
-
 protected:
     Object(const std::string& name_) : name(name_) {}
 
@@ -63,6 +62,7 @@ public:
     virtual ~Object() {}
 
     const std::string& getName() const { return name; }
+
     void getName(const std::string &newName) { name = newName; }
 
     /// <summary>
@@ -77,7 +77,7 @@ public:
     /// </summary>
     /// <param name="name">Имя полюса.</param>
     /// <returns>Полюс с указанным именем, или <c>nullptr</c>, если такой полюс не существует.</returns>
-    virtual const Pole* getPole(const std::string& name) const = 0;
+    virtual const Pole* getPole(const std::string& name) const = 0 ;
 
     /// <returns>Количество полюсов в текущем устройстве.</returns>
     virtual size_t getPoleCount() const = 0;
@@ -87,7 +87,16 @@ public:
     /// </summary>
     /// <param name="other">Устройство, наличие прямой связи с которым проверяется.</param>
     /// <returns><c>true</c> если устройства связаны напрямую, <c>false</c> в противном случае.</returns>
-    bool isConnectedTo(const Object& other) const;
+    bool isConnectedTo(const Object& other) const {
+        for (int i = 1;i <= getPoleCount();i++) {
+            for (int j = 1;j <= other.getPoleCount();j++) {
+                if(getPole(i)->connected)
+                if (getPole(i)->connectedObjectPole == other.getPole(j)->name  &&  getPole(i)->name != other.getPole(j)->name)
+                    return true;
+            }
+        }
+        return false;
+    }
 
     /// <summary>
     /// Соединяет указанные полюса текущего и указанного устройства.
@@ -101,26 +110,125 @@ public:
     /// В этом случае в качестве <paramref name="other"/> следует передать то же устройство,
     /// для которого вызывается этот метод.
     /// </remarks>
-    bool connect(const std::string& poleName, const Object& other, const std::string& otherPoleName);
+    bool connect(const std::string& poleName, const Object& other, const std::string& otherPoleName) {
+        if (poleName != otherPoleName) {
+            getPole(poleName)->connectedObject = const_cast<Object*>(&other);
+            getPole(poleName)->connectedObjectPole = otherPoleName;
+            getPole(otherPoleName)->connectedObjectPole = poleName;
+            getPole(otherPoleName)->connectedObject = this;    // const_cast<Object*>
+            return true;
+        }
+        return false;
+    }
+
+    bool disconnect(const std::string& poleName, const Object& other, const std::string& otherPoleName) {
+        if (poleName == otherPoleName) {
+            getPole(poleName)->connectedObject = nullptr;
+            getPole(otherPoleName)->connectedObject = nullptr;
+            return true;
+        }
+
+        return false;
+    }
 };
+
+
+
 
 /// <summary>
 /// Простой выключатель с двумя полюсами.
 /// </summary>
 class Switch : public Object {
+    std::string name;
 public:
     Pole a1, a2;
 
-    Switch(const std::string& name = "");
+    Switch(const std::string& name = " ") : Object(name), a1("A1"), a2("A2") {}
+    
 
-    virtual size_t getPoleCount() const { return 2; }
+    size_t getPoleCount() const { return 2; }
 
-    virtual const Pole* getPole(const std::string& name) const;
+    const Pole* getPole(const std::string& name) const {
+        if (name == a1.name)
+            return &a1;
+        if (name == a2.name)
+            return &a2;
+        return nullptr;
+    }
+
 
 protected:
-    virtual const Pole* getPole(size_t idx) const;
+    const Pole* getPole(size_t idx) const {
+        if (idx == 1)
+            return &a1;
+        if (idx == 2)
+            return &a2;
+        return nullptr;
+    }
 };
 
+
+
+
+
 // TODO: класс светильника с двумя полюсами
+class Light : public Object {
+    std::string name;
+public:
+    Pole l1, l2;
+    Light(const std::string& name = " "):  Object(name), l1("A1"), l2("A2") {}
+
+    size_t getPoleCount() const { return 2; }
+
+    const Pole* getPole(const std::string& name) const {
+        if (name == l1.name)
+            return &l1;
+        if (name == l2.name)
+            return &l2;
+        return nullptr;
+    }
+
+protected:
+    const Pole* getPole(size_t idx) const {
+        if (idx == 1)
+            return &l1;
+        if (idx == 2)
+            return &l2;
+        return nullptr;
+    }
+
+};
+
+
+
 
 // TODO: класс генератора с тремя полюсами (фаза, нейтраль, земпя).
+class Generator : public Object {
+    std::string name;
+protected:
+    const Pole* getPole(size_t idx) const {
+        if (idx == 1)
+            return &a1;
+        if (idx == 2)
+            return &a2;
+        if (idx == 3)
+            return &a3;
+        return nullptr;
+    }
+public:
+    Pole a1, a2, a3;
+
+    Generator(const std::string& name = " ") : Object(name), a1("A1"), a2("A2"),a3("A3") {}
+
+    size_t getPoleCount() const { return 3; }
+
+    const Pole* getPole(const std::string& name) const {
+        if (name == a1.name)
+            return &a1;
+        if (name == a2.name)
+            return &a2;
+        if (name == a3.name)
+            return &a3;
+        return nullptr;
+    }
+};
