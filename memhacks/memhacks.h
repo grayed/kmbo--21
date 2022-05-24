@@ -6,19 +6,20 @@
 #include <iostream>
 
 
+class B;
 
 class A {
-protected:
 	std::string a_s;
 	int foo;
 	friend void printInternals(const B&);
+	friend void printInternals(B&);
 public:
-	A() : a_s("It's a!") { }
+	A() : a_s("It's a!"), foo(0) { }
 	
-	std::string getAString() const {  return *((const std::string*)(this + 1)); }
+	std::string getAString() const {  return *((const std::string*)(this +1)-3); }
 
-
-	float getdataFloat(int i) const { return *((const float*)(this+1)-i); }
+	float getdataFloat(int i) { return ((float*)(this + 2))[i]; }
+	//float getdataFloat(int i) const { return *((const float*)(this+1) + 5 -i); }
 
 
 
@@ -32,10 +33,10 @@ public:
 
 
 class B : public A {
-protected:
 	std::string b_s;
 	float data[7];
-	friend void printInternals(const B&); // Дружественный метод класса
+	friend void printInternals(const B&);
+	friend void printInternals( B&);// Дружественный метод класса
 public:
 	B() : b_s("It's b!") {
 		for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++)
@@ -59,8 +60,7 @@ public:
 	/// </summary>
 	/// <returns>Значение B::b_s</returns>
 	std::string getBString() const {
-		//cerr << "\n1234" << "\n";
-		return *((const std::string*)(this + 1));
+		return *((const std::string*)(this + 8));
 	} //string 4 bytes
 
 	void printData(std::ostream& os);
@@ -87,7 +87,6 @@ void B::printData2(std::ostream& os) {
 /// <param name="b">Изучаемый объект</param>
 void printInternals(B& b) { 
 	const A* a = &b, *a2 = a + 1; // указатель А* сомтрит на объект производного класса
-	std::cout << "umpa lumpa" << "\n";
 	std::cout  << "Address of b is 0x" << &b << ", address of b.a_s is 0x" << &b.a_s << ", address of b.b_s is 0x" << &b.b_s << std::endl;
 	std::cout << "Size of A is " << sizeof(A) << ", size of B is " << sizeof(B) << std::endl;
 	std::cout << "B string is '" << b.getBString() << "'" << std::endl;
@@ -103,8 +102,7 @@ void printInternals(B& b) {
 	/// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 	/// </summary>
 void B::printData(std::ostream & os)  {
-		// TODO
-		os << "A string is '" << a_s << "', B string is '" << getBString() << "'" << std::endl;
+		os << "A string is '" << getAString() << "', B string is '" << getBString() << "'" << std::endl;
 		for (int i = 0; i < 7; ++i) os << getdataFloat(i) << " ";
 	}
 

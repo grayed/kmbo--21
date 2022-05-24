@@ -49,7 +49,7 @@ protected:
     /// </summary>
     /// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
     /// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
-    Pole* getPole(size_t idx) { /* TODO */ return nullptr; }
+    Pole* getPole(size_t idx) { return const_cast<Pole*>(const_cast<const Object*>(this)->getPole(idx)); }
 
     /// <summary>
     /// Возвращает полюс по внутреннему индексу устройства.
@@ -87,16 +87,22 @@ public:
     /// </summary>
     /// <param name="other">Устройство, наличие прямой связи с которым проверяется.</param>
     /// <returns><c>true</c> если устройства связаны напрямую, <c>false</c> в противном случае.</returns>
+    /// 
     bool isConnectedTo(const Object& other) const {
+        for (int i = 0; i < other.getPoleCount(); ++i) {
+            if (other.getPole(i) == nullptr)
+                return false;
+        }
         for (int i = 1;i <= getPoleCount();i++) {
             for (int j = 1;j <= other.getPoleCount();j++) {
-                if(getPole(i)->connected)
+                //if(getPole(i)->connected)
                 if (getPole(i)->connectedObjectPole == other.getPole(j)->name  &&  getPole(i)->name != other.getPole(j)->name)
                     return true;
             }
         }
         return false;
     }
+    
 
     /// <summary>
     /// Соединяет указанные полюса текущего и указанного устройства.
@@ -110,7 +116,7 @@ public:
     /// В этом случае в качестве <paramref name="other"/> следует передать то же устройство,
     /// для которого вызывается этот метод.
     /// </remarks>
-    bool connect(const std::string& poleName, const Object& other, const std::string& otherPoleName) {
+    bool connect(const std::string& poleName, Object& other, const std::string& otherPoleName) {
         if (poleName != otherPoleName) {
             getPole(poleName)->connectedObject = const_cast<Object*>(&other);
             getPole(poleName)->connectedObjectPole = otherPoleName;
@@ -120,16 +126,28 @@ public:
         }
         return false;
     }
-
-    bool disconnect(const std::string& poleName, const Object& other, const std::string& otherPoleName) {
-        if (poleName == otherPoleName) {
+    bool disconnect(const std::string& poleName, Object& other, const std::string& otherPoleName) {
+        if (getPole(poleName)->connectedObject == nullptr || getPole(poleName)->connectedObject ==nullptr)
+            return false;
+        else {
             getPole(poleName)->connectedObject = nullptr;
             getPole(otherPoleName)->connectedObject = nullptr;
+            getPole(poleName)->connectedObjectPole = "";
+            getPole(otherPoleName)->connectedObjectPole = "";
+            return true;
+        }
+    }
+    /*
+    bool disconnect(const std::string& poleName, Object& other, const std::string& otherPoleName) {
+        if (poleName == otherPoleName) {
+            getPole(poleName)->connectedObject = nullptr;
+            other.getPole(otherPoleName)->connectedObject = nullptr;
             return true;
         }
 
         return false;
     }
+    */
 };
 
 
