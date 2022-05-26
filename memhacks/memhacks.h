@@ -16,13 +16,16 @@ class A {
 public:
 	A() : a_s("It's a!"), foo(0) { }
 	
-	std::string getAString() const {  return *((const std::string*)(this +1)-3); }
+	std::string getAString() const { return *((const std::string*)((const float*)(this + 1) - 12)); } //hurray!!!
 
-	float getdataFloat(int i) { return ((float*)(this + 2))[i]; }
-	//float getdataFloat(int i) const { return *((const float*)(this+1) + 5 -i); }
-
-
-
+	std::string getBString() const {
+		return  *((const std::string*)(this + 1));
+	}
+	
+	
+	//доступ к элементам массива
+	float getdataFloat(int i) { return ((float*)(this + 2) - 4)[i]; }
+	
 	virtual std::string str_A() const {
 		std::stringstream ss;
 		ss << "String A: " << a_s;
@@ -42,6 +45,12 @@ public:
 		for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++)
 			data[i] = (float)i * 2;
 	}
+	/// <summary>
+	/// Извлекает значение <see cref="B::b_s"/> из текущего объекта.
+	/// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
+	/// </summary>
+	/// <returns>Значение B::b_s</returns>
+	
 
 	virtual std::string str_B() {
 		std::stringstream ss;
@@ -54,18 +63,21 @@ public:
 		return ss.str();
 	}
 
-	/// <summary>
-	/// Извлекает значение <see cref="B::b_s"/> из текущего объекта.
-	/// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
-	/// </summary>
-	/// <returns>Значение B::b_s</returns>
-	std::string getBString() const {
-		return *((const std::string*)(this + 8));
-	} //string 4 bytes
+	
 
-	void printData(std::ostream& os);
 
 	void printData2(std::ostream& os);
+	/// <summary>
+	/// Извлекает значения <see cref="A::a_s"/>, <see cref="B::b_s"/> и <see cref="B::data"/>
+	/// из текущего объекта и выводит их в текстовом виде в указанный выходной поток
+	/// с помощью адресной арифметики.
+	/// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
+	/// </summary>
+	void printData(std::ostream& os) {
+		os << "A string is '" << getAString() << "', B string is '" << getBString() << "'" << std::endl;
+		for (int i = 0; i < 7; ++i) os << getdataFloat(i) << " ";
+	}
+
 };
 
 /// <summary>
@@ -77,7 +89,6 @@ void B::printData2(std::ostream& os) {
 	os << str_A();   // virtual function
 	os << str_B();
 }
-
 
 
 /// <summary>
@@ -95,16 +106,7 @@ void printInternals(B& b) {
 }
 
 
-/// <summary>
-	/// Извлекает значения <see cref="A::a_s"/>, <see cref="B::b_s"/> и <see cref="B::data"/>
-	/// из текущего объекта и выводит их в текстовом виде в указанный выходной поток
-	/// с помощью адресной арифметики.
-	/// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
-	/// </summary>
-void B::printData(std::ostream & os)  {
-		os << "A string is '" << getAString() << "', B string is '" << getBString() << "'" << std::endl;
-		for (int i = 0; i < 7; ++i) os << getdataFloat(i) << " ";
-	}
+
 
 
 

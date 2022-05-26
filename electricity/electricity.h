@@ -89,18 +89,15 @@ public:
     /// <returns><c>true</c> если устройства связаны напрямую, <c>false</c> в противном случае.</returns>
     /// 
     bool isConnectedTo(const Object& other) const {
-        for (int i = 0; i < other.getPoleCount(); ++i) {
-            if (other.getPole(i) == nullptr)
-                return false;
-        }
+
         for (int i = 1;i <= getPoleCount();i++) {
             for (int j = 1;j <= other.getPoleCount();j++) {
-                //if(getPole(i)->connected)
-                if (getPole(i)->connectedObjectPole == other.getPole(j)->name  &&  getPole(i)->name != other.getPole(j)->name)
+                if (getPole(i)->connectedObjectPole == other.getPole(j)->name  &&  getPole(i)->connectedObject == const_cast<Object*>(&other)) // проверим что полюса совпадают; имена совпадают 
                     return true;
             }
         }
         return false;
+        
     }
     
 
@@ -126,31 +123,15 @@ public:
         }
         return false;
     }
-    bool disconnect(const std::string& poleName, Object& other, const std::string& otherPoleName) {
-        if (getPole(poleName)->connectedObject == nullptr || getPole(poleName)->connectedObject ==nullptr)
-            return false;
-        else {
-            getPole(poleName)->connectedObject = nullptr;
-            getPole(otherPoleName)->connectedObject = nullptr;
-            getPole(poleName)->connectedObjectPole = "";
-            getPole(otherPoleName)->connectedObjectPole = "";
-            return true;
+    bool disconnect(Object& other) {
+        for (int i = 1;i <= getPoleCount();i++) {
+            getPole(i)->connectedObject = nullptr;
+            getPole(i)->connectedObjectPole = "";
         }
+        return true;
     }
-    /*
-    bool disconnect(const std::string& poleName, Object& other, const std::string& otherPoleName) {
-        if (poleName == otherPoleName) {
-            getPole(poleName)->connectedObject = nullptr;
-            other.getPole(otherPoleName)->connectedObject = nullptr;
-            return true;
-        }
-
-        return false;
-    }
-    */
+    
 };
-
-
 
 
 /// <summary>

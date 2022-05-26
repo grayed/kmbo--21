@@ -9,9 +9,10 @@ int main()
     Switch sw, sw2;
     sw.connect("A2", sw2, "A1");
     cout << "is " << (sw.isConnectedTo(sw2) ? " " : "not ") << "connected" << endl;
-    sw.disconnect("A2", sw2, "A1");
+    sw.disconnect(sw2);
     cout << "is " << (sw.isConnectedTo(sw2) ? " " : "not ") << "connected" << endl;
     
+    cout << "Other::::::\n";
     Switch sw1;
     Light lamp;
     Generator generator;
