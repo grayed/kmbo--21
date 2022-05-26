@@ -19,8 +19,9 @@ static vector<item> numbers_v;
 static list<item> numbers_l;
 static forward_list<item> numbers_f;
 
-double timediff(const time_point<high_resolution_clock> &till, const time_point<high_resolution_clock> &from) {
-    duration<double> d(till - from);
+template<class TimePoint>
+double timediff(const TimePoint &start, const TimePoint &end) {
+    duration<double> d(end - start);
     return d.count();
 }
 
@@ -52,10 +53,10 @@ int main() {
     auto time_l = high_resolution_clock::now();
 
     cout << "Addition:" << endl;
-    cout << "C array: " << timediff(time_c, start ) << " secs" << endl;
-    cout << "array: "   << timediff(time_a, time_c) << " secs" << endl;
-    cout << "vector: "  << timediff(time_v, time_a) << " secs" << endl;
-    cout << "list: "    << timediff(time_l, time_v) << " secs" << endl;
+    cout << "C array: " << timediff(start , time_c) << " secs" << endl;
+    cout << "array: "   << timediff(time_c, time_a) << " secs" << endl;
+    cout << "vector: "  << timediff(time_a, time_v) << " secs" << endl;
+    cout << "list: "    << timediff(time_v, time_l) << " secs" << endl;
 
     start = high_resolution_clock::now();
 
@@ -69,8 +70,8 @@ int main() {
 
 	cout << endl;
 	cout << "Removal:" << endl;
-    cout << "vector removal: " << timediff(time_v, start ) << " secs" << endl;
-    cout << "list removal: "   << timediff(time_l, time_v) << " secs" << endl;
+    cout << "vector removal: " << timediff(start , time_v) << " secs" << endl;
+    cout << "list removal: "   << timediff(time_v, time_l) << " secs" << endl;
 
 	return 0;
 }
