@@ -1,49 +1,68 @@
-﻿#pragma once
-
-#include <ostream>
+﻿#include <ostream>
 #include <string>
 #include <sstream>
+#include <iostream>
+
 using namespace std;
-class B;	// чтобы можно было объявить printInternals() как friend в классе A
+class B;
 
 class A {
-	std::string a_s;
+	string a_s;
 	int foo;
 	friend void printInternals(const B&);
-
+	friend void printInternals(B&);
 public:
-    A();
-    std::string getAString() const;
-	std::string getBString() const;
-	float getdataFloat(int i) const;
-	virtual string aboutA() const {
-	    stringstream ss;
+	A();
+
+	string getAString() const { return *((const std::string*)((const float*)(this + 1) - 12)); }
+
+	string getBString() const {
+		return  *((const std::string*)(this + 1));
+	}
+
+
+	//доступ к элементам массива
+	float getdataFloat(int i) { return ((float*)(this + 2) - 4)[i]; }
+
+	virtual std::string About_A() const {
+		std::stringstream ss;
 		ss << "String A: " << a_s;
 		return ss.str();
 	}
-	void printData(std::ostream& os, const A& a, const B& b);
 };
+
+
 
 class B : public A {
 	std::string b_s;
-	friend void printInternals(const B&);
 	float data[7];
-
+	friend void printInternals(const B&);
+	friend void printInternals(B&);// Дружественный метод класса
 public:
 	B();
-	string get_b_s(){return b_s;}
-	float get_data(int i){return data[i];}
-	virtual string aboutB() {
-	    stringstream ss;
-		ss << "String B: " << get_b_s() << endl;
+	/// <summary>
+	/// Извлекает значение <see cref="B::b_s"/> из текущего объекта.
+	/// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
+	/// </summary>
+	/// <returns>Значение B::b_s</returns>
+
+
+	virtual std::string About_B() {
+		std::stringstream ss;
+		ss << "String B: " << b_s << endl;
 		ss << "Data : ";
-		for (int i=0;i<7;i++){
-			ss << get_data(i) << "; ";
+		for (int i = 0; i < 7; i++) {
+			ss << data[i] << "; ";
 		}
 		cout << endl;
 		return ss.str();
 	}
+
+
+
+
 	void printData2(std::ostream& os);
+	void printData(std::ostream& os);
 };
 
-void printInternals(const B& b);
+void printInternals(B& b){}
