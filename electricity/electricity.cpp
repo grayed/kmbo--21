@@ -7,7 +7,7 @@ bool Object::isConnectedTo(const Object& other) const
 {
     for (int i=1;i<=getPoleCount();i++){
         for (int j=1;j<=other.getPoleCount();j++){
-            if (getPole(i)->connectedObjectPole==other.getPole(j)->name && getPole(i)->name!=other.getPole(j)->name)
+            if (getPole(i)->connectedObjectPole==other.getPole(j)->name && getPole(i)->connectedObject == const_cast<Object*>(&other))
                 return true;
         }
     }
@@ -17,10 +17,25 @@ bool Object::isConnectedTo(const Object& other) const
 bool Object::connect(const std::string& poleName, const Object& other, const std::string& otherPoleName)
 {
     if (poleName!=otherPoleName){
+        disconnect(poleName);
+        disconnect(otherPoleName);
         getPole(poleName)->connectedObject=const_cast<Object*>(&other);
         getPole(poleName)->connectedObjectPole=otherPoleName;
         getPole(otherPoleName)->connectedObjectPole=poleName;
         getPole(otherPoleName)->connectedObject=const_cast<Object*>(this);
+        return true;
+    }
+    return false;
+}
+
+bool Object::disconnect(const std::string& poleName)
+{
+    if (getPole(poleName)->connectedObject!=nullptr)
+    {
+        getPole(getPole(poleName)->connectedObjectPole)->connectedObject = nullptr;
+        getPole(getPole(poleName)->connectedObjectPole)->connectedObjectPole = "";
+        getPole(poleName)->connectedObject=nullptr;
+        getPole(poleName)->connectedObjectPole="";
         return true;
     }
     return false;
@@ -103,13 +118,19 @@ int main()
     Switch sw, sw2;
     sw.connect("A2", sw2, "A1");
     cout << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected" << endl;
+    sw.disconnect("A2");
+    cout << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected" << endl;
     //создать цепь из генератора, выключателя и светильника
     Switch sw1;
     Light lamp;
     Generator gen;
     gen.connect("A2",lamp,"A1"); // Нейтраль с 1ым полюсом лампы
-    gen.connect("A1",lamp,"A2"); // Фаза со 2ым полюсаом лампы
+    cout << "is " << (gen.isConnectedTo(lamp) ? "" : "not ") << "connected" << endl;
+    gen.connect("A1",lamp,"A2"); // Нейтраль с 1ым полюсом лампы
+    cout << "is " << (gen.isConnectedTo(lamp) ? "" : "not ") << "connected" << endl;
     gen.connect("A2",sw1,"A1");  // Нейтраль с 1ым полюсом переключателя
+    cout << "is " << (gen.isConnectedTo(sw1) ? "" : "not ") << "connected" << endl;
     gen.connect("A3",sw1,"A2"); //Земля со 2ым полюсом переключателя
+     cout << "is " << (gen.isConnectedTo(sw1) ? "" : "not ") << "connected" << endl;
     return 0;
 }
