@@ -101,6 +101,15 @@ public:
     /// для которого вызывается этот метод.
     /// </remarks>
     bool connect(const std::string& poleName, const Object& other, const std::string& otherPoleName);
+    /// <резюме>
+    /// Отключает указанный полюс, если к нему что-либо подключено.
+    /// </summary>
+    /// <param name="poleName">Название полюса, от которого производится отключение.</param>
+    /// <returns><c>true</c> если что-либо было отключено, <c>false</c> в противном случае.</returns>
+    /// <примечания>
+    /// Вызов этого метода для полюса, если к нему ничего не подключено, не является ошибкой.
+    /// </примечания>
+    bool disconnect(const std::string& poleName);
 };
 
 /// <summary>
