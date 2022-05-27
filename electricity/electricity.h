@@ -50,7 +50,11 @@ protected:
     /// </summary>
     /// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
     /// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
-    Pole* getPole(size_t idx) { /* TODO */ return nullptr; }
+    Pole* getPole(size_t idx) {
+        if (getPole("A" + std::to_string(idx)))
+            return getPole("A" + std::to_string(idx));
+        return nullptr; 
+    }
 
     /// <summary>
     /// Возвращает полюс по внутреннему индексу устройства.
@@ -135,3 +139,30 @@ protected:
 // TODO: класс светильника с двумя полюсами
 
 // TODO: класс генератора с тремя полюсами (фаза, нейтраль, земпя).
+class Lamp : public Object {
+public:
+    Pole a1, a2;
+
+    Lamp(const std::string& name = "");
+
+    size_t getPoleCount() const override { return 2; }
+
+    const Pole* getPole(const std::string& name) const override;
+
+protected:
+    const Pole* getPole(size_t idx) const override;
+};
+
+class Generator : public Object {
+public:
+    Pole a1, a2, a3;
+
+    Generator(const std::string& name = "");
+
+    size_t getPoleCount() const override { return 3; }
+
+    const Pole* getPole(const std::string& name) const override;
+
+protected:
+    const Pole* getPole(size_t idx) const override;
+};

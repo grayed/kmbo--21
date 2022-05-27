@@ -13,7 +13,27 @@ public:
 	float& operator[](int idx)       { return data[idx]; }
 	float  operator[](int idx) const { return data[idx]; }
 
-	friend int main(int argc, char** argv);
+	vector3d operator+ (vector3d vector) {
+		return vector3d(data[0] + vector[0], data[1] + vector[1], data[2] + vector[2]);
+	}
+	vector3d operator- (vector3d vector) {
+		return vector3d(data[0] - vector[0], data[1] - vector[1], data[2] - vector[2]);
+	}
+	vector3d operator* (float scalar) {
+		return vector3d(data[0] * scalar, data[1] * scalar, data[2] * scalar);
+	}
+	vector3d operator/ (float scalar) {
+		return vector3d(data[0] / scalar, data[1] / scalar, data[2] / scalar);
+	}
+	vector3d operator- () {
+		return vector3d(-data[0], -data[1], -data[2]);
+	}
+	vector3d operator! () {
+		return vector3d(!data[0] && !data[1] && !data[2]);
+	}
+	bool operator== (vector3d vector) {
+    	return data[0] == vector[0] && data[1] == vector[1] && data[2] == vector[2];
+	}
 };
 
 std::ostream& operator <<(std::ostream& os, const vector3d& v);
