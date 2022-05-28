@@ -4,27 +4,26 @@
 using namespace std;
 
 bool Object::isConnectedTo(const Object& other) const {
-    for (int i = 0; i < other.getPoleCount(); ++i) {
-        auto pole = other.getPole(i);
-        if (pole->connectedObject == this)
+    for (int i = 0; i < getPoleCount(); ++i) {
+        auto pole = getPole(i);
+        if (pole != nullptr && pole->connectedObject == &other)
             return true;
     }
     return false;
 }
 
 bool Object::connect(const std::string& poleName, Object& other, const std::string& otherPoleName) {
-    try {
-        auto pole = getPole(poleName);
-        pole->connectedObject = (Object*)(&other);
-        pole->connectedObjectPole = otherPoleName;
-
-        auto otherPole = (Pole*)(other.getPole(otherPoleName));
-        otherPole->connectedObject = this;
-        otherPole->connectedObjectPole = poleName;
-    } catch (const char* exception) {
-        cerr << exception << endl;
+    if (poleName == otherPoleName && &other == this)
         return false;
-    }
+
+    auto pole = getPole(poleName);
+    auto otherPole = (Pole*)(other.getPole(otherPoleName));
+
+    pole->connectedObject = (Object*)(&other);
+    pole->connectedObjectPole = otherPoleName;
+    otherPole->connectedObject = this;
+    otherPole->connectedObjectPole = poleName;
+
     return true;
 }
 
@@ -34,6 +33,7 @@ bool Object::disconnect(const std::string &poleName) {
         return false;
     else {
         pole->connectedObjectPole = "";
+        pole->connectedObject = nullptr;
         return true;
     }
 }
