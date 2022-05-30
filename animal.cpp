@@ -5,9 +5,9 @@ using namespace std;
 int main()
 {
     Dog Mia("blue");
-    Amy.setEyeColor("green");
+    Mia.setEyeColor("green");
     string aboutDog = Mia.about();
-    cout<<"Amy:"<<aboutDog<<endl;
+    cout<<"Mia:"<<aboutDog<<endl;
 
 int main() {
 	return 0;
