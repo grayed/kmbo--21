@@ -132,10 +132,23 @@ public:
     virtual const Pole* getPole(const std::string& name) const;
 
 protected:
-    virtual const Pole* getPole(size_t idx) const;
+    virtual const Pole* getPole(size_t idx) const; // получение ссылки на полюс по индексу
 };
 
-class Light : public Switch { public: bool stage; };
+class Light : public Object {
+public:
+    Pole a1, a2;
+
+    Light(const std::string& name = "");
+
+    virtual size_t getPoleCount() const { return 2; }
+
+    virtual const Pole* getPole(const std::string& name) const;
+
+    bool state = false;
+protected:
+    virtual const Pole* getPole(size_t idx) const; // получение ссылки на полюс по индексу
+};
 
 class Power : public Object {
 public:
@@ -153,7 +166,7 @@ protected:
 
 // TODO: класс светильника с двумя полюсами
 
-// TODO: класс генератора с тремя полюсами (фаза, нейтраль, земпя).
+// TODO: класс генератора с тремя полюсами (фаза, нейтраль, земля).
 
 
 
