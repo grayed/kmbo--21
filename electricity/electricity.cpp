@@ -10,7 +10,7 @@ bool Object::isConnectedTo(const Object& other) const
 
         for (size_t idx_2 = 0; idx_2 < other.getPoleCount(); idx_2++) {
 
-            if (this->getPole(idx_1)->name == other.getPole(idx_2)->name) return true;
+            if (this->getPole(idx_1)->connectedObjectPole == other.getPole(idx_2)->name) return true;
 
         }
     }
@@ -36,36 +36,89 @@ bool Object::disconnect(const std::string& poleName)
     return false;
 }
 
-class Object {
-    string name;
+Switch::Switch(const std::string& name)
+    : Object(name)
+    , a1("A1")
+    , a2("A2")
+{}
 
-protected:
-    Object(const string &name_) : name(name_) {}
-    Pole* getPole(size_t idx) { /*TODO*/ return nullptr; }
-    virtual const Pole* getPole(size_t idx) const = 0;
+Light::Light(const std::string& name)
+    : Object(name)
+    , a1("A1")
+    , a2("A2")
+{}
 
-public:
-    virtual ~Object() {}
-    Pole* getPole(const string &name) { return const_cast<Pole*>(const_cast<const Object*>(this)->getPole(name)); }
-    virtual const Pole* getPole(const string &name) const = 0;
-    virtual size_t getPoleCount() const = 0;
-    bool isConnectedTo(const Object &other) const { /* TODO */ return false; }
-    void connect(const string &poleName, const Object &other, const string &otherPoleName) { /* TODO */ }
-};
+Power::Power(const std::string& name)
+    : Object(name)
+    , phase("A1") 
+    , neutral("A2") 
+    , ground("A3") 
+{}
+
+const Pole* Switch::getPole(const string& name) const
+{
+    if (name == a1.name)
+        return &a1;
+    if (name == a2.name)
+        return &a2;
+    return nullptr;
+}
+
+const Pole* Light::getPole(const string& name) const
+{
+    if (name == a1.name)
+        return &a1;
+    if (name == a2.name)
+        return &a2;
+    return nullptr;
+}
+
+const Pole* Power::getPole(const string& name) const
+{
+    if (name == phase.name)
+        return &phase;
+    if (name == neutral.name)
+        return &neutral;
+    if (name == ground.name)
+        return &ground;
+    return nullptr;
+}
 
 const Pole* Switch::getPole(size_t idx) const
 {
-    // TODO
+    if (idx == 1)
+        return &a1;
+    if (idx == 2)
+        return &a2;
 
     return nullptr;
 }
 
+const Pole* Light::getPole(const string& name) const
+{
+    if (name == a1.name)
+        return &a1;
+    if (name == a2.name)
+        return &a2;
+    return nullptr;
+}
+
+const Pole* Light::getPole(size_t idx) const
+{
+    if (idx == 1)
+        return &a1;
+    if (idx == 2)
+        return &a2;
+    return nullptr;
+}
+
+
 int main()
 {
-    Switch sw;
-    Power pwr;
-    Light lgt;
-    int counter;
+    Switch sw;   // Переключатель
+    Power pwr;   // Источник 
+    Light lgt;   // Светильник
+    //int counter;
     lgt.getPole("lgt_in");
     lgt.getPole("lgt_out");
     pwr.getPole("phase");
@@ -82,3 +135,6 @@ int main()
     // TODO: создать цепь из генератора, выключателя и светильника
     return 0;
 }
+
+//Power::Power(const std::string& name)
+
