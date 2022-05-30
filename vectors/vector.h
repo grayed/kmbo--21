@@ -12,7 +12,13 @@ public:
 
 	float& operator[](int idx)       { return data[idx]; }
 	float  operator[](int idx) const { return data[idx]; }
-
+	vector3d  operator+(vector3d const &v);
+	vector3d  operator-(vector3d const &v);
+	friend vector3d operator*(vector3d const &v,float const &d);
+	friend vector3d operator*(float const &d,vector3d const &v);
+	friend vector3d operator/(vector3d const &v,float const &d);
+	vector3d  operator-();
+	vector3d  operator!();
 	friend int main(int argc, char** argv);
 };
 
