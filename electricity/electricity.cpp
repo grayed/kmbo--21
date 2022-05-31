@@ -84,6 +84,8 @@ const Pole* Power::getPole(const string& name) const
     return nullptr;
 }
 
+
+
 const Pole* Switch::getPole(size_t idx) const
 {
     if (idx == 1)
@@ -94,21 +96,23 @@ const Pole* Switch::getPole(size_t idx) const
     return nullptr;
 }
 
-const Pole* Light::getPole(const string& name) const
-{
-    if (name == a1.name)
-        return &a1;
-    if (name == a2.name)
-        return &a2;
-    return nullptr;
-}
-
 const Pole* Light::getPole(size_t idx) const
 {
     if (idx == 1)
         return &a1;
     if (idx == 2)
         return &a2;
+    return nullptr;
+}
+
+const Pole* Power::getPole(size_t idx) const
+{
+    if (idx == 1)
+        return &phase;
+    if (idx == 2)
+        return &neutral;
+    if (idx == 3)
+        return &ground;
     return nullptr;
 }
 
