@@ -94,11 +94,10 @@ public:
     class iterator {
         Node *node;
         iterator(Node *n) : node(n) {}
-
+        friend class Tree;
     public:
-        T operator *() { return node->data; }
-
-        iterator& operator++() {        // ++a  lvalue
+        T& operator *() { return node->data; }
+        iterator& operator ++() {        // ++a  lvalue
             if (node->right) {
                 node = node->right;
                 while (node->left)
@@ -109,20 +108,19 @@ public:
                 node = node->parent;
             }
         }
-
-        iterator operator++(int) {      // a++  rvalue
+        iterator operator ++(int) {      // a++  rvalue
             iterator prev = *this;
             ++(*this);
             return prev;
         }
-
-        // int a = 1, b = 5;
-        // cout << a++;         1
-        // cout << ++b;         6
-        // cout << a++(2) + ++b(7);   9
+        iterator& operator --()    { /* TODO */ }
+        iterator  operator --(int) { /* TODO */ }
     };
 
-    Tree() : root(nullptr) {}
+    class reverse_iterator {
+        // TODO 1: Написать аналог iterator, работающий в обратном направлении.
+        // TODO 2: Вынести общий код iterator и reverse_iterator в базовый класс.
+    };
 
     iterator begin() {
         if (root == nullptr)
@@ -132,8 +130,11 @@ public:
             node = node->left;
         return iterator(node);
     }
-
     iterator end() { return iterator(nullptr); }
+    reverse_iterator rbegin() { /* TODO */ }
+    reverse_iterator rend() { /* TODO */ }
+
+    Tree() : root(nullptr) {}
 
     iterator Find(KeyT what) const {
 		for (Node *node = root; node != nullptr;) {
