@@ -1,5 +1,4 @@
 ﻿#pragma once
-<<<<<<< HEAD
 #include <string>
 
 class Object;
@@ -51,20 +50,23 @@ protected:
     /// </summary>
     /// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
     /// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
-    Pole* getPole(size_t idx) { /* TODO */ return nullptr; }
-
-    /// <summary>
-    /// Возвращает полюс по внутреннему индексу устройства.
-    /// </summary>
-    /// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
-    /// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
+  /*  Pole* getPole(size_t idx) {
+        if (idx < this->getPoleCount()) {return &Pole((std::string&)idx);}
+        else {return nullptr;}
+    }
+*/
+/// <summary>
+/// Возвращает полюс по внутреннему индексу устройства.
+/// </summary>
+/// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
+/// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
     virtual const Pole* getPole(size_t idx) const = 0;
 
 public:
     virtual ~Object() {}
 
     const std::string& getName() const { return name; }
-    void getName(const std::string &newName) { name = newName; }
+    void getName(const std::string& newName) { name = newName; }
 
     /// <summary>
     /// Возвращает полюс по имени.
@@ -130,11 +132,43 @@ public:
     virtual const Pole* getPole(const std::string& name) const;
 
 protected:
-    virtual const Pole* getPole(size_t idx) const;
+    virtual const Pole* getPole(size_t idx) const; // получение ссылки на полюс по индексу
 };
+
+class Light : public Object {
+public:
+    Pole a1, a2;
+
+    Light(const std::string& name = "");
+
+    virtual size_t getPoleCount() const { return 2; }
+
+    virtual const Pole* getPole(const std::string& name) const;
+
+    bool state = false;
+protected:
+    virtual const Pole* getPole(size_t idx) const; // получение ссылки на полюс по индексу
+};
+
+class Power : public Object {
+public:
+    Pole phase, neutral, ground;
+
+    Power(const std::string& name = "");
+
+    virtual size_t getPoleCount() const { return 3; }
+
+    virtual const Pole* getPole(const std::string& name) const;
+
+protected:
+    virtual const Pole* getPole(size_t idx) const; // получение ссылки на полюс по индексу
+};
+
+
 
 // TODO: класс светильника с двумя полюсами
 
-// TODO: класс генератора с тремя полюсами (фаза, нейтраль, земпя).
-=======
->>>>>>> electricity homework draft
+// TODO: класс генератора с тремя полюсами (фаза, нейтраль, земля).
+
+
+
