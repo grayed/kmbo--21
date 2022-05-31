@@ -103,7 +103,7 @@ public:
                 while (node->left)
                     node = node->left;
             } else {
-                while (node->parent && node->parent->right == node)
+                while (node->parent && (node->parent->right == node))
                     node = node->parent;
                 node = node->parent;
             }
@@ -113,14 +113,67 @@ public:
             ++(*this);
             return prev;
         }
-        iterator& operator --()    { /* TODO */ }
-        iterator  operator --(int) { /* TODO */ }
+        iterator& operator --()    { 
+            if (node->left) {
+                node = node->left;
+                while (node->right)
+                    node = node->right;
+            } else {
+                while (node->parent && node->parent->left == node)
+                    node = node->parent;
+                node = node->parent;
+            }
+        }
+        iterator  operator --(int) { 
+            iterator prev = *this;
+            ++(*this);
+            return prev;
+        }
     };
 
     class reverse_iterator {
-        // TODO 1: Написать аналог iterator, работающий в обратном направлении.
-        // TODO 2: Вынести общий код iterator и reverse_iterator в базовый класс.
+        Node* node;
+        reverse_iterator(Node* n) : node(n) {}
+        friend class Tree;
+    public:
+        T& operator *() { return node->data; }
+        reverse_iterator& operator --() {        // ++a  lvalue
+            if (node->right) {
+                node = node->right;
+                while (node->left)
+                    node = node->left;
+            }
+            else {
+                while (node->parent && (node->parent->right == node))
+                    node = node->parent;
+                node = node->parent;
+            }
+        }
+        reverse_iterator operator ++(int) {      // a++  rvalue
+            reverse_iterator prev = *this;
+            ++(*this);
+            return prev;
+        }
+        reverse_iterator& operator ++() {
+            if (node->left) {
+                node = node->left;
+                while (node->right)
+                    node = node->right;
+            }
+            else {
+                while (node->parent && node->parent->left == node)
+                    node = node->parent;
+                node = node->parent;
+            }
+        }
+        reverse_iterator  operator --(int) {
+            reverse_iterator prev = *this;
+            ++(*this);
+            return prev;
+        }
     };
+    // [x] TODO 1: Написать аналог iterator, работающий в обратном направлении. 
+    // [ ] TODO 2: Вынести общий код iterator и reverse_iterator в базовый класс.
 
     iterator begin() {
         if (root == nullptr)
@@ -131,8 +184,15 @@ public:
         return iterator(node);
     }
     iterator end() { return iterator(nullptr); }
-    reverse_iterator rbegin() { /* TODO */ }
-    reverse_iterator rend() { /* TODO */ }
+    reverse_iterator rbegin() { 
+        if (root == nullptr)
+            return rend();
+        auto node = root;
+        while (node->right)
+            node = node->right;
+        return reverse_iterator(node);
+    }
+    reverse_iterator rend() { return reverse_iterator(nullptr); }
 
     Tree() : root(nullptr) {}
 
