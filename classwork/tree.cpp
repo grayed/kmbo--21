@@ -5,8 +5,8 @@ using namespace std;
 template<typename KeyT, typename T>
 class Tree {
 	struct Node {
-		KeyT	 key;
-		T	 data;
+		KeyT	 key; // ключ
+		T	    data; // тип данных, которые хранятся в дереве/значение
 		Node	*left, *right, *parent;
 
 		Node(KeyT key_, const T &data_) : key(key_), data(data_), left(nullptr), right(nullptr), parent(nullptr) {}
