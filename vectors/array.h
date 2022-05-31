@@ -1,4 +1,5 @@
 #pragma once
+<<<<<<< HEAD
 
 #include <iostream>
 
@@ -19,3 +20,5 @@ public:
     float  operator[] (size_t index) const { return data[index]; }
     float& operator[] (size_t index)       { return data[index]; }
 };
+=======
+>>>>>>> electricity homework draft

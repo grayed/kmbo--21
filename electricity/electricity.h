@@ -1,4 +1,5 @@
 ﻿#pragma once
+<<<<<<< HEAD
 #include <string>
 
 class Object;
@@ -135,3 +136,5 @@ protected:
 // TODO: класс светильника с двумя полюсами
 
 // TODO: класс генератора с тремя полюсами (фаза, нейтраль, земпя).
+=======
+>>>>>>> electricity homework draft
