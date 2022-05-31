@@ -1,25 +1,179 @@
+#pragma once
+
 #include <iostream>
-#include "vector.h"
+#include "vectors.h"
 
 using namespace std;
 
-ostream& operator <<(ostream& os, const vector3d& v) {
-	return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }";
+
+
+template<size_t Dimensions>
+ostream& operator <<(ostream& os, const Vector<Dimensions>& v) {
+    os << "{ " << v[0];
+    for (size_t i = 1; i < Dimensions; i++)
+        os << ", " << v[i];
+    return os << " }";
 }
 
-int main(int argc, char** argv) {
-	vector3d v1, v2(12), v3(1, 3, 8);
-	v1[2] = 54;
-	//vector3d v4 = v1 + v2, v5 = v1 - v2, v6 = v1 * 0.5f;
-	//cout << "v4: " << v4 << endl << "v5: " << v5 << endl << "v6: " << v6 << endl;
 
-	printf("address of v1:             0x%p, size: %zu bytes\n", &v1, sizeof(v1));
-	printf("address of v1.data:        0x%p, size: %zu bytes\n", &v1.data, sizeof(v1.data));
-	printf("address of v1.data[-1]:    0x%p, size: %zu bytes\n", &v1.data[-1], sizeof(v1.data[-1]));
-	printf("address of v1.data[0]:     0x%p, size: %zu bytes\n", &v1.data[0], sizeof(v1.data[0]));
-	printf("address of v1.data[1]:     0x%p, size: %zu bytes\n", &v1.data[1], sizeof(v1.data[1]));
-	printf("address of v1.data[2]:     0x%p, size: %zu bytes\n", &v1.data[2], sizeof(v1.data[2]));
-	printf("address of v1.data[2000]:  0x%p, size: %zu bytes\n", &v1.data[2000], sizeof(v1.data[2000]));
+template<size_t Dimensions>
+bool test_vector(Vector<Dimensions>(&Arr)[5], Vector<Dimensions> v1, Vector<Dimensions> v2, float n)
+{   
+    bool Res = 0;
+    bool t = true;
 
-	return 0;
+    cout << v1 << endl;
+    cout << v2 << endl;
+
+
+    for (int i = 0; i < 5; i++)
+    {
+            switch (i) {
+                case 0:
+                    for (size_t j = 0; j < Dimensions; j++)
+                    {
+                        if (Arr[i][j] != v1[j] + v2[j])
+                        {
+                            t = false;
+                        }
+
+                    }
+
+                    if (t)
+                    {
+                        cerr << "Сумма: верно" << endl;
+                    }
+                    else {
+                        cerr << "Сумма: неверно" << endl;
+                        Res = 1;
+                    }
+                    break;
+
+                case 1:
+                    for (size_t j = 0; j < Dimensions; j++)
+                    {
+                        if (Arr[i][j] != v1[j] - v2[j])
+                        {
+                            t = false;
+                        }
+
+                    }
+
+                    if (t)
+                    {
+                        cerr << "Рзаность: верно" << endl;
+                    }
+                    else {
+                        cerr << "Разность: неверно" << endl;
+                        Res = 1;
+                    }
+                    break;
+
+                case 2:
+                    for (size_t j = 0; j < Dimensions; j++)
+                    {
+                        if (Arr[i][j] != v1[j] * n)
+                        {
+                            t = false;
+                        }
+
+                    }
+
+                    if (t)
+                    {
+                        cerr << "Умножение на скалаяр: верно" << endl;
+                    }
+                    else {
+                        cerr << "Умножение на скалаяр: верно" << endl;
+                        Res = 1;
+                    }
+                    break;
+
+                case 3:
+                    for (size_t j = 0; j < Dimensions; j++)
+                    {
+                        if (Arr[i][j] != v1[j] / n)
+                        {
+                            t = false;
+                        }
+
+                    }
+
+                    if (t)
+                    {
+                        cerr << "Деление на скалаяр: верно" << endl;
+                    }
+                    else {
+                        cerr << "Деление на скалаяр: неверно" << endl;
+                        Res = 1;
+                    }
+                    break;
+
+                case 4:
+                    for (size_t j = 0; j < Dimensions; j++)
+                    {
+                        if (Arr[i][j] != -v1[j])
+                        {
+                            t = false;
+                        }
+
+                    }
+
+                    if (t)
+                    {
+                        cerr << "Инвертирование знака: верно" << endl;
+                    }
+                    else {
+                        cerr << "Инвертирование знака: неверно" << endl;
+                        Res = 1;
+                    }
+                    break;
+
+            }
+
+    }
+    return Res;
+}
+    
+
+
+
+int main() {
+    Vector<5> v1(6);
+    Vector<5> v2(2);
+    Vector<5> Arr[5];
+    Vector<6> v3;
+
+    cout << v1 + v2 << endl;
+    Arr[0] = v1 + v2;
+
+    cout << v1 - v2 << endl;
+    Arr[1] = v1 - v2;
+
+    cout << v1 * 3 << endl;
+    Arr[2] = v1 * 3;
+
+    cout << 4 * v2 << endl;
+
+    cout << v1 / 3 << endl;
+    Arr[3] = v1 / 3;
+
+    cout << 8 / v2 << endl;
+
+    cout << -v2 << endl;
+    Arr[4] = -v1;
+    
+    cout << !v3 << endl;
+
+    cout << !v2 << endl;
+
+    Vector<5> v4;
+    v4 = average_value(v1, v2);
+    cout << v4 << endl;
+
+    bool res = test_vector(Arr, v1, v2, 3);
+
+    cout << res;
+
+    return 0;
 }
