@@ -1,19 +1,34 @@
 #pragma once
 
-#include <ostream>
+#include <iostream>
 
-class vector3d {
-	float data[3];
-
+class Vector3d
+{
 public:
-	vector3d() { data[2] = data[1] = data[0] = 0; }
-	vector3d(float value) { data[2] = data[1] = data[0] = value; }
-	vector3d(float a1, float a2, float a3) { data[0] = a1;  data[1] = a2; data[2] = a3; }
+    Vector3d();
 
-	float& operator[](int idx)       { return data[idx]; }
-	float  operator[](int idx) const { return data[idx]; }
+    Vector3d(const float& value);
 
-	friend int main(int argc, char** argv);
+    Vector3d(const float& a1, const float& a2, const float& a3);
+
+    float operator[](const int& index) const;
+
+    float& operator[](const int& index);
+
+    Vector3d operator+(const Vector3d& other);
+
+    Vector3d operator-(const Vector3d& other);
+
+    Vector3d operator*(const float& value);
+
+    Vector3d operator/(const float& value);
+
+    Vector3d operator-();
+
+    Vector3d operator!();
+
+private:
+    float _data[3];
 };
 
-std::ostream& operator <<(std::ostream& os, const vector3d& v);
+std::ostream& operator<<(std::ostream& os, const Vector3d& vector);

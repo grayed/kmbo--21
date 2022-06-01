@@ -1,30 +1,45 @@
-﻿#pragma once
+#pragma once
 
 #include <ostream>
 #include <string>
+#include <vector>
 
-class B;	// чтобы можно было объявить printInternals() как friend в классе A
+class B;
 
-class A {
-	std::string a_s;
-	int foo;
-
-	friend void printInternals(const B&);
-
+class A
+{
 public:
-	std::string getBString() const;
-	void printData(std::ostream& os);
-	void printData2(std::ostream& os);
+    std::string getBString() const;
+
+    void printData(std::ostream& os);
+
+    void printData2(std::ostream& os);
+
+    virtual std::string getBStringV() const = 0;
+
+    virtual std::vector<float> getBDataV() const = 0;
+
+private:
+    std::string a_s;
+    int foo;
+
+    friend void printInternals(const B&);
 };
 
-class B : public A {
-	std::string b_s;
-	float data[7];
-
-	friend void printInternals(const B&);
-
+class B : public A
+{
 public:
-	B();
+    B();
+
+    std::string getBStringV() const override;
+
+    std::vector<float> getBDataV() const override;
+
+private:
+    std::string b_s;
+    float data[7];
+
+    friend void printInternals(const B&);
 };
 
-void printInternals(const B& b);
+void printInternals(const B&);
