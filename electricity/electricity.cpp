@@ -119,9 +119,23 @@ const Pole* Power::getPole(size_t idx) const
 
 int main()
 {
-    Switch sw;   // Переключатель
+    // цепь из генератора, выключателя и светильника.
+    Switch sw1;   // Переключатель
     Power pwr;   // Источник 
     Light lgt;   // Светильник
+    
+    Switch sw, sw2;
+    sw.connect("A2", sw2, "A1");
+    //cout << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected" << endl;
+    sw.disconnect("A2");
+    //cout << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected" << endl;
+                 
+                 
+                 
+                 
+                 
+                 
+                 
     /*int counter;
     lgt.getPole("lgt_in");
     lgt.getPole("lgt_out");
