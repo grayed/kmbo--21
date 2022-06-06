@@ -17,10 +17,10 @@ int main()
     Light lamp;
     Generator generator;
     //Генератор [фаза] - выключатель - лампа - [нейтраль] Генератор
-    generator.connect("A1", sw1, "A1"); 
-    sw1.connect("A2", lamp, "A1"); 
+    generator.connect("A1", sw1, "A2"); 
+    sw1.connect("A1", lamp, "A2"); 
     lamp.connect("A2", generator, "A2");
-    cout << "is " << (lamp.isConnectedTo(sw1) ? " " : "not ") << "connected" << endl;
+    cout << "is " << (sw1.isConnectedTo(lamp) ? " " : "not ") << "connected" << endl;
     generator.disconnect("A1");
     cout << "is " << (generator.isConnectedTo(sw1) ? " " : "not ") << "connected" << endl;
 
