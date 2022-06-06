@@ -89,7 +89,6 @@ public:
     /// <returns><c>true</c> если устройства связаны напрямую, <c>false</c> в противном случае.</returns>
     /// 
     bool isConnectedTo(const Object& other) const {
-
         for (int i = 1;i <= getPoleCount();i++) {
             for (int j = 1;j <= other.getPoleCount();j++) {
                 if (getPole(i)->connectedObjectPole == other.getPole(j)->name  &&  getPole(i)->connectedObject == const_cast<Object*>(&other)) // проверим что полюса совпадают; имена совпадают 
@@ -97,7 +96,6 @@ public:
             }
         }
         return false;
-        
     }
     
 
