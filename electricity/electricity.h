@@ -114,7 +114,7 @@ public:
     bool connect(const std::string& poleName, Object& other, const std::string& otherPoleName) {
         if (poleName != otherPoleName) {
             Pole* p1 = getPole(poleName);
-            Pole* p2 = getPole(otherPoleName);
+            Pole* p2 = other.getPole(otherPoleName);
             p1->connectedObject = const_cast<Object*>(&other); // тк это указатель поле, а у на спередатется ссылка
             p1->connectedObjectPole = otherPoleName;
             p2->connectedObjectPole = poleName;
