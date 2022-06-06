@@ -1,25 +1,27 @@
-#include <iostream>
 #include "vector.h"
 
-using namespace std;
+class vector3d {
+public:
+	float data[3];
+	vector3d() { data[2] = data[1] = data[0] = 0; }
+	vector3d(float k) { data[2] = data[1] = data[0] = k; }
+	vector3d(float x, float y, float z) { data[0] = x;  data[1] = y; data[2] = z; }
+	float  operator [](int i) const { return data[i]; }
+	vector3d operator +(vector3d& Vector2) { return vector3d(data[0] + Vector2[0], data[1] + Vector2[1], data[2] + Vector2[2]); } //Vector3d& Vector2
+	vector3d operator -(vector3d& Vector2) { return vector3d(data[0] - Vector2[0], data[1] - Vector2[1], data[2] - Vector2[2]); }
+	vector3d operator *(float k) { return vector3d(data[0] * k, data[1] * k, data[2] * k); }
+	vector3d operator /(float k) {
+		if (k != 0)
+			return vector3d(data[0] / k, data[1] / k, data[2] / k);
+		else std::cout << "Division by zero";
+	}
+	vector3d operator -() { return vector3d(-data[0], -data[1], -data[2]); }
+	vector3d operator !() {
+		if (data[0] == 0 && data[1] == 0 && data[2] == 0) return vector3d(1, 1, 1);
+		else return vector3d(0, 0, 0);
+	}
+};
 
-ostream& operator <<(ostream& os, const vector3d& v) {
-	return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }";
-}
-
-int main(int argc, char** argv) {
-	vector3d v1, v2(12), v3(1, 3, 8);
-	v1[2] = 54;
-	//vector3d v4 = v1 + v2, v5 = v1 - v2, v6 = v1 * 0.5f;
-	//cout << "v4: " << v4 << endl << "v5: " << v5 << endl << "v6: " << v6 << endl;
-
-	printf("address of v1:             0x%p, size: %zu bytes\n", &v1, sizeof(v1));
-	printf("address of v1.data:        0x%p, size: %zu bytes\n", &v1.data, sizeof(v1.data));
-	printf("address of v1.data[-1]:    0x%p, size: %zu bytes\n", &v1.data[-1], sizeof(v1.data[-1]));
-	printf("address of v1.data[0]:     0x%p, size: %zu bytes\n", &v1.data[0], sizeof(v1.data[0]));
-	printf("address of v1.data[1]:     0x%p, size: %zu bytes\n", &v1.data[1], sizeof(v1.data[1]));
-	printf("address of v1.data[2]:     0x%p, size: %zu bytes\n", &v1.data[2], sizeof(v1.data[2]));
-	printf("address of v1.data[2000]:  0x%p, size: %zu bytes\n", &v1.data[2000], sizeof(v1.data[2000]));
-
-	return 0;
+std::ostream& operator <<(std::ostream& os, vector3d& v) {
+	return os << "(" << v[0] << " " << v[1] << " " << v[2] << ")";
 }
