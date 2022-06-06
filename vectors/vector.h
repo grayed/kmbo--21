@@ -6,6 +6,7 @@ using namespace std;
 
 class Vector3d {
 public:
+
 	float data[3];
 public:  
 	Vector3d() { data[2] = data[1] = data[0] = 0; }
