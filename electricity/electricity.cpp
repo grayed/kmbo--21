@@ -123,14 +123,12 @@ int main()
     //создать цепь из генератора, выключателя и светильника
     Switch sw1;
     Light lamp;
-    Generator gen;
-    gen.connect("A2",lamp,"A1"); // Нейтраль с 1ым полюсом лампы
-    cout << "is " << (gen.isConnectedTo(lamp) ? "" : "not ") << "connected" << endl;
-    gen.connect("A1",lamp,"A2"); // Нейтраль с 1ым полюсом лампы
-    cout << "is " << (gen.isConnectedTo(lamp) ? "" : "not ") << "connected" << endl;
-    gen.connect("A2",sw1,"A1");  // Нейтраль с 1ым полюсом переключателя
+    Generator gen;  //A1-фаза, А2-нейтраль А3-земля
+    gen.connect("A1",sw1,"A2"); // к фазе подключаем переключатель к полюсу А2
     cout << "is " << (gen.isConnectedTo(sw1) ? "" : "not ") << "connected" << endl;
-    gen.connect("A3",sw1,"A2"); //Земля со 2ым полюсом переключателя
-     cout << "is " << (gen.isConnectedTo(sw1) ? "" : "not ") << "connected" << endl;
+    sw1.connect("A1",lamp,"A2"); // к другому полюсу перключателя (А1) подключаем лампу полюсуом А2
+    cout << "is " << (sw1.isConnectedTo(lamp) ? "" : "not ") << "connected" << endl;
+    gen.connect("A2",lamp,"A1"); // подключили лампу другим полюсом к генературу, нейтрали.
+    cout << "is " << (gen.isConnectedTo(lamp) ? "" : "not ") << "connected" << endl;
     return 0;
 }
