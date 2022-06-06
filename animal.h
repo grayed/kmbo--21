@@ -61,7 +61,7 @@ private:
 	bool have_work;
 	string lifestyle;
 public:
-	void human(bool have_work, string lifestyle) {
+	void human(bool have_work, string lifestyle) {   
 		have_work = have_work;
 		lifestyle = lifestyle;
 	}
