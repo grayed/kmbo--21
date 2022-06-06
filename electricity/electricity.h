@@ -113,20 +113,28 @@ public:
     /// </remarks>
     bool connect(const std::string& poleName, Object& other, const std::string& otherPoleName) {
         if (poleName != otherPoleName) {
-            getPole(poleName)->connectedObject = const_cast<Object*>(&other);
-            getPole(poleName)->connectedObjectPole = otherPoleName;
-            getPole(otherPoleName)->connectedObjectPole = poleName;
-            getPole(otherPoleName)->connectedObject = this;    // const_cast<Object*>
+            Pole* p1 = getPole(poleName);
+            Pole* p2 = getPole(otherPoleName);
+            p1->connectedObject = const_cast<Object*>(&other); // тк это указатель поле, а у на спередатется ссылка
+            p1->connectedObjectPole = otherPoleName;
+            p2->connectedObjectPole = poleName;
+            p2->connectedObject = this;    // const_cast<Object*>
             return true;
         }
         return false;
     }
-    bool disconnect(Object& other) {
-        for (int i = 1;i <= getPoleCount();i++) {
-            getPole(i)->connectedObject = nullptr;
-            getPole(i)->connectedObjectPole = "";
+    bool disconnect(const std::string& poleName) { // отключаем  конкретные полюса
+        if(getPole(poleName)->connectedObject != nullptr) {
+            //отключаем у другого прибора, потом у себя
+            Pole* p = getPole(poleName);
+            getPole(p->connectedObjectPole)->connectedObject = nullptr; 
+            getPole(p->connectedObjectPole)->connectedObjectPole = "";
+            p->connectedObject = nullptr;
+            p->connectedObjectPole = "";
+
+            return true;
         }
-        return true;
+        return false;
     }
     
 };
