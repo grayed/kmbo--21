@@ -9,10 +9,14 @@ public:
 
 class Mammal : public Animal {
 public:
-	float pregnancyDuration;	// days
+	float pregnancyDuration = 9;	// days
+	void setAbout() {
+		cout << pregnancyDuration;
+	}
 };
 
 class Cat : public Mammal {
 public:
 	float vibrissaLength;		// meters
+
 };
