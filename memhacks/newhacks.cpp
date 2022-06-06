@@ -6,10 +6,10 @@ using namespace std;
 
 int main()
 {
-    std::cout << "Explore dynamic memory" << std::endl;
+    cout << "Explore dynamic memory" << std::endl;
     dynamicMemory();
 
-    std::cout << "Explore stack memory" << std::endl;
+    cout << "Explore stack memory" << std::endl;
     stackMemory();
 
     Buz* b = new Buz;
