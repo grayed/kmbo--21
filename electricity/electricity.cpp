@@ -90,9 +90,13 @@ const Pole* Power::getPole(size_t idx) const
 }
 int main()
 {
+    cerr << "________________ " << endl;
+
+
+
     Switch sw, sw2;
     sw.connect("A2", sw2, "A1");
-    cout << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected!" << endl;
+    cerr << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected!" << endl;
 
 
     Power p;
@@ -104,11 +108,11 @@ int main()
     p.connect("A1", l, "A1");
 
     l.connect("A2", sw, "A1");
-    cout << "is " << (p.isConnectedTo(l) ? "" : "not ") << "connected!" << endl;
-    cout << "is " << (l.isConnectedTo(sw3) ? "" : "not ") << "connected!" << endl;
+    cerr << "is " << (p.isConnectedTo(l) ? "" : "not ") << "connected!" << endl;
+    cerr << "is " << (l.isConnectedTo(sw3) ? "" : "not ") << "connected!" << endl;
     
     p.disconnect("A1");
-    cout << "is " << (p.isConnectedTo(l) ? "" : "not ") << "connected!" << endl;
-
+    cerr << "is " << (p.isConnectedTo(l) ? "" : "not ") << "connected!" << endl;
+    cerr << "________________ " << endl;
     return 0;
 }
