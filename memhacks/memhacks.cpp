@@ -62,7 +62,7 @@ void A::printData(std::ostream& os) const {
 /// с помощью виртуальных функций, предусмотренных в классе <see cref="A"/>.
 /// </summary>
 void A::printData2(std::ostream& os) const {
-    B b = *((B*)(this));
+    B b = *dynamic_cast<const B*>(this);
     os << "(using printData2): A string is '" << a_s << "', B string is '" << b.getBString() << "'" << endl;
     for (int i = 0; i < 7; ++i) os << b.getData(i) << " ";
 }
