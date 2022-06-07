@@ -9,7 +9,7 @@ class A {
 	std::string a_s;
 	int foo;
 
-	friend void printInternals(B &b);
+	friend void printInternals(const B &b);
 
 public:
     A();
@@ -17,15 +17,15 @@ public:
 	virtual std::string getBString() const;
     virtual float getData(int idx) const;
 
-	void printData(std::ostream& os);
-	void printData2(std::ostream& os);
+	void printData(std::ostream& os) const;
+	void printData2(std::ostream& os) const;
 };
 
 class B : public A {
 	std::string b_s;
 	float data[7]{};
 
-	friend void printInternals(B &b);
+	friend void printInternals(const B &b);
 
 public:
 	B();
@@ -34,4 +34,4 @@ public:
     std::string getBString() const override;
 };
 
-void printInternals(B &b);
+void printInternals(const B &b);

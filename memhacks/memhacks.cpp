@@ -15,13 +15,13 @@ B::B() : b_s("It's b!") {
 /// Можно модифицировать для собственных отладочных целей.
 /// </summary>
 /// <param name="b">Изучаемый объект</param>
-void printInternals(B &b) {
-	const A* a = &b, * a2 = a + 1;
-	cout << "Address of b is 0x" << &b << ", address of b.a_s is 0x" << &b.a_s << ", address of b.b_s is 0x" << &b.b_s << endl;
+void printInternals(const B &b) {
+    const A* a = &b, *a2 = a + 1;
+    cout << "Address of b is 0x" << &b << ", address of b.a_s is 0x" << &b.a_s << ", address of b.b_s is 0x" << &b.b_s << endl;
 	cout << "Size of A is " << sizeof(A) << ", size of B is " << sizeof(B) << endl;
 	cout << "B string is '" << b.getBString() << "'" << endl;
-	cout << "B data (using printData): "; b.printData(cout); cout << endl;
-	cout << "B data (using printData2): "; b.printData2(cout); cout << endl;
+	cout << "B data "; a->printData(cout); cout << endl;
+	cout << "B data "; a->printData2(cout); cout << endl;
 }
 
 /// <summary>
@@ -51,8 +51,8 @@ float B::getData(int idx) const {
 /// с помощью адресной арифметики.
 /// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 /// </summary>
-void A::printData(std::ostream& os) {
-    os << "A string is '" << a_s << "', B string is '" << getBString() << "'" << endl;
+void A::printData(std::ostream& os) const {
+    os << "(using printData): A string is '" << a_s << "', B string is '" << getBString() << "'" << endl;
     for (int i = 0; i < 7; ++i) os << getData(i) << " ";
 }
 
@@ -61,9 +61,9 @@ void A::printData(std::ostream& os) {
 /// из текущего объекта и выводит их в текстовом виде в указанный выходной поток
 /// с помощью виртуальных функций, предусмотренных в классе <see cref="A"/>.
 /// </summary>
-void A::printData2(std::ostream& os) {
+void A::printData2(std::ostream& os) const {
     B b = *((B*)(this));
-    os << "A string is '" << a_s << "', B string is '" << b.getBString() << "'" << endl;
+    os << "(using printData2): A string is '" << a_s << "', B string is '" << b.getBString() << "'" << endl;
     for (int i = 0; i < 7; ++i) os << b.getData(i) << " ";
 }
 
