@@ -30,7 +30,7 @@ void printInternals(const B &b) {
 /// </summary>
 /// <returns>Значение B::b_s</returns>
 std::string A::getBString() const {
-    return *((const string*)(this + 1));
+    return dynamic_cast<const B*>(this)->getBString();
 }
 
 std::string B::getBString() const {
@@ -38,7 +38,7 @@ std::string B::getBString() const {
 }
 
 float A::getData(int idx) const {
-    return ((float*)(this + 2))[idx];
+    return dynamic_cast<const B*>(this)->getData(idx);
 }
 
 float B::getData(int idx) const {
