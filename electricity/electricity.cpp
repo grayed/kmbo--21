@@ -16,16 +16,14 @@ bool Object::isConnectedTo(const Object& other) const
 
 bool Object::connect(const std::string& poleName, const Object& other, const std::string& otherPoleName)
 {
-    if (poleName!=otherPoleName){
-        disconnect(poleName);
-        disconnect(otherPoleName);
-        getPole(poleName)->connectedObject=const_cast<Object*>(&other);
-        getPole(poleName)->connectedObjectPole=otherPoleName;
-        getPole(otherPoleName)->connectedObjectPole=poleName;
-        getPole(otherPoleName)->connectedObject=const_cast<Object*>(this);
-        return true;
-    }
-    return false;
+    disconnect(poleName);
+    disconnect(otherPoleName);
+    getPole(poleName)->connectedObject=const_cast<Object*>(&other);
+    getPole(poleName)->connectedObjectPole=otherPoleName;
+    Pole*p=const_cast<Pole*>(other.getPole(otherPoleName));
+    p->connectedObjectPole=poleName;
+    p->connectedObject=const_cast<Object*>(this);
+    return true;
 }
 
 bool Object::disconnect(const std::string& poleName)
@@ -118,6 +116,7 @@ int main()
     Switch sw, sw2;
     sw.connect("A2", sw2, "A1");
     cout << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected" << endl;
+    cout << "is " << (sw2.isConnectedTo(sw) ? "" : "not ") << "connected" << endl; //поменял местами, чтобы убедиться, что работает в обратную сторону.
     sw.disconnect("A2");
     cout << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected" << endl;
     //создать цепь из генератора, выключателя и светильника
