@@ -29,13 +29,17 @@ bool Object::connect(const std::string& poleName, Object& other, const std::stri
 
 bool Object::disconnect(const std::string &poleName) {
     auto pole = getPole(poleName);
+    auto otherPole = pole->connectedObject->getPole(poleName);
+
     if (pole->connectedObjectPole.empty())
         return false;
-    else {
-        pole->connectedObjectPole = "";
-        pole->connectedObject = nullptr;
-        return true;
-    }
+
+    pole->connectedObjectPole = "";
+    pole->connectedObject = nullptr;
+    otherPole->connectedObjectPole = "";
+    otherPole->connectedObject = nullptr;
+
+    return true;
 }
 
 Switch::Switch(const std::string& name) : Object(name), a1("A1"), a2("A2") {}
@@ -90,6 +94,10 @@ int main() {
     gen.connect("A1", sw, "A1");
     sw.connect("A2", light, "A1");
     gen.connect("A2", light, "A2");
+
+    cout << "is " << (gen.isConnectedTo(sw) ? "" : "not ") << "connected" << endl;
+
+    gen.disconnect("A1");
 
     cout << "is " << (gen.isConnectedTo(sw) ? "" : "not ") << "connected" << endl;
 
