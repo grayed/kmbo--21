@@ -30,14 +30,16 @@ bool Object::connect(const std::string& poleName, Object& other, const std::stri
 
 
 bool Object::disconnect(const std::string& poleName)
-{   auto pole = getPole(poleName);
-    if (pole->connectedObjectPole == "")
-        return false;
-    else {
-        pole->connectedObjectPole = "";
-        pole->connectedObject = nullptr;
+{
+    if (getPole(poleName)->connectedObject != nullptr)
+    {
+        getPole(getPole(poleName)->connectedObjectPole)->connectedObject = nullptr;
+        getPole(getPole(poleName)->connectedObjectPole)->connectedObjectPole = "";
+        getPole(poleName)->connectedObject = nullptr;
+        getPole(poleName)->connectedObjectPole = "";
         return true;
     }
+    return false;
 }
 
 Switch::Switch(const std::string& name)
@@ -99,8 +101,8 @@ int main()
     Generator generator_test;
     Lamp lamp_test;
     Switch switch_test;
-    generator_test.connect("A1", lamp_test, "A1");
-    lamp_test.connect("A2", switch_test, "A1");
+    generator_test.connect("A1", switch_test, "A2");
+    switch_test.connect("A1", lamp_test, "A2");
     cout << "is " << (generator_test.isConnectedTo(lamp_test) ? "" : "not ") << "connected" << endl;
     cout << "is " << (lamp_test.isConnectedTo(switch_test) ? "" : "not ") << "connected" << endl;
     generator_test.disconnect("A1");

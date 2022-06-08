@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include <ostream>
 #include <string>
-using namespace std;
 class B;	// чтобы можно было объявить printInternals() как friend в классе A
 class A {
 	std::string a_s;
@@ -10,10 +9,11 @@ class A {
 
 public:
 	A();
-	virtual string getBString() const;
-	virtual float getData(int idx) const;
+	std::string getBString() const;
+	virtual float getBData(int idx) const;
 	void printData(std::ostream& os);
 	void printData2(std::ostream& os);
+	virtual float* getBData() = 0;
 };
 class B : public A {
 	std::string b_s;
@@ -23,8 +23,8 @@ class B : public A {
 public:
 	B();
 
-	virtual std::string getBString() const;
-	virtual float getData(int idx) const;
+	std::string getBString() const;
+	virtual float getBData(int idx) const;
 };
 
 void printInternals(B& b);
