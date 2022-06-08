@@ -17,7 +17,10 @@ bool Object::connect(const std::string& poleName, Object& other, const std::stri
         return false;
 
     auto pole = getPole(poleName);
-    auto otherPole = (Pole*)(other.getPole(otherPoleName));
+    auto otherPole = other.getPole(otherPoleName);
+
+    if (pole == nullptr || otherPole == nullptr)
+        return false;
 
     pole->connectedObject = (Object*)(&other);
     pole->connectedObjectPole = otherPoleName;
@@ -29,10 +32,12 @@ bool Object::connect(const std::string& poleName, Object& other, const std::stri
 
 bool Object::disconnect(const std::string &poleName) {
     auto pole = getPole(poleName);
-    auto otherPole = pole->connectedObject->getPole(poleName);
 
-    if (pole->connectedObjectPole.empty())
+    if (pole == nullptr || pole->connectedObjectPole.empty() || pole->connectedObject == nullptr)
         return false;
+
+    auto otherPoleName = pole->connectedObjectPole;
+    auto otherPole = pole->connectedObject->getPole(otherPoleName);
 
     pole->connectedObjectPole = "";
     pole->connectedObject = nullptr;
