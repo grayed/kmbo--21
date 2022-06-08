@@ -51,9 +51,7 @@ protected:
     /// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
     /// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
     Pole* getPole(size_t idx) {
-        if (getPole("A" + std::to_string(idx)))
-            return getPole("A" + std::to_string(idx));
-        return nullptr;
+        return getPole("A" + std::to_string(idx + 1));
     }
 
     /// <summary>
