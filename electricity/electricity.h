@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <string>
 
 class Object;
@@ -108,17 +108,36 @@ public:
 /// Простой выключатель с двумя полюсами.
 /// </summary>
 class Switch : public Object {
+    
 public:
     Pole a1, a2;
-
     Switch(const std::string& name = "");
-
-    virtual size_t getPoleCount() const { return 2; }
-
-    virtual const Pole* getPole(const std::string& name) const;
-
+    size_t getPoleCount() const override { return 2; }
+    const Pole* getPole(const std::string& name) const override;
 protected:
-    virtual const Pole* getPole(size_t idx) const;
+    const Pole* getPole(size_t idx) const override;
+};
+
+class Light : public Object {
+    
+public:
+    Pole a1, a2;
+    Light(const std::string& name = "");
+    size_t getPoleCount() const override { return 2; }
+    const Pole* getPole(const std::string& name) const override;
+protected:
+    const Pole* getPole(size_t idx) const override;
+};
+
+class Generator : public Object {
+    
+public:
+    Pole a1, a2, a3;
+    Generator(const std::string& name = "");
+    size_t getPoleCount() const override { return 3; }
+    const Pole* getPole(const std::string& name) const override;
+protected:
+    const Pole* getPole(size_t idx) const override;
 };
 
 // TODO: класс светильника с двумя полюсами
