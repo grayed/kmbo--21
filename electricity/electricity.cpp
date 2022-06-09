@@ -10,8 +10,7 @@ bool Object::isConnectedTo(const Object& other) const
 
         for (size_t idx_2 = 0; idx_2 < other.getPoleCount(); idx_2++) {
 
-            if (this->getPole(idx_1)->connectedObjectPole == other.getPole(idx_2)->name) return true;
-
+            if (this->getPole(idx_1)->connectedObject->name == other.name && this->getPole(idx_1)->connectedObjectPole == other.getPole(idx_2)->name) return true;
         }
     }
     return false;
@@ -21,9 +20,21 @@ bool Object::disconnect(const std::string& poleName)
 {
     // TODO
     if (getPole(poleName)->connectedObjectPole != "") {
-
+        
         getPole(poleName)->connectedObjectPole = "";
-        this->getPole(poleName)->connectedObject = nullptr;
+        getPole(poleName)->connectedObject = nullptr;
+        this->getPole(poleName)->name = "";
+        
+        /*
+        bool c = false;
+        size_t idx = 0;
+        for (; idx < getPole(poleName)->connectedObject->getPoleCount() && c != true;)
+        {
+            if (getPole(poleName)->connectedObject->getPole(idx)->connectedObject->name == this->name) c = true;
+            idx++;
+        }
+        this->getPole(poleName)->connectedObject->getPole(idx)->connectedObject = nullptr;
+        */
         return true;
     }
     else return false;
@@ -116,3 +127,5 @@ int main()
     cerr << "________________ " << endl;
     return 0;
 }
+
+// источник -> переключатель -> светильник

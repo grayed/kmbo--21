@@ -14,6 +14,9 @@ public:
 
 	bool Gender;
 	virtual string about() const;
+protected:
+	Animal();
+	
 };
 
 string Animal::about() const {
@@ -31,6 +34,8 @@ public:
 
 	string Coat_color;
 	virtual string about() const;
+protected:
+	Mammal();
 };
 
 string Mammal::about() const {
@@ -129,6 +134,21 @@ string Mainkun::about() const {
 	ss << Cat::about() << " " << " Number_of_fleas = " << " " << Number_of_fleas;
 	return ss.str();
 };
+
+
+Animal::Animal()
+	: Gender()
+	, the_average_value_of_the_duration_of_life()
+{
+	cerr << "" << endl;
+}
+
+Mammal::Mammal()
+	: number_of_individuals()
+	, Coat_color()
+{
+	cerr << "" << endl;
+}
 
 
 int main(){
