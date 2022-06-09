@@ -18,4 +18,12 @@ public:
     Vector(float value = 0) { for (size_t i = 0; i < Dimensions; i++) data[i] = value;  }
     float  operator[] (size_t index) const { return data[index]; }
     float& operator[] (size_t index)       { return data[index]; }
+
+    Vector operator +(const Vector v) const;
 };
+
+template<size_t Dimensions>
+Vector<Dimensions> operator *(const Vector<Dimensions> v, float n);
+
+template<size_t Dimensions>
+Vector<Dimensions> avg(const Vector<Dimensions> v1, const Vector<Dimensions> v2);
