@@ -5,14 +5,29 @@ using namespace std;
 
 bool Object::isConnectedTo(const Object& other) const
 {
-    // TODO
+    for (int i = 0; i < getPoleCount(); ++i) {
+        for (int j = 0; j < other.getPoleCount(); ++j) {
+            if (getPole(i)->connectedObjectPole == other.getPole(j)->name && getPole(i)->connectedObject == const_cast<Object*>(&other))
+                return true;
+        }
+    }
     return false;
 }
 
 bool Object::connect(const std::string& poleName, Object& other, const std::string& otherPoleName)
 {
-    // TODO
-    return false;
+    Pole* myPole = getPole(poleName);
+    Pole* otherPole = other.getPole(otherPoleName);
+
+    if (!myPole || !otherPole) return false;
+
+    myPole->connectedObject = const_cast<Object*>(&other);
+    myPole->connectedObjectPole = otherPoleName;
+
+    otherPole->connectedObject = this;
+    otherPole->connectedObjectPole = poleName;
+
+    return true;
 }
 
 bool Object::disconnect(const std::string& poleName)
@@ -39,8 +54,38 @@ const Pole* Switch::getPole(const string& name) const
 
 const Pole* Switch::getPole(size_t idx) const
 {
-    // TODO
+    switch (idx) {
+    case 0:
+        return &a1;
+    case 1:
+        return &a2;
+    default:
+        return nullptr; 
+    }
+}
+
+const Pole* Generator::getPole(const std::string &name) const {
+    if (name == p1.name)
+        return &p1;
+    if (name == p2.name)
+        return &p2;
+    if (name == p3.name)
+        return &p3;
     return nullptr;
+}
+
+const Pole* Generator::getPole(size_t idx) const
+{
+    switch (idx) {
+    case 0:
+        return &p1;
+    case 1:
+        return &p2;
+    case 2:
+        return &p3;
+    default:
+        return nullptr; 
+    }
 }
 
 int main()
@@ -50,6 +95,12 @@ int main()
     cout << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected" << endl;
 
     // TODO: создать цепь из генератора, выключателя и светильника
+    Generator g;
+    Switch s;
+    Light l;
+
+    cout << g.connect("P1", s, "A1") << endl;
+    cout << s.connect("A2", l, "A1") << endl;
 
     return 0;
 }
