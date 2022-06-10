@@ -37,7 +37,8 @@ string Automobile::about() const {
 int main()
 {
 	Automobile a1(5.3f);
+	
 	cout << "Automobile 1: " << a1 << endl;
-
-	return 0;
+	
+	
 }
