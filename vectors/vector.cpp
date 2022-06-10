@@ -24,8 +24,8 @@ vector3d operator + (const vector3d& v1, const vector3d& v2) { return vector3d(v
 vector3d operator - (const vector3d& v1, const vector3d& v2) { return vector3d(v1[0] - v2[0], v1[1] - v2[1], v1[2] - v2[2]); }
 vector3d operator * (const vector3d& v1, const float x) { return vector3d(v1[0] * x, v1[1] * x, v1[2] * x); }
 vector3d operator / (const vector3d& v1, const float x) { return vector3d(v1[0] / x, v1[1] / x, v1[2] / x); }
-const vector3d operator -(const vector3d& v1) { return vector3d(-v1[0], -v1[1], -v1[2]); }
-const vector3d operator !(const vector3d& v1) {
+vector3d operator -(const vector3d& v1) { return vector3d(-v1[0], -v1[1], -v1[2]); }
+vector3d operator !(const vector3d& v1) {
 	if (v1[0] == 0 and v1[1] == 0 and v1[2] == 0) { return vector3d(1, 1, 1); }
 	else return vector3d(0, 0, 0);
 }

@@ -150,6 +150,9 @@ Mammal::Mammal()
 	cerr << "" << endl;
 }
 
+inline ostream& operator <<(ostream& os, const Animal& animal) {
+	return os << animal.about();
+}
 
 int main(){
 	Mainkun kot_bOris;
@@ -178,11 +181,11 @@ int main(){
 	dogs.limbs = 4;
 
 	cout << "-------------------------------------------------------------" << endl;
-	cout << "kot_bOris: " << kot_bOris.about() << endl;
-	cout << "kot_Vasily: " << kot_Vasily.about() << endl;
-	cout << "Roudi: " << Roudi.about() << endl;
-	cout << "ANgry_birds: " << ANgry_birds.about() << endl;
-	cout << "dogs: " << dogs.about() << endl;
+	cout << "kot_bOris: " << kot_bOris << endl;
+	cout << "kot_Vasily: " << kot_Vasily << endl;
+	cout << "Roudi: " << Roudi << endl;
+	cout << "ANgry_birds: " << ANgry_birds << endl;
+	cout << "dogs: " << dogs << endl;
 	cout << "-------------------------------------------------------------";
 	
 	
