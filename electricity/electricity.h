@@ -89,7 +89,7 @@ public:
     bool isConnectedTo(const Object& other) const {
         for (auto i = 0; i < getPoleCount(); i++) {
             for (auto j = 0; j < other.getPoleCount(); j++) {
-                if (getPole(i)->connectedObjectPole == other.getPole(j)->name) {
+                if ((getPole(i)->connectedObjectPole == other.getPole(j)->name) && (getPole(i)->connectedObject == &other)) {
                     return true;
                 }
             }
@@ -110,11 +110,13 @@ public:
     /// для которого вызывается этот метод.
     /// </remarks>
     bool connect(const std::string& poleName, Object& other, const std::string& otherPoleName) {
+        Pole* pl = getPole(poleName);
         if (poleName != otherPoleName) {
-            getPole(poleName)->connectedObject = &other; //const_cast<Object*>(&other)
-            getPole(poleName)->connectedObjectPole = otherPoleName;
-            getPole(otherPoleName)->connectedObjectPole = poleName;
-            getPole(otherPoleName)->connectedObject = this;
+            pl->connectedObject = &other;
+            pl->connectedObjectPole = otherPoleName;
+            Pole* other_pl = other.getPole(otherPoleName);
+            other_pl->connectedObjectPole = poleName;
+            other_pl->connectedObject = this;
             return true;
         }
         return false;
@@ -128,9 +130,13 @@ public:
     /// Вызов этого метода для полюса, если к нему ничего не подключено, не является ошибкой.
     /// </remarks>
     bool disconnect(const std::string& poleName) {
-        if (getPole(poleName)->connectedObject) {
-            getPole(poleName)->connectedObject = nullptr;
-            getPole(poleName)->connectedObjectPole = "";
+        Pole* pl = getPole(poleName);
+        Pole* other_pl = getPole(poleName)->connectedObject->getPole(getPole(poleName)->connectedObjectPole);
+        if (pl->connectedObject) {
+            other_pl->connectedObject = nullptr;
+            other_pl->connectedObjectPole = "";
+            pl->connectedObject = nullptr;
+            pl->connectedObjectPole = "";
             return true;
         }
         return false;
@@ -163,6 +169,7 @@ protected:
             return &a1;
         if (idx == 1)
             return &a2;
+        return nullptr;
     }
 };
 
@@ -183,11 +190,10 @@ public:
 
 protected:
     const Pole* getPole(size_t idx) const {
-        if (idx == 1)
+        if (idx == 0)
             return &a1;
-        if (idx == 2)
+        if (idx == 1)
             return &a2;
-        return nullptr;
     }
 };
 
@@ -211,6 +217,21 @@ public:
             return &a2;
         if (name == a3.name)
             return &a3;
+        return nullptr;
+    }
+protected:
+    const Pole* getPole(size_t idx) const {
+        if (idx == 0)
+            return &a1;
+        if (idx == 1)
+            return &a2;
+        if (idx == 2)
+            return &a3;
+        return nullptr;
+    }
+
+};
+
         return nullptr;
     }
 protected:

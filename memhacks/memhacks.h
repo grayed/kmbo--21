@@ -8,24 +8,24 @@ class B;	// чтобы можно было объявить printInternals() к�
 class A {
 	std::string a_s;
 	int foo;
-	friend void printInternals(B&);
+	friend void printInternals(const B&);
 public:
 	A();
 	std::string getBString() const;
-	void printData(std::ostream& os);
-	void printData2(std::ostream& os);
-	virtual std::string* getBStr() = 0;
-	virtual float* getBData() = 0;
+	void printData(std::ostream& os) const;
+	void printData2(std::ostream& os) const;
+	virtual const std::string* getBStr() const = 0;
+	virtual const float* getBData() const = 0;
 };
 
 class B : public A {
 	std::string b_s;
 	float data[7];
-	friend void printInternals(B&);
+	friend void printInternals(const B&);
 public:
 	B();
-	virtual std::string* getBStr() { return &b_s; }
-	virtual float* getBData() { return data; }
+	virtual const std::string* getBStr() const { return &b_s; }
+	virtual const float* getBData() const { return data; }
 };
 
-void printInternals(B& b);
+void printInternals(const B& b);

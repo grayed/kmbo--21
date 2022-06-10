@@ -15,8 +15,8 @@ B::B() : b_s("It's b!") {
 /// Можно модифицировать для собственных отладочных целей.
 /// </summary>
 /// <param name="b">Изучаемый объект</param>
-void printInternals(B& b) {
-	const A* a = &b, * a2 = a + 1;
+void printInternals(const B& b) {
+	const A* a = &b;
 	cout << "Address of b is 0x" << &b << ", address of b.a_s is 0x" << &b.a_s << ", address of b.b_s is 0x" << &b.b_s << endl;
 	cout << "Size of A is " << sizeof(A) << ", size of B is " << sizeof(B) << endl;
 	cout << "B string is '" << b.getBString() << "'" << endl;
@@ -39,7 +39,7 @@ string A::getBString() const {
 /// с помощью адресной арифметики.
 /// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 /// </summary>
-void A::printData(ostream& os) {
+void A::printData(ostream& os) const {
 	os << "a_s is " << a_s << std::endl;
 	os << "b_s is " << getBString() << endl;
 	float* b_Data = ((float*)(((string*)(this + 1)) + 1));
@@ -55,10 +55,10 @@ void A::printData(ostream& os) {
 /// из текущего объекта и выводит их в текстовом виде в указанный выходной поток
 /// с помощью виртуальных функций, предусмотренных в классе <see cref="A"/>.
 /// </summary>
-void A::printData2(std::ostream& os) {
+void A::printData2(ostream& os) const {
 	os << "a_s is " << a_s << std::endl;
 	os << "b_s is " << *getBStr() << std::endl;
-	float* b_Data = getBData();
+	const float* b_Data = getBData();
 	os << "data is: ";
 	for (auto i = 0; i < sizeof(b_Data) - 1; i++)
 	{
@@ -67,10 +67,10 @@ void A::printData2(std::ostream& os) {
 	os << std::endl;
 }
 
-/*
+
 int main()
 {
 	B b;
 	printInternals(b);
 	return 0;
-} */
+}

@@ -1,11 +1,10 @@
 #pragma once
-#include <iostream>
-#include <sstream> 
-#include <string>
+
 
 class vector3d {
-public:
+private:
 	float data[3];
+public:
 	vector3d() { data[2] = data[1] = data[0] = 0; }
 	vector3d(float k) { data[2] = data[1] = data[0] = k; }
 	vector3d(float x, float y, float z) { data[0] = x;  data[1] = y; data[2] = z; }
