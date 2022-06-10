@@ -16,15 +16,24 @@ vector3d operator - (const vector3d& v1, const vector3d& v2) { return vector3d(v
 vector3d operator * (const vector3d& v1, const float x)      { return vector3d(v1[0] * x, v1[1] * x, v1[2] * x); }
 vector3d operator * (const float x, const vector3d& v1)      { return vector3d(v1[0] * x, v1[1] * x, v1[2] * x); }
 vector3d operator / (const vector3d& v1, const float x)      { return vector3d(v1[0] / x, v1[1] / x, v1[2] / x); }
-const vector3d operator -(const vector3d& v1)                { return vector3d(-v1[0], -v1[1], -v1[2]); }
-const vector3d operator !(const vector3d& v1) {
+vector3d operator -(const vector3d& v1)                      { return vector3d(-v1[0], -v1[1], -v1[2]); }
+vector3d operator !(const vector3d& v1) {
     if (v1[0] == 0 && v1[1] == 0 && v1[2] == 0)              { return vector3d(1, 1, 1); }
     else                                                     { return vector3d(0, 0, 0); }
 }
 
 
-ostream& operator <<(ostream& os, const vector3d& v)         { return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }"; }
-
+ostream& operator <<(ostream& os, const vector3d& v)         
+{ 
+    return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }"; 
+}
+bool operator ==(vector3d& first, vector3d& second)
+{
+    if ((first[0] == second[0]) && (first[1] == second[1]) && (first[2] == second[2]))
+    { return 1; }
+    else 
+    { return 0; }
+};
 
 void testBVA(vector3d firstTester, vector3d secondTester, bool flag) {
     vector3d ans;
@@ -36,7 +45,7 @@ void testBVA(vector3d firstTester, vector3d secondTester, bool flag) {
     vector3d test = firstTester + secondTester;
     cerr << test << " - Vector obtained from + operator." << endl;
 
-    if ((ans[0] == test[0]) && (ans[1] == test[1]) && (ans[2] == test[2])) {
+    if (ans == test) {
         cerr << "Testing of Binary Vector Addition went successful." << endl << endl;
     } else { cerr << "ERROR in Binary Vector Addition: something went wrong." << endl << endl; flag = 0; }
 }
@@ -51,7 +60,7 @@ void testBVS(vector3d firstTester, vector3d secondTester, bool flag) {
     vector3d test = firstTester - secondTester;
     cerr << test << " - Vector obtained from - operator." << endl;
 
-    if ((ans[0] == test[0]) && (ans[1] == test[1]) && (ans[2] == test[2])) {
+    if (ans == test) {
         cerr << "Testing of Binary Vector Subtraction went successful." << endl << endl;
     } else { cerr << "ERROR in Binary Vector Subtraction: something went wrong." << endl << endl; flag = 0; }
 }
@@ -66,7 +75,7 @@ void testLeftVSM(float floatTester, vector3d secondTester, bool flag) {
     vector3d test = floatTester * secondTester;
     cerr << test << " - Vector obtained from * operator (left)." << endl;
 
-    if ((ans[0] == test[0]) && (ans[1] == test[1]) && (ans[2] == test[2])) {
+    if (ans == test) {
         cerr << "Testing of Vector Scalar Multiple (left) went successful." << endl << endl;
     } else { cerr << "ERROR in Vector Scalar Multiple (left): something went wrong." << endl << endl; flag = 0; }
 }
@@ -81,7 +90,7 @@ void testRightVSM(vector3d firstTester, float floatTester, bool flag) {
     vector3d test = firstTester * floatTester;
     cerr << test << " - Vector obtained from * operator (right)." << endl;
 
-    if ((ans[0] == test[0]) && (ans[1] == test[1]) && (ans[2] == test[2])) {
+    if (ans == test) {
         cerr << "Testing of Vector Scalar Multiple (right) went successful." << endl << endl;
     } else { cerr << "ERROR in Vector Scalar Multiple (right): something went wrong." << endl << endl; flag = 0; }
 }
@@ -96,7 +105,7 @@ void testVSD(vector3d firstTester, float floatTester, bool flag) {
     vector3d test = firstTester / floatTester;
     cerr << test << " - Vector obtained from / operator." << endl;
 
-    if ((ans[0] == test[0]) && (ans[1] == test[1]) && (ans[2] == test[2])) {
+    if (ans == test) {
         cerr << "Testing of Vector Scalar Division went successful." << endl << endl;
     } else { cerr << "ERROR in Vector Scalar Division: something went wrong." << endl << endl; flag = 0; }
 }
@@ -111,7 +120,7 @@ void testCV(vector3d firstTester, bool flag) {
     vector3d test = -firstTester;
     cerr << test << " - Vector obtained from - operator." << endl;
 
-    if ((ans[0] == test[0]) && (ans[1] == test[1]) && (ans[2] == test[2])) {
+    if (ans == test) {
         cerr << "Testing of Converse Vector went successful." << endl << endl;
     } else { cerr << "ERROR in Converse Vector: something went wrong." << endl << endl; flag = 0; }
 }
@@ -125,7 +134,7 @@ void testLDV(vector3d firstTester, bool flag) {
     vector3d test = !firstTester;
     cerr << test << " - Vector obtained from ! operator." << endl;
 
-    if ((ans[0] == test[0]) && (ans[1] == test[1]) && (ans[2] == test[2])) {
+    if (ans == test) {
         cerr << "Testing of Logical Denial of Vector went successful." << endl << endl;
     } else { cerr << "ERROR in Logical Denial of Vector: something went wrong." << endl << endl; flag = 0; }
 }
