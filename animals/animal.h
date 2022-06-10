@@ -8,7 +8,7 @@ string toString(bool value) {
 	if (value) { return "true"; }
 	else { return "false"; }
 }
-int toString(int value) { return value; }
+int toString(int value) { return bool(value); }
 
 class Animal {
 private:
@@ -133,11 +133,11 @@ private:
 public:
 	Crab() { is_shell = true; }
 	Crab(bool is_shell_, bool claw_number_, bool heterotrophic_) {
-		is_shell = is_shell_;
+		is_shell = bool(is_shell_);
 		set_claw_number(claw_number_);
 		set_heterotrophic(heterotrophic_);
 	}
-	bool get_is_shell() const { return is_shell; }
+	bool get_is_shell() const { return bool(is_shell); }
 	void set_is_shell(bool newValue) { is_shell = newValue; }
 	virtual string about() const;
 };
