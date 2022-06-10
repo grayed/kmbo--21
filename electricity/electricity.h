@@ -1,5 +1,9 @@
 ﻿#pragma once
-#include <string>
+#include<string>
+#include<iostream>
+
+
+using namespace std;
 
 class Object;
 
@@ -50,7 +54,15 @@ protected:
     /// </summary>
     /// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
     /// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
-    Pole* getPole(size_t idx) { /* TODO */ return nullptr; }
+    Pole* getPole(size_t idx) {
+        if (idx > getPoleCount()) {
+            std::string str = "O" + std::to_string(idx);
+            return getPole(str);
+        }
+        else {
+            return nullptr;
+        }
+    };
 
     /// <summary>
     /// Возвращает полюс по внутреннему индексу устройства.
@@ -63,7 +75,7 @@ public:
     virtual ~Object() {}
 
     const std::string& getName() const { return name; }
-    void getName(const std::string &newName) { name = newName; }
+    void getName(const std::string& newName) { name = newName; }
 
     /// <summary>
     /// Возвращает полюс по имени.
@@ -114,13 +126,12 @@ public:
     /// </remarks>
     bool disconnect(const std::string& poleName);
 };
-
 /// <summary>
 /// Простой выключатель с двумя полюсами.
 /// </summary>
 class Switch : public Object {
 public:
-    Pole a1, a2;
+    Pole A1, A2;
 
     Switch(const std::string& name = "");
 
@@ -132,6 +143,37 @@ protected:
     virtual const Pole* getPole(size_t idx) const;
 };
 
-// TODO: класс светильника с двумя полюсами
 
 // TODO: класс генератора с тремя полюсами (фаза, нейтраль, земпя).
+
+class Power : public Object {
+public:
+    Pole A1, A2, A3;
+
+    Power(const std::string& name = "");
+
+    virtual size_t getPoleCount() const { return 3; }
+
+    virtual const Pole* getPole(const std::string& name) const;
+
+protected:
+    virtual const Pole* getPole(size_t idx) const;
+};
+
+// TODO: класс светильника с двумя полюсами
+
+class Light : public Object {
+public:
+    Pole A1, A2;
+
+    bool st = false;
+
+    Light(const std::string& name = "");
+
+    virtual size_t getPoleCount() const { return 2; }
+
+    virtual const Pole* getPole(const std::string& name) const;
+
+protected:
+    virtual const Pole* getPole(size_t idx) const;
+};
