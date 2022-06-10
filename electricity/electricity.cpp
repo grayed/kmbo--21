@@ -3,45 +3,6 @@
 
 using namespace std;
 
-bool Object::isConnectedTo(const Object& other) const
-{
-    // TODO
-    return false;
-}
-
-bool Object::connect(const std::string& poleName, Object& other, const std::string& otherPoleName)
-{
-    // TODO
-    return false;
-}
-
-bool Object::disconnect(const std::string& poleName)
-{
-    // TODO
-    return false;
-}
-
-Switch::Switch(const std::string& name)
-    : Object(name)
-    , a1("A1")
-    , a2("A2")
-{
-}
-
-const Pole* Switch::getPole(const string& name) const
-{
-    if (name == a1.name)
-        return &a1;
-    if (name == a2.name)
-        return &a2;
-    return nullptr;
-}
-
-const Pole* Switch::getPole(size_t idx) const
-{
-    // TODO
-    return nullptr;
-}
 
 int main()
 {
@@ -49,7 +10,22 @@ int main()
     sw.connect("A2", sw2, "A1");
     cout << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected" << endl;
 
-    // TODO: создать цепь из генератора, выключателя и светильника
+    Switch swtch;
+    Light lght;
+    Generator gnr;
+    gnr.connect("A1", swtch, "A2");
+    gnr.connect("A2", lght, "A1");
+    swtch.connect("A1", lght, "A2");
+    cout << "Generator is" << (gnr.isConnectedTo(lght) ? " " : "not ") << "connected light" << endl;
+    cout << "Light is" << (lght.isConnectedTo(gnr) ? " " : "not ") << "connected to generator" << endl;
+    cout << "Generator is" << (gnr.isConnectedTo(swtch) ? " " : "not ") << "connected to switch" << endl;
+    cout << "Switch is" << (swtch.isConnectedTo(gnr) ? " " : "not ") << "connected to generator" << endl;
+    cout << "Switch is" << (swtch.isConnectedTo(lght) ? " " : "not ") << "connected to light" << endl;
+    cout << "Light is" << (lght.isConnectedTo(swtch) ? " " : "not ") << "connected to switch" << endl;
 
+    gnr.disconnect("A2");
+    cout << "Generator disconnected" << endl;
+    cout << "Generator is" << (gnr.isConnectedTo(lght) ? " " : " not ") << "connected light" << endl;
+    cout << "Light is" << (lght.isConnectedTo(gnr) ? " " : " not ") << "connected to generator" << endl;
     return 0;
 }
