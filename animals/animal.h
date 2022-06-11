@@ -4,7 +4,7 @@
 
 class Animal {
 public:
-	float weight;				// kg
+	float weight; // kg
 };
 
 class Mammal : public Animal {
