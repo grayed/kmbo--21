@@ -3,6 +3,8 @@
 
 using namespace std;
 
+A::A() : a_s("It`s a!"), foo(0) {};
+
 B::B() : b_s("It's b!") {
 	for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++)
 		data[i] = i * 2;
@@ -26,8 +28,8 @@ void printInternals(const B& b) {
 /// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 /// </summary>
 /// <returns>Значение B::b_s</returns>
-std::string A::getBString() const {
-	// TODO
+string A::getBString() const {
+	return *((const string*)(this + 1));
 }
 
 /// <summary>
@@ -37,7 +39,16 @@ std::string A::getBString() const {
 /// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 /// </summary>
 void A::printData(std::ostream& os) {
-	// TODO
+	os << "a_s is " << a_s << endl;
+	os << "b_s is " << getBString() << endl;
+	float* b_data = ((float*)(((string*)(this + 1)) + 1));
+	cout << "It`s b_data ";
+	for (auto i = 0; i < sizeof(b_data) - 1; ++i) {
+		cout << ' ' << b_data[i];
+	}
+	cout << endl;
+
+
 }
 
 /// <summary>
@@ -46,12 +57,23 @@ void A::printData(std::ostream& os) {
 /// с помощью виртуальных функций, предусмотренных в классе <see cref="A"/>.
 /// </summary>
 void A::printData2(std::ostream& os) {
-	// TODO
+	os << "a_s is " << a_s << endl;
+	os << "b_s is " << this->get_s() << endl;
+	float *b_data = this->getData();
+	cout << "It`s b_data ";
+	for (auto i = 0; i < sizeof(b_data) - 1; ++i) {
+		cout << ' ' << b_data[i];
+	}
+	cout << endl;
 }
 
 int main()
 {
 	B b;
 	printInternals(b);
+	cout << "\n";
+	b.printData(cout);
+	cout << "\n";
+	b.printData2(cout);
 	return 0;
 }
