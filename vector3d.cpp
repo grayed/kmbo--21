@@ -1,6 +1,6 @@
 #include "vector.h"
 
-bool test_vectors() {
+bool test_vector3() {
     auto vec_1 = vector3(1, 2, 3);
     auto vec_2 = vector3(3, 2, 1);
 
@@ -37,4 +37,4 @@ bool test_vectors() {
 }
 
 int main() {
-    return !test_vectors()
+    return !test_vector3()
