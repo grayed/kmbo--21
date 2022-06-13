@@ -22,4 +22,6 @@ int main(int argc, char** argv) {
 	printf("address of v1.data[2000]:  0x%p, size: %zu bytes\n", &v1.data[2000], sizeof(v1.data[2000]));
 
 	return 0;
+
+	cout << "frfrfrfr";
 }

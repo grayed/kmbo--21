@@ -1,32 +1,8 @@
 #include <iostream>
+#include "array.h"
 using namespace std;
 
-class Vector3d {
-    float data[3];
-public:
-    Vector3d() { data[2] = data[1] = data[0] = 0; }
-    Vector3d(float value) { data[2] = data[1] = data[0] = value; }
-    float  operator[] (int index) const { cerr << "const" << index << endl; return data[index]; }
-    float& operator[] (int index)       { cerr << "non-const" << index << endl; return data[index]; }
-};
 
-template<size_t Dimensions>
-class Vector {
-    float data[Dimensions];
-public:
-    Vector(float value = 0) { for (size_t i = 0; i < Dimensions; i++) data[i] = value;  }
-    float  operator[] (size_t index) const { return data[index]; }
-    float& operator[] (size_t index)       { return data[index]; }
-};
-
-// Написать шаблонные функции:
-//   1. operator + (реализация внутри класса)
-//   2. operator * (вектор на скаляр и скаляр на вектор; реализация вне класса)
-//   3. Нахождение среднего для двух векторов (реализация вне класса)
-
-ostream& operator <<(ostream& os, const Vector3d& v) {
-    return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }";
-}
 
 template<size_t Dimensions>
 ostream& operator <<(ostream& os, const Vector<Dimensions>& v) {
@@ -36,10 +12,39 @@ ostream& operator <<(ostream& os, const Vector<Dimensions>& v) {
     return os << " }";
 }
 
-int main() {
-    Vector<12> v1;
-    v1[1] = v1[2] = 54;
-    Vector<12> v2 = v1;
-    cout << v2 << endl;
-	return 0;
+ostream& operator <<(ostream& os, const Vector3d& v) {
+    return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }";
 }
+
+
+
+
+int main() {
+    Vector3d v1(1, 2, 3), v2(1), v3 = v1 + v2, v4 = v2 * 6, v5 = v1 - v2, v6 = -v1;
+
+    Vector3d srVect = v1 & v2;
+
+    cout << v3 << endl;
+    cout << v4 << endl;
+    cout << v5 << endl;
+    cout << v6 << endl;
+    cout << srVect;
+    bool a = test_vector3d(v3, v2, v5, '-');
+    cout << a<<endl;
+    bool b = test_vector3d(v2, 6, v4, '*');
+    cout << b<<endl;
+    bool c = test_vector3d(v1, v6, '-');
+    cout << c << endl;
+
+  
+
+
+
+
+
+
+
+
+
+}
+
