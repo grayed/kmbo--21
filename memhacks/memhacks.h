@@ -1,9 +1,10 @@
-﻿#include <ostream>
+#pragma once
+using namespace std;
+#include <ostream>
 #include <string>
 #include <sstream>
 #include <iostream>
 
-using namespace std;
 class B;
 
 class A {
@@ -12,20 +13,19 @@ class A {
 	friend void printInternals(const B&);
 	friend void printInternals(B&);
 public:
-	A();
+	A() : a_s("It's a!"), foo(0) { }
 
-	string getAString() const { return *((const std::string*)((const float*)(this + 1) - 12)); }
+	string getAString() const { return *((const string*)((const float*)(this + 1) - 12)); } 
 
 	string getBString() const {
-		return  *((const std::string*)(this + 1));
+		return  *((const string*)(this + 1));
 	}
 
 
-	//доступ к элементам массива
 	float getdataFloat(int i) { return ((float*)(this + 2) - 4)[i]; }
 
-	virtual std::string About_A() const {
-		std::stringstream ss;
+	virtual string about_A() const {
+		stringstream ss;
 		ss << "String A: " << a_s;
 		return ss.str();
 	}
@@ -34,21 +34,18 @@ public:
 
 
 class B : public A {
-	std::string b_s;
+	string b_s;
 	float data[7];
 	friend void printInternals(const B&);
-	friend void printInternals(B&);// Дружественный метод класса
+	friend void printInternals(B&);
 public:
-	B();
-	/// <summary>
-	/// Извлекает значение <see cref="B::b_s"/> из текущего объекта.
-	/// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
-	/// </summary>
-	/// <returns>Значение B::b_s</returns>
+	B() : b_s("It's b!") {
+		for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++)
+			data[i] = (float)i * 2;
+	}
 
-
-	virtual std::string About_B() {
-		std::stringstream ss;
+	virtual string about_B() {
+		stringstream ss;
 		ss << "String B: " << b_s << endl;
 		ss << "Data : ";
 		for (int i = 0; i < 7; i++) {
@@ -58,11 +55,22 @@ public:
 		return ss.str();
 	}
 
+	void printData2(std::ostream& os) {
+		os << about_A();
+		os << about_B();
+	}
+	void printData(std::ostream& os) {
+		os << "A string is '" << getAString() << "', B string is '" << getBString() << "'" << endl;
+		for (int i = 0; i < 7; ++i) os << getdataFloat(i) << " ";
+	}
 
-
-
-	void printData2(std::ostream& os);
-	void printData(std::ostream& os);
 };
 
-void printInternals(B& b){}
+void printInternals(B& b) {
+	const A* a = &b, * a2 = a + 1; // указатель А* сомтрит на объект производного класса
+	cout << "Address of b is 0x" << &b << ", address of b.a_s is 0x" << &b.a_s << ", address of b.b_s is 0x" << &b.b_s << endl;
+	cout << "Size of A is " << sizeof(A) << ", size of B is " << sizeof(B) << endl;
+	cout << "B string is '" << b.getBString() << "'" << endl;
+	cout << "B data: "; b.printData(std::cout); cout << endl;
+	cout << "B data: "; b.printData2(std::cout); cout << endl;
+}
