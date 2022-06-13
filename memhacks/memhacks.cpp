@@ -8,13 +8,15 @@ B::B() : b_s("It's b!") {
 		data[i] = i * 2;
 }
 
+A::A() : a_s("It's a!") {}
+
 /// <summary>
 /// Выводит на экран адреса и размеры объекта типа <see cref="B"/> и его содержимого.
 /// Можно модифицировать для собственных отладочных целей.
 /// </summary>
 /// <param name="b">Изучаемый объект</param>
 void printInternals(const B& b) {
-	const A* a = &b, * a2 = a + 1;
+	const A* a = &b; // *a2 = a + 1;
 	cout << "Address of b is 0x" << &b << ", address of b.a_s is 0x" << &b.a_s << ", address of b.b_s is 0x" << &b.b_s << endl;
 	cout << "Size of A is " << sizeof(A) << ", size of B is " << sizeof(B) << endl;
 	cout << "B string is '" << b.getBString() << "'" << endl;
@@ -26,9 +28,8 @@ void printInternals(const B& b) {
 /// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 /// </summary>
 /// <returns>Значение B::b_s</returns>
-std::string A::getBString() const {
-	// TODO
-}
+std::string A::getBString() const { return *((std::string const*)(this + 1)); }
+
 
 /// <summary>
 /// Извлекает значения <see cref="A::a_s"/>, <see cref="B::b_s"/> и <see cref="B::data"/>
@@ -36,8 +37,14 @@ std::string A::getBString() const {
 /// с помощью адресной арифметики.
 /// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 /// </summary>
+/// 
 void A::printData(std::ostream& os) {
-	// TODO
+	 os << "a_s: " << a_s << endl;
+	 os << "b_s: " << getBString() << endl;
+	 os << "b_data: ";
+	 const float* bData = (const float*)( ((const string*)(this + 1)) + 1 );
+	 for (auto i = 0; i < 7; i++) { os << *(bData + i) << " "; }
+	 os << endl;
 }
 
 /// <summary>
@@ -46,12 +53,27 @@ void A::printData(std::ostream& os) {
 /// с помощью виртуальных функций, предусмотренных в классе <see cref="A"/>.
 /// </summary>
 void A::printData2(std::ostream& os) {
-	// TODO
+	os << "a_s: " << a_s << endl;
+	os << "b_s: " << getBstr() << endl;
+	os << "b_data: ";
+	for (auto i = 0; i < 7; i++)
+	{
+		os << *(getBData() + i)<< " ";
+	}
+	os << endl;
 }
 
 int main()
 {
 	B b;
-	printInternals(b);
+	cout << "this is printData:" << endl;
+	b.printData(cout);
+
+	cout << endl;
+
+	cout << "this is printData2:" << endl;
+	b.printData2(cout);
+
+
 	return 0;
 }
