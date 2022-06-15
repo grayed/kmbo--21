@@ -1,47 +1,62 @@
 [
 {
-  "directory": "D:/Programms/C++/kmbo--21/build/classwork",
-  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/newdemo.dir/newdemo.cpp.obj -c D:/Programms/C++/kmbo--21/classwork/newdemo.cpp",
-  "file": "D:/Programms/C++/kmbo--21/classwork/newdemo.cpp"
+  "directory": "D:/Programms/C++/kmbo--21-1/build/classwork",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/handmade_containers.dir/handmade.cpp.obj -c D:/Programms/C++/kmbo--21-1/classwork/handmade.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/classwork/handmade.cpp"
 },
 {
-  "directory": "D:/Programms/C++/kmbo--21/build/classwork",
-  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/classwork.dir/main.cpp.obj -c D:/Programms/C++/kmbo--21/classwork/main.cpp",
-  "file": "D:/Programms/C++/kmbo--21/classwork/main.cpp"
+  "directory": "D:/Programms/C++/kmbo--21-1/build/classwork",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/newdemo.dir/newdemo.cpp.obj -c D:/Programms/C++/kmbo--21-1/classwork/newdemo.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/classwork/newdemo.cpp"
 },
 {
-  "directory": "D:/Programms/C++/kmbo--21/build/classwork",
-  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/vehicles.dir/vehicle.cpp.obj -c D:/Programms/C++/kmbo--21/classwork/vehicle.cpp",
-  "file": "D:/Programms/C++/kmbo--21/classwork/vehicle.cpp"
+  "directory": "D:/Programms/C++/kmbo--21-1/build/classwork",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/classwork.dir/main.cpp.obj -c D:/Programms/C++/kmbo--21-1/classwork/main.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/classwork/main.cpp"
 },
 {
-  "directory": "D:/Programms/C++/kmbo--21/build/classwork",
-  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/memarith.dir/memarith.cpp.obj -c D:/Programms/C++/kmbo--21/classwork/memarith.cpp",
-  "file": "D:/Programms/C++/kmbo--21/classwork/memarith.cpp"
+  "directory": "D:/Programms/C++/kmbo--21-1/build/classwork",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/containers.dir/containers.cpp.obj -c D:/Programms/C++/kmbo--21-1/classwork/containers.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/classwork/containers.cpp"
 },
 {
-  "directory": "D:/Programms/C++/kmbo--21/build/animals",
-  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/animals.dir/animal.cpp.obj -c D:/Programms/C++/kmbo--21/animals/animal.cpp",
-  "file": "D:/Programms/C++/kmbo--21/animals/animal.cpp"
+  "directory": "D:/Programms/C++/kmbo--21-1/build/classwork",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/vehicles.dir/vehicle.cpp.obj -c D:/Programms/C++/kmbo--21-1/classwork/vehicle.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/classwork/vehicle.cpp"
 },
 {
-  "directory": "D:/Programms/C++/kmbo--21/build/memhacks",
-  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/memhacks.dir/memhacks.cpp.obj -c D:/Programms/C++/kmbo--21/memhacks/memhacks.cpp",
-  "file": "D:/Programms/C++/kmbo--21/memhacks/memhacks.cpp"
+  "directory": "D:/Programms/C++/kmbo--21-1/build/classwork",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/memarith.dir/memarith.cpp.obj -c D:/Programms/C++/kmbo--21-1/classwork/memarith.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/classwork/memarith.cpp"
 },
 {
-  "directory": "D:/Programms/C++/kmbo--21/build/electricity",
-  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/electricity.dir/electricity.cpp.obj -c D:/Programms/C++/kmbo--21/electricity/electricity.cpp",
-  "file": "D:/Programms/C++/kmbo--21/electricity/electricity.cpp"
+  "directory": "D:/Programms/C++/kmbo--21-1/build/classwork",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/tree.dir/tree.cpp.obj -c D:/Programms/C++/kmbo--21-1/classwork/tree.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/classwork/tree.cpp"
 },
 {
-  "directory": "D:/Programms/C++/kmbo--21/build/vectors",
-  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/vectors.dir/vector.cpp.obj -c D:/Programms/C++/kmbo--21/vectors/vector.cpp",
-  "file": "D:/Programms/C++/kmbo--21/vectors/vector.cpp"
+  "directory": "D:/Programms/C++/kmbo--21-1/build/animals",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/animals.dir/animal.cpp.obj -c D:/Programms/C++/kmbo--21-1/animals/animal.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/animals/animal.cpp"
 },
 {
-  "directory": "D:/Programms/C++/kmbo--21/build/vectors",
-  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/arrays.dir/array.cpp.obj -c D:/Programms/C++/kmbo--21/vectors/array.cpp",
-  "file": "D:/Programms/C++/kmbo--21/vectors/array.cpp"
+  "directory": "D:/Programms/C++/kmbo--21-1/build/memhacks",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/memhacks.dir/memhacks.cpp.obj -c D:/Programms/C++/kmbo--21-1/memhacks/memhacks.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/memhacks/memhacks.cpp"
+},
+{
+  "directory": "D:/Programms/C++/kmbo--21-1/build/electricity",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/electricity.dir/electricity.cpp.obj -c D:/Programms/C++/kmbo--21-1/electricity/electricity.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/electricity/electricity.cpp"
+},
+{
+  "directory": "D:/Programms/C++/kmbo--21-1/build/vectors",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/vectors.dir/vector.cpp.obj -c D:/Programms/C++/kmbo--21-1/vectors/vector.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/vectors/vector.cpp"
+},
+{
+  "directory": "D:/Programms/C++/kmbo--21-1/build/vectors",
+  "command": "C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe   -g -o CMakeFiles/arrays.dir/array.cpp.obj -c D:/Programms/C++/kmbo--21-1/vectors/array.cpp",
+  "file": "D:/Programms/C++/kmbo--21-1/vectors/array.cpp"
 }
 ]

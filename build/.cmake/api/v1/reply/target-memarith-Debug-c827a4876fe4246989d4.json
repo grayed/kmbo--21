@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "classwork/newdemo.exe"
+			"path" : "classwork/memarith.exe"
 		},
 		{
-			"path" : "classwork/newdemo.pdb"
+			"path" : "classwork/memarith.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 4,
+				"line" : 7,
 				"parent" : 0
 			}
 		]
@@ -48,7 +48,7 @@
 			]
 		}
 	],
-	"id" : "newdemo::@3de3d43671564998e741",
+	"id" : "memarith::@3de3d43671564998e741",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -68,8 +68,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "newdemo",
-	"nameOnDisk" : "newdemo.exe",
+	"name" : "memarith",
+	"nameOnDisk" : "memarith.exe",
 	"paths" : 
 	{
 		"build" : "classwork",
@@ -97,12 +97,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "classwork/newdemo.cpp",
+			"path" : "classwork/memarith.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "classwork/newdemo.h",
+			"path" : "classwork/memarith.h",
 			"sourceGroupIndex" : 1
 		}
 	],

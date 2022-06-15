@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/Programms/C++/kmbo--21/classwork/newdemo.cpp" "classwork/CMakeFiles/newdemo.dir/newdemo.cpp.obj" "gcc" "classwork/CMakeFiles/newdemo.dir/newdemo.cpp.obj.d"
+  "D:/Programms/C++/kmbo--21-1/classwork/newdemo.cpp" "classwork/CMakeFiles/newdemo.dir/newdemo.cpp.obj" "gcc" "classwork/CMakeFiles/newdemo.dir/newdemo.cpp.obj.d"
   )
 
 # Targets to which this target links.

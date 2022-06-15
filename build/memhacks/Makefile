@@ -57,10 +57,10 @@ RM = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21
+CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21/build
+CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21-1/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles D:/Programms/C++/kmbo--21/build/memhacks//CMakeFiles/progress.marks
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 0
+	cd D:/Programms/C++/kmbo--21-1/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21-1/build/CMakeFiles D:/Programms/C++/kmbo--21-1/build/memhacks//CMakeFiles/progress.marks
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21-1/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/clean
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/preinstall
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/preinstall
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd D:/Programms/C++/kmbo--21-1/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 memhacks/CMakeFiles/memhacks.dir/rule:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/CMakeFiles/memhacks.dir/rule
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 memhacks/CMakeFiles/memhacks.dir/rule
 .PHONY : memhacks/CMakeFiles/memhacks.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ memhacks: memhacks/CMakeFiles/memhacks.dir/rule
 
 # fast build rule for target.
 memhacks/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/build
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/build
 .PHONY : memhacks/fast
 
 memhacks.obj: memhacks.cpp.obj
@@ -135,7 +135,7 @@ memhacks.obj: memhacks.cpp.obj
 
 # target to build an object file
 memhacks.cpp.obj:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.obj
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.obj
 .PHONY : memhacks.cpp.obj
 
 memhacks.i: memhacks.cpp.i
@@ -143,7 +143,7 @@ memhacks.i: memhacks.cpp.i
 
 # target to preprocess a source file
 memhacks.cpp.i:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.i
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.i
 .PHONY : memhacks.cpp.i
 
 memhacks.s: memhacks.cpp.s
@@ -151,7 +151,7 @@ memhacks.s: memhacks.cpp.s
 
 # target to generate assembly for a file
 memhacks.cpp.s:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.s
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f memhacks/CMakeFiles/memhacks.dir/build.make memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.s
 .PHONY : memhacks.cpp.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd D:/Programms/C++/kmbo--21-1/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

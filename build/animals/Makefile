@@ -57,10 +57,10 @@ RM = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21
+CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21/build
+CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21-1/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles D:/Programms/C++/kmbo--21/build/animals//CMakeFiles/progress.marks
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 animals/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 0
+	cd D:/Programms/C++/kmbo--21-1/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21-1/build/CMakeFiles D:/Programms/C++/kmbo--21-1/build/animals//CMakeFiles/progress.marks
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 animals/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21-1/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 animals/clean
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 animals/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 animals/preinstall
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 animals/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 animals/preinstall
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 animals/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd D:/Programms/C++/kmbo--21-1/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 animals/CMakeFiles/animals.dir/rule:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 animals/CMakeFiles/animals.dir/rule
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 animals/CMakeFiles/animals.dir/rule
 .PHONY : animals/CMakeFiles/animals.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ animals: animals/CMakeFiles/animals.dir/rule
 
 # fast build rule for target.
 animals/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f animals/CMakeFiles/animals.dir/build.make animals/CMakeFiles/animals.dir/build
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f animals/CMakeFiles/animals.dir/build.make animals/CMakeFiles/animals.dir/build
 .PHONY : animals/fast
 
 animal.obj: animal.cpp.obj
@@ -135,7 +135,7 @@ animal.obj: animal.cpp.obj
 
 # target to build an object file
 animal.cpp.obj:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f animals/CMakeFiles/animals.dir/build.make animals/CMakeFiles/animals.dir/animal.cpp.obj
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f animals/CMakeFiles/animals.dir/build.make animals/CMakeFiles/animals.dir/animal.cpp.obj
 .PHONY : animal.cpp.obj
 
 animal.i: animal.cpp.i
@@ -143,7 +143,7 @@ animal.i: animal.cpp.i
 
 # target to preprocess a source file
 animal.cpp.i:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f animals/CMakeFiles/animals.dir/build.make animals/CMakeFiles/animals.dir/animal.cpp.i
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f animals/CMakeFiles/animals.dir/build.make animals/CMakeFiles/animals.dir/animal.cpp.i
 .PHONY : animal.cpp.i
 
 animal.s: animal.cpp.s
@@ -151,7 +151,7 @@ animal.s: animal.cpp.s
 
 # target to generate assembly for a file
 animal.cpp.s:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f animals/CMakeFiles/animals.dir/build.make animals/CMakeFiles/animals.dir/animal.cpp.s
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f animals/CMakeFiles/animals.dir/build.make animals/CMakeFiles/animals.dir/animal.cpp.s
 .PHONY : animal.cpp.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd D:/Programms/C++/kmbo--21-1/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

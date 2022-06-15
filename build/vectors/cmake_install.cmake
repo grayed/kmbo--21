@@ -1,4 +1,4 @@
-# Install script for directory: D:/Programms/C++/kmbo--21/vectors
+# Install script for directory: D:/Programms/C++/kmbo--21-1/vectors
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

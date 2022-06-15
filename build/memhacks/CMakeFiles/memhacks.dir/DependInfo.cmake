@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/Programms/C++/kmbo--21/memhacks/memhacks.cpp" "memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.obj" "gcc" "memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.obj.d"
+  "D:/Programms/C++/kmbo--21-1/memhacks/memhacks.cpp" "memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.obj" "gcc" "memhacks/CMakeFiles/memhacks.dir/memhacks.cpp.obj.d"
   )
 
 # Targets to which this target links.

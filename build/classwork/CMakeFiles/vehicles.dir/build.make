@@ -53,10 +53,10 @@ RM = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21
+CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21/build
+CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21-1/build
 
 # Include any dependencies generated for this target.
 include classwork/CMakeFiles/vehicles.dir/depend.make
@@ -72,16 +72,16 @@ include classwork/CMakeFiles/vehicles.dir/flags.make
 classwork/CMakeFiles/vehicles.dir/vehicle.cpp.obj: classwork/CMakeFiles/vehicles.dir/flags.make
 classwork/CMakeFiles/vehicles.dir/vehicle.cpp.obj: ../classwork/vehicle.cpp
 classwork/CMakeFiles/vehicles.dir/vehicle.cpp.obj: classwork/CMakeFiles/vehicles.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object classwork/CMakeFiles/vehicles.dir/vehicle.cpp.obj"
-	cd D:/Programms/C++/kmbo--21/build/classwork && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT classwork/CMakeFiles/vehicles.dir/vehicle.cpp.obj -MF CMakeFiles/vehicles.dir/vehicle.cpp.obj.d -o CMakeFiles/vehicles.dir/vehicle.cpp.obj -c D:/Programms/C++/kmbo--21/classwork/vehicle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Programms/C++/kmbo--21-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object classwork/CMakeFiles/vehicles.dir/vehicle.cpp.obj"
+	cd D:/Programms/C++/kmbo--21-1/build/classwork && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT classwork/CMakeFiles/vehicles.dir/vehicle.cpp.obj -MF CMakeFiles/vehicles.dir/vehicle.cpp.obj.d -o CMakeFiles/vehicles.dir/vehicle.cpp.obj -c D:/Programms/C++/kmbo--21-1/classwork/vehicle.cpp
 
 classwork/CMakeFiles/vehicles.dir/vehicle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vehicles.dir/vehicle.cpp.i"
-	cd D:/Programms/C++/kmbo--21/build/classwork && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:/Programms/C++/kmbo--21/classwork/vehicle.cpp > CMakeFiles/vehicles.dir/vehicle.cpp.i
+	cd D:/Programms/C++/kmbo--21-1/build/classwork && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:/Programms/C++/kmbo--21-1/classwork/vehicle.cpp > CMakeFiles/vehicles.dir/vehicle.cpp.i
 
 classwork/CMakeFiles/vehicles.dir/vehicle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vehicles.dir/vehicle.cpp.s"
-	cd D:/Programms/C++/kmbo--21/build/classwork && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Programms/C++/kmbo--21/classwork/vehicle.cpp -o CMakeFiles/vehicles.dir/vehicle.cpp.s
+	cd D:/Programms/C++/kmbo--21-1/build/classwork && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Programms/C++/kmbo--21-1/classwork/vehicle.cpp -o CMakeFiles/vehicles.dir/vehicle.cpp.s
 
 # Object files for target vehicles
 vehicles_OBJECTS = \
@@ -94,20 +94,20 @@ classwork/vehicles.exe: classwork/CMakeFiles/vehicles.dir/vehicle.cpp.obj
 classwork/vehicles.exe: classwork/CMakeFiles/vehicles.dir/build.make
 classwork/vehicles.exe: classwork/CMakeFiles/vehicles.dir/linklibs.rsp
 classwork/vehicles.exe: classwork/CMakeFiles/vehicles.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable vehicles.exe"
-	cd D:/Programms/C++/kmbo--21/build/classwork && "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/vehicles.dir/objects.a
-	cd D:/Programms/C++/kmbo--21/build/classwork && C:/Users/Ilya/gcc/bin/ar.exe cr CMakeFiles/vehicles.dir/objects.a @CMakeFiles/vehicles.dir/objects1.rsp
-	cd D:/Programms/C++/kmbo--21/build/classwork && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles/vehicles.dir/objects.a -Wl,--no-whole-archive -o vehicles.exe -Wl,--out-implib,libvehicles.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/vehicles.dir/linklibs.rsp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Programms/C++/kmbo--21-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable vehicles.exe"
+	cd D:/Programms/C++/kmbo--21-1/build/classwork && "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/vehicles.dir/objects.a
+	cd D:/Programms/C++/kmbo--21-1/build/classwork && C:/Users/Ilya/gcc/bin/ar.exe cr CMakeFiles/vehicles.dir/objects.a @CMakeFiles/vehicles.dir/objects1.rsp
+	cd D:/Programms/C++/kmbo--21-1/build/classwork && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles/vehicles.dir/objects.a -Wl,--no-whole-archive -o vehicles.exe -Wl,--out-implib,libvehicles.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/vehicles.dir/linklibs.rsp
 
 # Rule to build all files generated by this target.
 classwork/CMakeFiles/vehicles.dir/build: classwork/vehicles.exe
 .PHONY : classwork/CMakeFiles/vehicles.dir/build
 
 classwork/CMakeFiles/vehicles.dir/clean:
-	cd D:/Programms/C++/kmbo--21/build/classwork && $(CMAKE_COMMAND) -P CMakeFiles/vehicles.dir/cmake_clean.cmake
+	cd D:/Programms/C++/kmbo--21-1/build/classwork && $(CMAKE_COMMAND) -P CMakeFiles/vehicles.dir/cmake_clean.cmake
 .PHONY : classwork/CMakeFiles/vehicles.dir/clean
 
 classwork/CMakeFiles/vehicles.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" D:/Programms/C++/kmbo--21 D:/Programms/C++/kmbo--21/classwork D:/Programms/C++/kmbo--21/build D:/Programms/C++/kmbo--21/build/classwork D:/Programms/C++/kmbo--21/build/classwork/CMakeFiles/vehicles.dir/DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" D:/Programms/C++/kmbo--21-1 D:/Programms/C++/kmbo--21-1/classwork D:/Programms/C++/kmbo--21-1/build D:/Programms/C++/kmbo--21-1/build/classwork D:/Programms/C++/kmbo--21-1/build/classwork/CMakeFiles/vehicles.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : classwork/CMakeFiles/vehicles.dir/depend
 

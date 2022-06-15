@@ -1,4 +1,4 @@
-# Install script for directory: D:/Programms/C++/kmbo--21/animals
+# Install script for directory: D:/Programms/C++/kmbo--21-1/animals
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

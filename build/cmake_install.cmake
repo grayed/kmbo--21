@@ -1,4 +1,4 @@
-# Install script for directory: D:/Programms/C++/kmbo--21
+# Install script for directory: D:/Programms/C++/kmbo--21-1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/Programms/C++/kmbo--21/build/classwork/cmake_install.cmake")
-  include("D:/Programms/C++/kmbo--21/build/animals/cmake_install.cmake")
-  include("D:/Programms/C++/kmbo--21/build/memhacks/cmake_install.cmake")
-  include("D:/Programms/C++/kmbo--21/build/electricity/cmake_install.cmake")
-  include("D:/Programms/C++/kmbo--21/build/vectors/cmake_install.cmake")
+  include("D:/Programms/C++/kmbo--21-1/build/classwork/cmake_install.cmake")
+  include("D:/Programms/C++/kmbo--21-1/build/animals/cmake_install.cmake")
+  include("D:/Programms/C++/kmbo--21-1/build/memhacks/cmake_install.cmake")
+  include("D:/Programms/C++/kmbo--21-1/build/electricity/cmake_install.cmake")
+  include("D:/Programms/C++/kmbo--21-1/build/vectors/cmake_install.cmake")
 
 endif()
 
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Programms/C++/kmbo--21/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Programms/C++/kmbo--21-1/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

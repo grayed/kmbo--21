@@ -57,10 +57,10 @@ RM = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21
+CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21/build
+CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21-1/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles D:/Programms/C++/kmbo--21/build/classwork//CMakeFiles/progress.marks
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21/build/CMakeFiles 0
+	cd D:/Programms/C++/kmbo--21-1/build && $(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21-1/build/CMakeFiles D:/Programms/C++/kmbo--21-1/build/classwork//CMakeFiles/progress.marks
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:/Programms/C++/kmbo--21-1/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/clean
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,36 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/preinstall
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/preinstall
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd D:/Programms/C++/kmbo--21-1/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
+classwork/CMakeFiles/handmade_containers.dir/rule:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/handmade_containers.dir/rule
+.PHONY : classwork/CMakeFiles/handmade_containers.dir/rule
+
+# Convenience name for target.
+handmade_containers: classwork/CMakeFiles/handmade_containers.dir/rule
+.PHONY : handmade_containers
+
+# fast build rule for target.
+handmade_containers/fast:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/handmade_containers.dir/build.make classwork/CMakeFiles/handmade_containers.dir/build
+.PHONY : handmade_containers/fast
+
+# Convenience name for target.
 classwork/CMakeFiles/newdemo.dir/rule:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/newdemo.dir/rule
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/newdemo.dir/rule
 .PHONY : classwork/CMakeFiles/newdemo.dir/rule
 
 # Convenience name for target.
@@ -127,12 +141,12 @@ newdemo: classwork/CMakeFiles/newdemo.dir/rule
 
 # fast build rule for target.
 newdemo/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/build
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/build
 .PHONY : newdemo/fast
 
 # Convenience name for target.
 classwork/CMakeFiles/classwork.dir/rule:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/classwork.dir/rule
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/classwork.dir/rule
 .PHONY : classwork/CMakeFiles/classwork.dir/rule
 
 # Convenience name for target.
@@ -141,12 +155,26 @@ classwork: classwork/CMakeFiles/classwork.dir/rule
 
 # fast build rule for target.
 classwork/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/classwork.dir/build.make classwork/CMakeFiles/classwork.dir/build
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/classwork.dir/build.make classwork/CMakeFiles/classwork.dir/build
 .PHONY : classwork/fast
 
 # Convenience name for target.
+classwork/CMakeFiles/containers.dir/rule:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/containers.dir/rule
+.PHONY : classwork/CMakeFiles/containers.dir/rule
+
+# Convenience name for target.
+containers: classwork/CMakeFiles/containers.dir/rule
+.PHONY : containers
+
+# fast build rule for target.
+containers/fast:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/containers.dir/build.make classwork/CMakeFiles/containers.dir/build
+.PHONY : containers/fast
+
+# Convenience name for target.
 classwork/CMakeFiles/vehicles.dir/rule:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/vehicles.dir/rule
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/vehicles.dir/rule
 .PHONY : classwork/CMakeFiles/vehicles.dir/rule
 
 # Convenience name for target.
@@ -155,12 +183,12 @@ vehicles: classwork/CMakeFiles/vehicles.dir/rule
 
 # fast build rule for target.
 vehicles/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/vehicles.dir/build.make classwork/CMakeFiles/vehicles.dir/build
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/vehicles.dir/build.make classwork/CMakeFiles/vehicles.dir/build
 .PHONY : vehicles/fast
 
 # Convenience name for target.
 classwork/CMakeFiles/memarith.dir/rule:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/memarith.dir/rule
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/memarith.dir/rule
 .PHONY : classwork/CMakeFiles/memarith.dir/rule
 
 # Convenience name for target.
@@ -169,15 +197,77 @@ memarith: classwork/CMakeFiles/memarith.dir/rule
 
 # fast build rule for target.
 memarith/fast:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/build
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/build
 .PHONY : memarith/fast
+
+# Convenience name for target.
+classwork/CMakeFiles/tree.dir/rule:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 classwork/CMakeFiles/tree.dir/rule
+.PHONY : classwork/CMakeFiles/tree.dir/rule
+
+# Convenience name for target.
+tree: classwork/CMakeFiles/tree.dir/rule
+.PHONY : tree
+
+# fast build rule for target.
+tree/fast:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/tree.dir/build.make classwork/CMakeFiles/tree.dir/build
+.PHONY : tree/fast
+
+containers.obj: containers.cpp.obj
+.PHONY : containers.obj
+
+# target to build an object file
+containers.cpp.obj:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/containers.dir/build.make classwork/CMakeFiles/containers.dir/containers.cpp.obj
+.PHONY : containers.cpp.obj
+
+containers.i: containers.cpp.i
+.PHONY : containers.i
+
+# target to preprocess a source file
+containers.cpp.i:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/containers.dir/build.make classwork/CMakeFiles/containers.dir/containers.cpp.i
+.PHONY : containers.cpp.i
+
+containers.s: containers.cpp.s
+.PHONY : containers.s
+
+# target to generate assembly for a file
+containers.cpp.s:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/containers.dir/build.make classwork/CMakeFiles/containers.dir/containers.cpp.s
+.PHONY : containers.cpp.s
+
+handmade.obj: handmade.cpp.obj
+.PHONY : handmade.obj
+
+# target to build an object file
+handmade.cpp.obj:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/handmade_containers.dir/build.make classwork/CMakeFiles/handmade_containers.dir/handmade.cpp.obj
+.PHONY : handmade.cpp.obj
+
+handmade.i: handmade.cpp.i
+.PHONY : handmade.i
+
+# target to preprocess a source file
+handmade.cpp.i:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/handmade_containers.dir/build.make classwork/CMakeFiles/handmade_containers.dir/handmade.cpp.i
+.PHONY : handmade.cpp.i
+
+handmade.s: handmade.cpp.s
+.PHONY : handmade.s
+
+# target to generate assembly for a file
+handmade.cpp.s:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/handmade_containers.dir/build.make classwork/CMakeFiles/handmade_containers.dir/handmade.cpp.s
+.PHONY : handmade.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/classwork.dir/build.make classwork/CMakeFiles/classwork.dir/main.cpp.obj
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/classwork.dir/build.make classwork/CMakeFiles/classwork.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -185,7 +275,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/classwork.dir/build.make classwork/CMakeFiles/classwork.dir/main.cpp.i
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/classwork.dir/build.make classwork/CMakeFiles/classwork.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -193,7 +283,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/classwork.dir/build.make classwork/CMakeFiles/classwork.dir/main.cpp.s
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/classwork.dir/build.make classwork/CMakeFiles/classwork.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 memarith.obj: memarith.cpp.obj
@@ -201,7 +291,7 @@ memarith.obj: memarith.cpp.obj
 
 # target to build an object file
 memarith.cpp.obj:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/memarith.cpp.obj
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/memarith.cpp.obj
 .PHONY : memarith.cpp.obj
 
 memarith.i: memarith.cpp.i
@@ -209,7 +299,7 @@ memarith.i: memarith.cpp.i
 
 # target to preprocess a source file
 memarith.cpp.i:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/memarith.cpp.i
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/memarith.cpp.i
 .PHONY : memarith.cpp.i
 
 memarith.s: memarith.cpp.s
@@ -217,7 +307,7 @@ memarith.s: memarith.cpp.s
 
 # target to generate assembly for a file
 memarith.cpp.s:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/memarith.cpp.s
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/memarith.dir/build.make classwork/CMakeFiles/memarith.dir/memarith.cpp.s
 .PHONY : memarith.cpp.s
 
 newdemo.obj: newdemo.cpp.obj
@@ -225,7 +315,7 @@ newdemo.obj: newdemo.cpp.obj
 
 # target to build an object file
 newdemo.cpp.obj:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/newdemo.cpp.obj
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/newdemo.cpp.obj
 .PHONY : newdemo.cpp.obj
 
 newdemo.i: newdemo.cpp.i
@@ -233,7 +323,7 @@ newdemo.i: newdemo.cpp.i
 
 # target to preprocess a source file
 newdemo.cpp.i:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/newdemo.cpp.i
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/newdemo.cpp.i
 .PHONY : newdemo.cpp.i
 
 newdemo.s: newdemo.cpp.s
@@ -241,15 +331,39 @@ newdemo.s: newdemo.cpp.s
 
 # target to generate assembly for a file
 newdemo.cpp.s:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/newdemo.cpp.s
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/newdemo.dir/build.make classwork/CMakeFiles/newdemo.dir/newdemo.cpp.s
 .PHONY : newdemo.cpp.s
+
+tree.obj: tree.cpp.obj
+.PHONY : tree.obj
+
+# target to build an object file
+tree.cpp.obj:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/tree.dir/build.make classwork/CMakeFiles/tree.dir/tree.cpp.obj
+.PHONY : tree.cpp.obj
+
+tree.i: tree.cpp.i
+.PHONY : tree.i
+
+# target to preprocess a source file
+tree.cpp.i:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/tree.dir/build.make classwork/CMakeFiles/tree.dir/tree.cpp.i
+.PHONY : tree.cpp.i
+
+tree.s: tree.cpp.s
+.PHONY : tree.s
+
+# target to generate assembly for a file
+tree.cpp.s:
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/tree.dir/build.make classwork/CMakeFiles/tree.dir/tree.cpp.s
+.PHONY : tree.cpp.s
 
 vehicle.obj: vehicle.cpp.obj
 .PHONY : vehicle.obj
 
 # target to build an object file
 vehicle.cpp.obj:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/vehicles.dir/build.make classwork/CMakeFiles/vehicles.dir/vehicle.cpp.obj
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/vehicles.dir/build.make classwork/CMakeFiles/vehicles.dir/vehicle.cpp.obj
 .PHONY : vehicle.cpp.obj
 
 vehicle.i: vehicle.cpp.i
@@ -257,7 +371,7 @@ vehicle.i: vehicle.cpp.i
 
 # target to preprocess a source file
 vehicle.cpp.i:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/vehicles.dir/build.make classwork/CMakeFiles/vehicles.dir/vehicle.cpp.i
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/vehicles.dir/build.make classwork/CMakeFiles/vehicles.dir/vehicle.cpp.i
 .PHONY : vehicle.cpp.i
 
 vehicle.s: vehicle.cpp.s
@@ -265,7 +379,7 @@ vehicle.s: vehicle.cpp.s
 
 # target to generate assembly for a file
 vehicle.cpp.s:
-	cd D:/Programms/C++/kmbo--21/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/vehicles.dir/build.make classwork/CMakeFiles/vehicles.dir/vehicle.cpp.s
+	cd D:/Programms/C++/kmbo--21-1/build && $(MAKE) $(MAKESILENT) -f classwork/CMakeFiles/vehicles.dir/build.make classwork/CMakeFiles/vehicles.dir/vehicle.cpp.s
 .PHONY : vehicle.cpp.s
 
 # Help Target
@@ -277,9 +391,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... classwork"
+	@echo "... containers"
+	@echo "... handmade_containers"
 	@echo "... memarith"
 	@echo "... newdemo"
+	@echo "... tree"
 	@echo "... vehicles"
+	@echo "... containers.obj"
+	@echo "... containers.i"
+	@echo "... containers.s"
+	@echo "... handmade.obj"
+	@echo "... handmade.i"
+	@echo "... handmade.s"
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -289,6 +412,9 @@ help:
 	@echo "... newdemo.obj"
 	@echo "... newdemo.i"
 	@echo "... newdemo.s"
+	@echo "... tree.obj"
+	@echo "... tree.i"
+	@echo "... tree.s"
 	@echo "... vehicle.obj"
 	@echo "... vehicle.i"
 	@echo "... vehicle.s"
@@ -303,6 +429,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd D:/Programms/C++/kmbo--21/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd D:/Programms/C++/kmbo--21-1/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

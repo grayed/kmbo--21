@@ -53,10 +53,10 @@ RM = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21
+CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21/build
+CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21-1/build
 
 # Include any dependencies generated for this target.
 include electricity/CMakeFiles/electricity.dir/depend.make
@@ -72,16 +72,16 @@ include electricity/CMakeFiles/electricity.dir/flags.make
 electricity/CMakeFiles/electricity.dir/electricity.cpp.obj: electricity/CMakeFiles/electricity.dir/flags.make
 electricity/CMakeFiles/electricity.dir/electricity.cpp.obj: ../electricity/electricity.cpp
 electricity/CMakeFiles/electricity.dir/electricity.cpp.obj: electricity/CMakeFiles/electricity.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object electricity/CMakeFiles/electricity.dir/electricity.cpp.obj"
-	cd D:/Programms/C++/kmbo--21/build/electricity && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT electricity/CMakeFiles/electricity.dir/electricity.cpp.obj -MF CMakeFiles/electricity.dir/electricity.cpp.obj.d -o CMakeFiles/electricity.dir/electricity.cpp.obj -c D:/Programms/C++/kmbo--21/electricity/electricity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Programms/C++/kmbo--21-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object electricity/CMakeFiles/electricity.dir/electricity.cpp.obj"
+	cd D:/Programms/C++/kmbo--21-1/build/electricity && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT electricity/CMakeFiles/electricity.dir/electricity.cpp.obj -MF CMakeFiles/electricity.dir/electricity.cpp.obj.d -o CMakeFiles/electricity.dir/electricity.cpp.obj -c D:/Programms/C++/kmbo--21-1/electricity/electricity.cpp
 
 electricity/CMakeFiles/electricity.dir/electricity.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/electricity.dir/electricity.cpp.i"
-	cd D:/Programms/C++/kmbo--21/build/electricity && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:/Programms/C++/kmbo--21/electricity/electricity.cpp > CMakeFiles/electricity.dir/electricity.cpp.i
+	cd D:/Programms/C++/kmbo--21-1/build/electricity && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:/Programms/C++/kmbo--21-1/electricity/electricity.cpp > CMakeFiles/electricity.dir/electricity.cpp.i
 
 electricity/CMakeFiles/electricity.dir/electricity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/electricity.dir/electricity.cpp.s"
-	cd D:/Programms/C++/kmbo--21/build/electricity && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Programms/C++/kmbo--21/electricity/electricity.cpp -o CMakeFiles/electricity.dir/electricity.cpp.s
+	cd D:/Programms/C++/kmbo--21-1/build/electricity && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Programms/C++/kmbo--21-1/electricity/electricity.cpp -o CMakeFiles/electricity.dir/electricity.cpp.s
 
 # Object files for target electricity
 electricity_OBJECTS = \
@@ -94,20 +94,20 @@ electricity/electricity.exe: electricity/CMakeFiles/electricity.dir/electricity.
 electricity/electricity.exe: electricity/CMakeFiles/electricity.dir/build.make
 electricity/electricity.exe: electricity/CMakeFiles/electricity.dir/linklibs.rsp
 electricity/electricity.exe: electricity/CMakeFiles/electricity.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable electricity.exe"
-	cd D:/Programms/C++/kmbo--21/build/electricity && "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/electricity.dir/objects.a
-	cd D:/Programms/C++/kmbo--21/build/electricity && C:/Users/Ilya/gcc/bin/ar.exe cr CMakeFiles/electricity.dir/objects.a @CMakeFiles/electricity.dir/objects1.rsp
-	cd D:/Programms/C++/kmbo--21/build/electricity && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles/electricity.dir/objects.a -Wl,--no-whole-archive -o electricity.exe -Wl,--out-implib,libelectricity.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/electricity.dir/linklibs.rsp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Programms/C++/kmbo--21-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable electricity.exe"
+	cd D:/Programms/C++/kmbo--21-1/build/electricity && "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/electricity.dir/objects.a
+	cd D:/Programms/C++/kmbo--21-1/build/electricity && C:/Users/Ilya/gcc/bin/ar.exe cr CMakeFiles/electricity.dir/objects.a @CMakeFiles/electricity.dir/objects1.rsp
+	cd D:/Programms/C++/kmbo--21-1/build/electricity && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles/electricity.dir/objects.a -Wl,--no-whole-archive -o electricity.exe -Wl,--out-implib,libelectricity.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/electricity.dir/linklibs.rsp
 
 # Rule to build all files generated by this target.
 electricity/CMakeFiles/electricity.dir/build: electricity/electricity.exe
 .PHONY : electricity/CMakeFiles/electricity.dir/build
 
 electricity/CMakeFiles/electricity.dir/clean:
-	cd D:/Programms/C++/kmbo--21/build/electricity && $(CMAKE_COMMAND) -P CMakeFiles/electricity.dir/cmake_clean.cmake
+	cd D:/Programms/C++/kmbo--21-1/build/electricity && $(CMAKE_COMMAND) -P CMakeFiles/electricity.dir/cmake_clean.cmake
 .PHONY : electricity/CMakeFiles/electricity.dir/clean
 
 electricity/CMakeFiles/electricity.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" D:/Programms/C++/kmbo--21 D:/Programms/C++/kmbo--21/electricity D:/Programms/C++/kmbo--21/build D:/Programms/C++/kmbo--21/build/electricity D:/Programms/C++/kmbo--21/build/electricity/CMakeFiles/electricity.dir/DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" D:/Programms/C++/kmbo--21-1 D:/Programms/C++/kmbo--21-1/electricity D:/Programms/C++/kmbo--21-1/build D:/Programms/C++/kmbo--21-1/build/electricity D:/Programms/C++/kmbo--21-1/build/electricity/CMakeFiles/electricity.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : electricity/CMakeFiles/electricity.dir/depend
 

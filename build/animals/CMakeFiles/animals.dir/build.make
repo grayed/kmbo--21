@@ -53,10 +53,10 @@ RM = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21
+CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21/build
+CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21-1/build
 
 # Include any dependencies generated for this target.
 include animals/CMakeFiles/animals.dir/depend.make
@@ -72,16 +72,16 @@ include animals/CMakeFiles/animals.dir/flags.make
 animals/CMakeFiles/animals.dir/animal.cpp.obj: animals/CMakeFiles/animals.dir/flags.make
 animals/CMakeFiles/animals.dir/animal.cpp.obj: ../animals/animal.cpp
 animals/CMakeFiles/animals.dir/animal.cpp.obj: animals/CMakeFiles/animals.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object animals/CMakeFiles/animals.dir/animal.cpp.obj"
-	cd D:/Programms/C++/kmbo--21/build/animals && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT animals/CMakeFiles/animals.dir/animal.cpp.obj -MF CMakeFiles/animals.dir/animal.cpp.obj.d -o CMakeFiles/animals.dir/animal.cpp.obj -c D:/Programms/C++/kmbo--21/animals/animal.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Programms/C++/kmbo--21-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object animals/CMakeFiles/animals.dir/animal.cpp.obj"
+	cd D:/Programms/C++/kmbo--21-1/build/animals && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT animals/CMakeFiles/animals.dir/animal.cpp.obj -MF CMakeFiles/animals.dir/animal.cpp.obj.d -o CMakeFiles/animals.dir/animal.cpp.obj -c D:/Programms/C++/kmbo--21-1/animals/animal.cpp
 
 animals/CMakeFiles/animals.dir/animal.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/animals.dir/animal.cpp.i"
-	cd D:/Programms/C++/kmbo--21/build/animals && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:/Programms/C++/kmbo--21/animals/animal.cpp > CMakeFiles/animals.dir/animal.cpp.i
+	cd D:/Programms/C++/kmbo--21-1/build/animals && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:/Programms/C++/kmbo--21-1/animals/animal.cpp > CMakeFiles/animals.dir/animal.cpp.i
 
 animals/CMakeFiles/animals.dir/animal.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/animals.dir/animal.cpp.s"
-	cd D:/Programms/C++/kmbo--21/build/animals && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Programms/C++/kmbo--21/animals/animal.cpp -o CMakeFiles/animals.dir/animal.cpp.s
+	cd D:/Programms/C++/kmbo--21-1/build/animals && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Programms/C++/kmbo--21-1/animals/animal.cpp -o CMakeFiles/animals.dir/animal.cpp.s
 
 # Object files for target animals
 animals_OBJECTS = \
@@ -94,20 +94,20 @@ animals/animals.exe: animals/CMakeFiles/animals.dir/animal.cpp.obj
 animals/animals.exe: animals/CMakeFiles/animals.dir/build.make
 animals/animals.exe: animals/CMakeFiles/animals.dir/linklibs.rsp
 animals/animals.exe: animals/CMakeFiles/animals.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable animals.exe"
-	cd D:/Programms/C++/kmbo--21/build/animals && "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/animals.dir/objects.a
-	cd D:/Programms/C++/kmbo--21/build/animals && C:/Users/Ilya/gcc/bin/ar.exe cr CMakeFiles/animals.dir/objects.a @CMakeFiles/animals.dir/objects1.rsp
-	cd D:/Programms/C++/kmbo--21/build/animals && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles/animals.dir/objects.a -Wl,--no-whole-archive -o animals.exe -Wl,--out-implib,libanimals.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/animals.dir/linklibs.rsp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Programms/C++/kmbo--21-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable animals.exe"
+	cd D:/Programms/C++/kmbo--21-1/build/animals && "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/animals.dir/objects.a
+	cd D:/Programms/C++/kmbo--21-1/build/animals && C:/Users/Ilya/gcc/bin/ar.exe cr CMakeFiles/animals.dir/objects.a @CMakeFiles/animals.dir/objects1.rsp
+	cd D:/Programms/C++/kmbo--21-1/build/animals && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles/animals.dir/objects.a -Wl,--no-whole-archive -o animals.exe -Wl,--out-implib,libanimals.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/animals.dir/linklibs.rsp
 
 # Rule to build all files generated by this target.
 animals/CMakeFiles/animals.dir/build: animals/animals.exe
 .PHONY : animals/CMakeFiles/animals.dir/build
 
 animals/CMakeFiles/animals.dir/clean:
-	cd D:/Programms/C++/kmbo--21/build/animals && $(CMAKE_COMMAND) -P CMakeFiles/animals.dir/cmake_clean.cmake
+	cd D:/Programms/C++/kmbo--21-1/build/animals && $(CMAKE_COMMAND) -P CMakeFiles/animals.dir/cmake_clean.cmake
 .PHONY : animals/CMakeFiles/animals.dir/clean
 
 animals/CMakeFiles/animals.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" D:/Programms/C++/kmbo--21 D:/Programms/C++/kmbo--21/animals D:/Programms/C++/kmbo--21/build D:/Programms/C++/kmbo--21/build/animals D:/Programms/C++/kmbo--21/build/animals/CMakeFiles/animals.dir/DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" D:/Programms/C++/kmbo--21-1 D:/Programms/C++/kmbo--21-1/animals D:/Programms/C++/kmbo--21-1/build D:/Programms/C++/kmbo--21-1/build/animals D:/Programms/C++/kmbo--21-1/build/animals/CMakeFiles/animals.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : animals/CMakeFiles/animals.dir/depend
 

@@ -1,4 +1,4 @@
-# Install script for directory: D:/Programms/C++/kmbo--21/memhacks
+# Install script for directory: D:/Programms/C++/kmbo--21-1/memhacks
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

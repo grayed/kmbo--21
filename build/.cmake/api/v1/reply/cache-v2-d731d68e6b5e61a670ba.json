@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/Programms/C++/kmbo--21/build"
+			"value" : "d:/Programms/C++/kmbo--21-1/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -635,7 +635,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Programms/C++/kmbo--21"
+			"value" : "D:/Programms/C++/kmbo--21-1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1255,7 +1255,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Programms/C++/kmbo--21/build"
+			"value" : "D:/Programms/C++/kmbo--21-1/build"
 		},
 		{
 			"name" : "kmbo--21_SOURCE_DIR",
@@ -1267,7 +1267,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Programms/C++/kmbo--21"
+			"value" : "D:/Programms/C++/kmbo--21-1"
 		}
 	],
 	"kind" : "cache",

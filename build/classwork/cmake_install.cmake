@@ -1,4 +1,4 @@
-# Install script for directory: D:/Programms/C++/kmbo--21/classwork
+# Install script for directory: D:/Programms/C++/kmbo--21-1/classwork
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

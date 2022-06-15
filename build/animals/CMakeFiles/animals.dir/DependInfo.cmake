@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/Programms/C++/kmbo--21/animals/animal.cpp" "animals/CMakeFiles/animals.dir/animal.cpp.obj" "gcc" "animals/CMakeFiles/animals.dir/animal.cpp.obj.d"
+  "D:/Programms/C++/kmbo--21-1/animals/animal.cpp" "animals/CMakeFiles/animals.dir/animal.cpp.obj" "gcc" "animals/CMakeFiles/animals.dir/animal.cpp.obj.d"
   )
 
 # Targets to which this target links.

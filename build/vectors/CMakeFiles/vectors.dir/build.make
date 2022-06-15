@@ -53,10 +53,10 @@ RM = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21
+CMAKE_SOURCE_DIR = D:/Programms/C++/kmbo--21-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21/build
+CMAKE_BINARY_DIR = D:/Programms/C++/kmbo--21-1/build
 
 # Include any dependencies generated for this target.
 include vectors/CMakeFiles/vectors.dir/depend.make
@@ -72,16 +72,16 @@ include vectors/CMakeFiles/vectors.dir/flags.make
 vectors/CMakeFiles/vectors.dir/vector.cpp.obj: vectors/CMakeFiles/vectors.dir/flags.make
 vectors/CMakeFiles/vectors.dir/vector.cpp.obj: ../vectors/vector.cpp
 vectors/CMakeFiles/vectors.dir/vector.cpp.obj: vectors/CMakeFiles/vectors.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vectors/CMakeFiles/vectors.dir/vector.cpp.obj"
-	cd D:/Programms/C++/kmbo--21/build/vectors && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT vectors/CMakeFiles/vectors.dir/vector.cpp.obj -MF CMakeFiles/vectors.dir/vector.cpp.obj.d -o CMakeFiles/vectors.dir/vector.cpp.obj -c D:/Programms/C++/kmbo--21/vectors/vector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Programms/C++/kmbo--21-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vectors/CMakeFiles/vectors.dir/vector.cpp.obj"
+	cd D:/Programms/C++/kmbo--21-1/build/vectors && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT vectors/CMakeFiles/vectors.dir/vector.cpp.obj -MF CMakeFiles/vectors.dir/vector.cpp.obj.d -o CMakeFiles/vectors.dir/vector.cpp.obj -c D:/Programms/C++/kmbo--21-1/vectors/vector.cpp
 
 vectors/CMakeFiles/vectors.dir/vector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vectors.dir/vector.cpp.i"
-	cd D:/Programms/C++/kmbo--21/build/vectors && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:/Programms/C++/kmbo--21/vectors/vector.cpp > CMakeFiles/vectors.dir/vector.cpp.i
+	cd D:/Programms/C++/kmbo--21-1/build/vectors && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:/Programms/C++/kmbo--21-1/vectors/vector.cpp > CMakeFiles/vectors.dir/vector.cpp.i
 
 vectors/CMakeFiles/vectors.dir/vector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vectors.dir/vector.cpp.s"
-	cd D:/Programms/C++/kmbo--21/build/vectors && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Programms/C++/kmbo--21/vectors/vector.cpp -o CMakeFiles/vectors.dir/vector.cpp.s
+	cd D:/Programms/C++/kmbo--21-1/build/vectors && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:/Programms/C++/kmbo--21-1/vectors/vector.cpp -o CMakeFiles/vectors.dir/vector.cpp.s
 
 # Object files for target vectors
 vectors_OBJECTS = \
@@ -94,20 +94,20 @@ vectors/vectors.exe: vectors/CMakeFiles/vectors.dir/vector.cpp.obj
 vectors/vectors.exe: vectors/CMakeFiles/vectors.dir/build.make
 vectors/vectors.exe: vectors/CMakeFiles/vectors.dir/linklibs.rsp
 vectors/vectors.exe: vectors/CMakeFiles/vectors.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Programms/C++/kmbo--21/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable vectors.exe"
-	cd D:/Programms/C++/kmbo--21/build/vectors && "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/vectors.dir/objects.a
-	cd D:/Programms/C++/kmbo--21/build/vectors && C:/Users/Ilya/gcc/bin/ar.exe cr CMakeFiles/vectors.dir/objects.a @CMakeFiles/vectors.dir/objects1.rsp
-	cd D:/Programms/C++/kmbo--21/build/vectors && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles/vectors.dir/objects.a -Wl,--no-whole-archive -o vectors.exe -Wl,--out-implib,libvectors.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/vectors.dir/linklibs.rsp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Programms/C++/kmbo--21-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable vectors.exe"
+	cd D:/Programms/C++/kmbo--21-1/build/vectors && "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/vectors.dir/objects.a
+	cd D:/Programms/C++/kmbo--21-1/build/vectors && C:/Users/Ilya/gcc/bin/ar.exe cr CMakeFiles/vectors.dir/objects.a @CMakeFiles/vectors.dir/objects1.rsp
+	cd D:/Programms/C++/kmbo--21-1/build/vectors && C:/Users/Ilya/gcc/bin/x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles/vectors.dir/objects.a -Wl,--no-whole-archive -o vectors.exe -Wl,--out-implib,libvectors.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/vectors.dir/linklibs.rsp
 
 # Rule to build all files generated by this target.
 vectors/CMakeFiles/vectors.dir/build: vectors/vectors.exe
 .PHONY : vectors/CMakeFiles/vectors.dir/build
 
 vectors/CMakeFiles/vectors.dir/clean:
-	cd D:/Programms/C++/kmbo--21/build/vectors && $(CMAKE_COMMAND) -P CMakeFiles/vectors.dir/cmake_clean.cmake
+	cd D:/Programms/C++/kmbo--21-1/build/vectors && $(CMAKE_COMMAND) -P CMakeFiles/vectors.dir/cmake_clean.cmake
 .PHONY : vectors/CMakeFiles/vectors.dir/clean
 
 vectors/CMakeFiles/vectors.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" D:/Programms/C++/kmbo--21 D:/Programms/C++/kmbo--21/vectors D:/Programms/C++/kmbo--21/build D:/Programms/C++/kmbo--21/build/vectors D:/Programms/C++/kmbo--21/build/vectors/CMakeFiles/vectors.dir/DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" D:/Programms/C++/kmbo--21-1 D:/Programms/C++/kmbo--21-1/vectors D:/Programms/C++/kmbo--21-1/build D:/Programms/C++/kmbo--21-1/build/vectors D:/Programms/C++/kmbo--21-1/build/vectors/CMakeFiles/vectors.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vectors/CMakeFiles/vectors.dir/depend
 
