@@ -118,3 +118,4 @@ string Ostrich::about() const
         ss << Bird::about() << " " << "EggWeight = " << " " << EggWeight;
         return ss.str();
 }
+
