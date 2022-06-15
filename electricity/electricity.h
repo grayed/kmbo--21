@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <string>
 
 class Object;
@@ -50,7 +50,7 @@ protected:
     /// </summary>
     /// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
     /// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
-    Pole* getPole(size_t idx) { /* TODO */ return nullptr; }
+    Pole* getPole(size_t idx);
 
     /// <summary>
     /// Возвращает полюс по внутреннему индексу устройства.
@@ -64,14 +64,13 @@ public:
 
     const std::string& getName() const { return name; }
     void getName(const std::string &newName) { name = newName; }
-
     /// <summary>
     /// Возвращает полюс по имени.
     /// </summary>
     /// <param name="name">Имя полюса.</param>
     /// <returns>Полюс с указанным именем, или <c>nullptr</c>, если такой полюс не существует.</returns>
     Pole* getPole(const std::string& name) { return const_cast<Pole*>(const_cast<const Object*>(this)->getPole(name)); }
-
+    
     /// <summary>
     /// Возвращает полюс по имени.
     /// </summary>
@@ -102,6 +101,15 @@ public:
     /// для которого вызывается этот метод.
     /// </remarks>
     bool connect(const std::string& poleName, const Object& other, const std::string& otherPoleName);
+    /// <резюме>
+    /// Отключает указанный полюс, если к нему что-либо подключено.
+    /// </summary>
+    /// <param name="poleName">Название полюса, от которого производится отключение.</param>
+    /// <returns><c>true</c> если что-либо было отключено, <c>false</c> в противном случае.</returns>
+    /// <примечания>
+    /// Вызов этого метода для полюса, если к нему ничего не подключено, не является ошибкой.
+    /// </примечания>
+    bool disconnect(const std::string& poleName);
 };
 
 /// <summary>
@@ -121,6 +129,29 @@ protected:
     virtual const Pole* getPole(size_t idx) const;
 };
 
-// TODO: класс светильника с двумя полюсами
+class Light : public Object {
+public:
+    Pole a1, a2;
 
-// TODO: класс генератора с тремя полюсами (фаза, нейтраль, земпя).
+    Light(const std::string& name = "");
+
+    virtual size_t getPoleCount() const { return 2; }
+
+    virtual const Pole* getPole(const std::string& name) const;
+
+protected:
+    virtual const Pole* getPole(size_t idx) const;
+};
+class Generator : public Object {
+public:
+    Pole a1,a2,a3;
+
+    Generator(const std::string& name = "");
+
+    virtual size_t getPoleCount() const { return 3; }
+
+    virtual const Pole* getPole(const std::string& name) const;
+
+protected:
+    virtual const Pole* getPole(size_t idx) const;
+};
