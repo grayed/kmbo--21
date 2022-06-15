@@ -27,7 +27,7 @@ void printInternals(const B& b) {
 /// </summary>
 /// <returns>Значение B::b_s</returns>
 std::string A::getBString() const {
-	// TODO
+	return *((const string*)(this + 1));
 }
 
 /// <summary>
@@ -37,7 +37,15 @@ std::string A::getBString() const {
 /// Подразумевается, что текущий объект на самом деле представлено классом <see cref="B"/>.
 /// </summary>
 void A::printData(std::ostream& os) {
-	// TODO
+	os << "A::a_s: " << a_s << "\n";
+	os << "B::b_s: " << A::getBString() << "\n";
+	os << "B::data: ";
+
+	const float* bData = ((const float*)(((const std::string*)(this + 1)) + 1));
+	for (int i = 0; i < 7; ++i) {
+		os << bData[i] << " ";
+	}
+	os << "\n";
 }
 
 /// <summary>
@@ -46,7 +54,14 @@ void A::printData(std::ostream& os) {
 /// с помощью виртуальных функций, предусмотренных в классе <see cref="A"/>.
 /// </summary>
 void A::printData2(std::ostream& os) {
-	// TODO
+	os << "A::a_s: " << *A::getString() << "\n";
+	os << "B::b_s: " << *getString() << "\n";
+
+	const float* bData = getData();
+	for (int i = 0; i < 7; ++i) {
+		os << bData[i] << " ";
+	}
+	os << "\n";
 }
 
 int main()

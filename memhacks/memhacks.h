@@ -15,6 +15,11 @@ public:
 	std::string getBString() const;
 	void printData(std::ostream& os);
 	void printData2(std::ostream& os);
+
+	virtual const std::string* getString() const {
+		return &a_s;
+	};
+	virtual const float* getData() const {}
 };
 
 class B : public A {
@@ -25,6 +30,12 @@ class B : public A {
 
 public:
 	B();
+	virtual const std::string* getString() const {
+		return &b_s;
+	}
+	virtual const float* getData() const {
+		return data;
+	}
 };
 
 void printInternals(const B& b);
