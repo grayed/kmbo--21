@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "classwork",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "classwork",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						5,
+						6,
+						8,
+						9,
+						11
+					]
+				},
+				{
+					"build" : "animals",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "animals",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "memhacks",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "memhacks",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "electricity",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "electricity",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "vectors",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "vectors",
+					"targetIndexes" : 
+					[
+						1,
+						10
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "kmbo--21",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "animals::@d3e6509ec9da81b9182b",
+					"jsonFile" : "target-animals-Debug-85966083efa53b50d0fb.json",
+					"name" : "animals",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "arrays::@bafb03b3c093a7eafa7a",
+					"jsonFile" : "target-arrays-Debug-e35101fbee77ec7772d3.json",
+					"name" : "arrays",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "classwork::@3de3d43671564998e741",
+					"jsonFile" : "target-classwork-Debug-2291b331bd2e14b9049f.json",
+					"name" : "classwork",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "containers::@3de3d43671564998e741",
+					"jsonFile" : "target-containers-Debug-3becb968d9f29237c938.json",
+					"name" : "containers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "electricity::@24281a5fc2138595488b",
+					"jsonFile" : "target-electricity-Debug-31b49d9109c1e306f289.json",
+					"name" : "electricity",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "handmade_containers::@3de3d43671564998e741",
+					"jsonFile" : "target-handmade_containers-Debug-85d00282dc0739c8773a.json",
+					"name" : "handmade_containers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "memarith::@3de3d43671564998e741",
+					"jsonFile" : "target-memarith-Debug-c827a4876fe4246989d4.json",
+					"name" : "memarith",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "memhacks::@e97f5161fd860b2aedc3",
+					"jsonFile" : "target-memhacks-Debug-f915adf210c318a3c648.json",
+					"name" : "memhacks",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "newdemo::@3de3d43671564998e741",
+					"jsonFile" : "target-newdemo-Debug-902ca31dd9de9f982a60.json",
+					"name" : "newdemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "tree::@3de3d43671564998e741",
+					"jsonFile" : "target-tree-Debug-6045b3d656071331aff6.json",
+					"name" : "tree",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "vectors::@bafb03b3c093a7eafa7a",
+					"jsonFile" : "target-vectors-Debug-e0d7682ae398b6b66185.json",
+					"name" : "vectors",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "vehicles::@3de3d43671564998e741",
+					"jsonFile" : "target-vehicles-Debug-9d9117c3453dc24afc84.json",
+					"name" : "vehicles",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Programms/C++/kmbo--21-1/build",
+		"source" : "D:/Programms/C++/kmbo--21-1"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

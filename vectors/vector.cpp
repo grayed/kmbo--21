@@ -1,25 +1,64 @@
-#include <iostream>
 #include "vector.h"
 
-using namespace std;
+bool test_vector3d() {
+    Vector3d vec1(2), vec2(1.5);
+    bool error = false;
 
-ostream& operator <<(ostream& os, const vector3d& v) {
-	return os << "{ " << v[0] << ", " << v[1] << ", " << v[2] << " }";
+    cout << vec1 << "; " << vec2 << endl;
+
+    cout << vec1 + vec2 << endl;
+    if (vec1[0] + vec2[0] != (vec1 + vec2)[0] || vec1[1] + vec2[1] != (vec1 + vec2)[1] || vec1[2] + vec2[2] != (vec1 + vec2)[2]) {
+        cerr << "Должно быть: " << "{ " << vec1[0] + vec2[0] << ", " << vec1[1] + vec2[1] << ", " << vec1[2] + vec2[2] << " }" << endl; 
+        error = true;
+    }
+
+    cout << vec1 - vec2 << endl;
+    if (vec1[0] - vec2[0] != (vec1 - vec2)[0] || vec1[1] - vec2[1] != (vec1 - vec2)[1] || vec1[2] - vec2[2] != (vec1 - vec2)[2]) {
+        cerr << "Должно быть: " << "{ " << vec1[0] - vec2[0] << ", " << vec1[1] - vec2[1] << ", " << vec1[2] - vec2[2] << " }" << endl; 
+        error = true;
+    }
+
+    cout << vec1 * 4 << endl;
+    if (vec1[0] * 4 != (vec1 * 4)[0] || vec1[1] * 4 != (vec1 * 4)[1] || vec1[2] * 4 != (vec1 * 4)[2]) {
+        cerr << "Должно быть: " << "{ " << vec1[0] * 4 << ", " << vec1[1] * 4 << ", " << vec1[2] * 4 << " }" << endl; 
+        error = true;
+    }
+
+    cout << 3 * vec1 << endl;
+    if (3 * vec1[0] != (3 * vec1)[0] || 3 * vec1[1] != (3 * vec1)[1] || 3 * vec1[2] != (3 * vec1)[2]) {
+        cerr << "Должно быть: " << "{ " << 3 * vec1[0] << ", " << 3 * vec1[1] << ", " << 3 * vec1[2] << " }" << endl; 
+        error = true;
+    }
+
+    cout << vec1 / 5 << endl;
+    if (vec1[0] / 5 != (vec1 / 5)[0] || vec1[1] / 5 != (vec1 / 5)[1] || vec1[2] / 5 != (vec1 / 5)[2]) {
+        cerr << "Должно быть: " << "{ " << vec1[0] / 5 << ", " << vec1[1] / 5 << ", " << vec1[2] / 5 << " }" << endl; 
+        error = true;
+    }
+
+    cout << -vec1 << endl;
+    if (-vec1[0] != (-vec1)[0] || -vec1[1] != (-vec1)[1] || -vec1[2] != (-vec1)[2]) {
+        cerr << "Должно быть: " << "{ " << -vec1[0] << ", " << -vec1[1] << ", " << -vec1[2] << " }" << endl; 
+        error = true;
+    }
+
+    cout << !vec1 << endl;
+    if (!vec1[0] != (!vec1)[0] || !vec1[1] != (!vec1)[1] || !vec1[2] != (!vec1)[2]) {
+        cerr << "Должно быть: " << "{ " << !vec1[0] << ", " << !vec1[1] << ", " << !vec1[2] << " }" << endl; 
+        error = true;
+    }
+
+    return error;
 }
 
-int main(int argc, char** argv) {
-	vector3d v1, v2(12), v3(1, 3, 8);
-	v1[2] = 54;
-	//vector3d v4 = v1 + v2, v5 = v1 - v2, v6 = v1 * 0.5f;
-	//cout << "v4: " << v4 << endl << "v5: " << v5 << endl << "v6: " << v6 << endl;
+int main() {
+    cout << test_vector3d() << endl;
 
-	printf("address of v1:             0x%p, size: %zu bytes\n", &v1, sizeof(v1));
-	printf("address of v1.data:        0x%p, size: %zu bytes\n", &v1.data, sizeof(v1.data));
-	printf("address of v1.data[-1]:    0x%p, size: %zu bytes\n", &v1.data[-1], sizeof(v1.data[-1]));
-	printf("address of v1.data[0]:     0x%p, size: %zu bytes\n", &v1.data[0], sizeof(v1.data[0]));
-	printf("address of v1.data[1]:     0x%p, size: %zu bytes\n", &v1.data[1], sizeof(v1.data[1]));
-	printf("address of v1.data[2]:     0x%p, size: %zu bytes\n", &v1.data[2], sizeof(v1.data[2]));
-	printf("address of v1.data[2000]:  0x%p, size: %zu bytes\n", &v1.data[2000], sizeof(v1.data[2000]));
+    Vector3d v1(3), v2(4);
+    cout << average(v1, v2);
 
-	return 0;
+    if (test_vector3d()) 
+        return 0;
+    else    
+        return 1;
 }
