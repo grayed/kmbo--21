@@ -19,22 +19,12 @@ bool Object::isConnectedTo(const Object& other) const
 bool Object::disconnect(const std::string& poleName)
 {
     // TODO
-    if (getPole(poleName)->connectedObjectPole != "") {
-        
-        getPole(poleName)->connectedObjectPole = "";
-        getPole(poleName)->connectedObject = nullptr;
-        this->getPole(poleName)->name = "";
-        
-        /*
-        bool c = false;
-        size_t idx = 0;
-        for (; idx < getPole(poleName)->connectedObject->getPoleCount() && c != true;)
-        {
-            if (getPole(poleName)->connectedObject->getPole(idx)->connectedObject->name == this->name) c = true;
-            idx++;
-        }
-        this->getPole(poleName)->connectedObject->getPole(idx)->connectedObject = nullptr;
-        */
+    if (this->getPole(poleName)->connectedObjectPole != "") {
+
+        this->getPole(poleName)->connectedObjectPole = "";
+
+        this->getPole(poleName)->connectedObject = nullptr;
+
         return true;
     }
     else return false;
@@ -52,11 +42,11 @@ bool Object::connect(const std::string& poleName, Object& other, const std::stri
     return false;
 }
 
-Switch::Switch(const std::string& name) : Object(name), A1("A1"), A2("A2") {}
+Switch::Switch(const std::string& name) : Object(name), A1("sw1"), A2("sw2") {}
 
-Light::Light(const std::string& name_) : Object(name_), A1("A1"), A2("A2") {}
+Light::Light(const std::string& name_) : Object(name_), A1("l1"), A2("l2") {}
 
-Power::Power(const std::string& name_) : Object(name_), A1("A1"), A2("A2"), A3("A3") {}
+Power::Power(const std::string& name_) : Object(name_), A1("p1"), A2("p2"), A3("p3") {}
 
 const Pole* Switch::getPole(const string& name) const
 {
@@ -88,16 +78,16 @@ const Pole* Power::getPole(const string& name) const
 
 const Pole* Switch::getPole(size_t idx) const
 {
-    return (getPole("A" + std::to_string(idx + 1)));
+    return (getPole("sw" + std::to_string(idx + 1)));
 }
 
 const Pole* Light::getPole(size_t idx) const
 {
-    return (getPole("A" + std::to_string(idx + 1)));
+    return (getPole("l" + std::to_string(idx + 1)));
 }
 const Pole* Power::getPole(size_t idx) const
 {
-    return (getPole("A" + std::to_string(idx + 1)));
+    return (getPole("p" + std::to_string(idx + 1)));
 }
 int main()
 {
@@ -105,26 +95,22 @@ int main()
 
 
 
-    Switch sw, sw2;
-    sw.connect("A2", sw2, "A1");
-    cerr << "is " << (sw.isConnectedTo(sw2) ? "" : "not ") << "connected!" << endl;
-
-
     Power p;
     Light l;
-    Switch sw3;
-
-
-
-    p.connect("A1", l, "A1");
-
-    l.connect("A2", sw, "A1");
-    cerr << "is " << (p.isConnectedTo(l) ? "" : "not ") << "connected!" << endl;
-    cerr << "is " << (l.isConnectedTo(sw3) ? "" : "not ") << "connected!" << endl;
-    
-    p.disconnect("A1");
-    cerr << "is " << (p.isConnectedTo(l) ? "" : "not ") << "connected!" << endl;
-    cerr << "________________ " << endl;
+    Switch sw;
+    p.getName("power");
+    l.getName("light");
+    sw.getName("switch");
+    p.connect("p1", l, "l1");
+    l.connect("l2", sw, "sw1");
+    sw.connect("sw2", p, "p2");
+    cout << "Is sw connected l ?" << "\n" << sw.isConnectedTo(l) << endl;
+   
+    sw.disconnect("sw1");
+    l.disconnect("l2");
+    /*
+    cout << "Is sw connected l ?" << "\n" << sw.isConnectedTo(l) << endl;
+    */
     return 0;
 }
 
