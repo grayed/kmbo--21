@@ -80,15 +80,50 @@ class Tree {
         }
 	}
 
-    void SmallTurnLeft(Node *upper, Node *lower) {
-        lower -> parent = upper -> parent;
-        lower -> left = upper;
-        upper -> parent = lower;
-        if(lower -> parent != nullptr){
-            if(lower ->parent ->left == upper ) {lower ->parent ->left = lower;}
-            else {lower ->parent -> right = lower;}
+    void SmallTurnLeft(Node* upper, Node* lower) {
+        lower->parent = upper->parent;
+        lower->left = upper;
+        upper->parent = lower;
+        if (lower->parent != nullptr) {
+            if (lower->parent->left == upper) { lower->parent->left = lower; }
+            else { lower->parent->right = lower; }
         }
-    }
+    };
+
+//-----------
+    class other_iterator {
+    protected:
+        Node* node;
+        other_iterator(Node* n) : node(n) {}
+    
+        other_iterator& next() {
+            if (node->right) {
+                node = node->right;
+                while (node->left)
+                    node = node->left;
+            }
+            else {
+                while (node->parent && node->parent->right == node)
+                    node = node->parent;
+                node = node->parent;
+            }
+            return *this
+        }
+        other_iterator& prev() {
+            if (node->left) {
+                node = node->left;
+                while (node->right)
+                    node = node->right;
+            }
+            else {
+                while (node->parent && node->parent->left == node)
+                    node = node->parent;
+                node = node->parent;
+            }
+            return *this;
+        }
+    };
+///-----
 
 public:
     class iterator {
@@ -98,29 +133,41 @@ public:
     public:
         T& operator *() { return node->data; }
         iterator& operator ++() {        // ++a  lvalue
-            if (node->right) {
-                node = node->right;
-                while (node->left)
-                    node = node->left;
-            } else {
-                while (node->parent && node->parent->right == node)
-                    node = node->parent;
-                node = node->parent;
-            }
+            next();
         }
         iterator operator ++(int) {      // a++  rvalue
             iterator prev = *this;
             ++(*this);
             return prev;
+        }  
+        iterator& operator --()    { 
+            auto temp = *this;
+            --(*this);
+            return temp;
         }
-        iterator& operator --()    { /* TODO */ }
-        iterator  operator --(int) { /* TODO */ }
+        iterator  operator --(int) { node->prev(); return *this }
     };
 
-    class reverse_iterator {
-        // TODO 1: Написать аналог iterator, работающий в обратном направлении.
-        // TODO 2: Вынести общий код iterator и reverse_iterator в базовый класс.
+    class reverse_iterator : public other_iterator {
+        reverse_iterator(Node* n) : other_iterator(n) {}
+        
+        friend class Tree;
+
+    public:
+        T& operator *() { return node->data; }
+        reverse_iterator& operator--() {
+            node->next(); return *this;
+        }
+        reverse_iterator operator--(int) {
+            auto temp = *this;
+            --(*this);
+            return temp;
+        }
     };
+
+        // TODO 1: Написать аналог iterator, работающий в обратном направлении.
+        
+        // TODO 2: Вынести общий код iterator и reverse_iterator в базовый класс.
 
     iterator begin() {
         if (root == nullptr)
@@ -131,8 +178,15 @@ public:
         return iterator(node);
     }
     iterator end() { return iterator(nullptr); }
-    reverse_iterator rbegin() { /* TODO */ }
-    reverse_iterator rend() { /* TODO */ }
+    reverse_iterator rbegin() { 
+        if (root == nullptr)
+            return rend();
+        auto node = root;
+        while (node->right)
+            node = node->right;
+        return reverse_iterator(node);
+    }
+    reverse_iterator rend() { return reverse_iterator(nullptr); }
 
     Tree() : root(nullptr) {}
 
@@ -274,9 +328,16 @@ int main() {
     tree.Insert(345, "Bleah");
     tree.Insert(893, "Moah");
     tree.Insert(043, "CooKoo");
+    tree.Insert(935, "Foobarbass");
+    tree.Insert(1000, "FooParam");
     std::cout << "Printing tree:" << std::endl;
 	tree.Walk<std::ostream&>(PrintNodeToFile, std::cout);
-
+    cout << "-------------------" << endl;
+    auto it = tree.rbegin();
+    cout << *it << endl;
+    it--;
+    cout << *it << endl;
+    cout << "-------------------" << endl;
     cout << "Vector:" << endl;
     std::vector<int> myvector { 121, 443, 565, 323 };
     for (size_t i = 0; i != myvector.size(); i++) {
