@@ -3,9 +3,11 @@
 
 using namespace std;
 
-B::B() : b_s("It's b!") {
+A::A() : a_s("It's--a"), foo(0) {}
+
+B::B() : b_s("It's--b") {
 	for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++)
-		data[i] = i * 2;
+		data[i] = (float)i * 2;
 }
 
 /// <summary>
@@ -13,12 +15,15 @@ B::B() : b_s("It's b!") {
 /// Можно модифицировать для собственных отладочных целей.
 /// </summary>
 /// <param name="b">Изучаемый объект</param>
-void printInternals(const B& b) {
+
+void printInternals(B& b) {
 	const A* a = &b, * a2 = a + 1;
 	cout << "Address of b is 0x" << &b << ", address of b.a_s is 0x" << &b.a_s << ", address of b.b_s is 0x" << &b.b_s << endl;
 	cout << "Size of A is " << sizeof(A) << ", size of B is " << sizeof(B) << endl;
 	cout << "B string is '" << b.getBString() << "'" << endl;
 	//cout << "B data: "; b.printData(cout); cout << endl;
+	cout << "B data,using printData: "; b.printData(cout); cout << endl;
+	cout << "B data,using printData2: "; b.printData2(cout); cout << endl;
 }
 
 /// <summary>
@@ -27,8 +32,22 @@ void printInternals(const B& b) {
 /// </summary>
 /// <returns>Значение B::b_s</returns>
 std::string A::getBString() const {
-	// TODO
+	return *((const string*)(this + 1));
 }
+
+std::string B::getBString() const {
+	return b_s;
+}
+
+float A::getData(int idx) const {
+	return ((float*)(this + 2))[idx];
+}
+
+float B::getData(int idx) const {
+	return data[idx];
+}
+
+
 
 /// <summary>
 /// Извлекает значения <see cref="A::a_s"/>, <see cref="B::b_s"/> и <see cref="B::data"/>
@@ -38,6 +57,8 @@ std::string A::getBString() const {
 /// </summary>
 void A::printData(std::ostream& os) {
 	// TODO
+	os << "A string is '" << a_s << "', B string is '" << getBString() << "'" << endl;
+	for (int i = 0; i < 7; ++i) os << getData(i) << " ";
 }
 
 /// <summary>
@@ -47,7 +68,12 @@ void A::printData(std::ostream& os) {
 /// </summary>
 void A::printData2(std::ostream& os) {
 	// TODO
+	B b = *((B*)(this));
+	os << "A string is '" << a_s << "', B string is '" << b.getBString() << "'" << endl;
+	for (int i = 0; i < 7; ++i) os << b.getData(i) << " ";
 }
+
+
 
 int main()
 {
