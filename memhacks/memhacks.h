@@ -12,8 +12,11 @@ class A {
 	friend void printInternals(const B&);
 
 public:
+	A();
 	std::string getBString() const;
-	void printData(std::ostream& os);
+	virtual std::string get_s() const { return a_s; }
+	virtual float *getData(){ return 0; }
+ 	void printData(std::ostream& os);
 	void printData2(std::ostream& os);
 };
 
@@ -25,6 +28,8 @@ class B : public A {
 
 public:
 	B();
+	std::string get_s() const override { return b_s; }
+	float *getData() override { float* pdata = data; return pdata; }
 };
 
 void printInternals(const B& b);
