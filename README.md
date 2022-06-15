@@ -65,8 +65,8 @@ UML-диаграммы (файлы с расширением `.xmi`) можно 
 5. Запретите создание объектов класса `Buz` в динамической памяти.
 
 ## Электричество №1
-
-1. Реализовать `const Pole* Switch::getPole(size_t idx) const`.
+ 
+1. Реализовать `const Pole* Switch::getPole(size_t idx) const`. 
 2. Реализовать `Pole* Object::getPole(size_t idx)`.
 3. Реализовать `bool Object::isConnectedTo(const Object& other) const`.
 4. Реализовать `bool Object::connect(const std::string& poleName, const Object& other, const std::string& otherPoleName)`.
