@@ -5,7 +5,7 @@ using namespace std;
 
 B::B() : b_s("It's b!") {
 	for (auto i = 0; i < sizeof(data) / sizeof(data[0]); i++)
-		data[i] = i * 2;
+		data[i] = (float)(i * 2);
 }
 
 /// <summary>
@@ -28,6 +28,7 @@ void printInternals(const B& b) {
 /// <returns>Значение B::b_s</returns>
 std::string A::getBString() const {
 	// TODO
+	return "";
 }
 
 /// <summary>
