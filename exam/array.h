@@ -14,11 +14,11 @@ public:
 	
 	template<typename SrcIter>
 	Array(size_t initialSize, SrcIter src)
-		: data(nullptr)
-		, nitems(0)
-		, nallocated(0)
 	{
-		
+		data = new T[initialSize];
+		nallocated = nitems = initialSize;
+		for (size_t i = 0; i < initialSize; i++)
+			data[i] = *src++;
 	}
 
 	virtual ~Array() {
@@ -35,6 +35,23 @@ public:
 		if (idx >= nitems)
 			throw std::out_of_range("idx");
 		return data[idx];
+	}
+
+	void add(const T& item) {
+		if (nitems == nallocated) {
+			size_t newSize = nallocated * sizeof(T);
+
+			T* tmp = realloc(data, )
+		}
+		data[nitems++] = item;
+	}
+
+	void remove(size_t idx) {
+		if (idx >= nitems)
+			throw std::out_of_range("idx");
+		for (size_t i = idx; idx < nitems - 1; idx++)
+			data[i] = data[i + 1];
+		nitems--;
 	}
 };
 
