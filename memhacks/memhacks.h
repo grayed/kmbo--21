@@ -12,9 +12,17 @@ class A {
 	friend void printInternals(const B&);
 
 public:
-	std::string getBString() const;
+	A();
+	
+	std::string geta_s();
+	virtual void aAbout(std::ostream& os);
+
+	int getbefore() const;
+	float getBData(int idx) const;
+	std::string getBString() const ;
+	std::string getAString() const ;
+	std::string* getBString_adr() const;
 	void printData(std::ostream& os);
-	void printData2(std::ostream& os);
 };
 
 class B : public A {
@@ -24,6 +32,12 @@ class B : public A {
 	friend void printInternals(const B&);
 
 public:
+
+	void printData2(std::ostream& os);
+	virtual void bAbout(std::ostream& os);
+	std::string getb_s();
+	float getdata(int i);
+
 	B();
 };
 

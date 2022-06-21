@@ -7,7 +7,7 @@ class Object;
 /// Полюс устройства.
 /// К одному полюсу может быть подключен один любой другой полюс этого же
 /// устройства, или же любой полюс любого другого устройства.
-/// 
+///
 /// У каждого полюса есть своё название, которое получает значение по умолчанию
 /// при создании устройства, но может быть изменено позднее.
 /// </summary>
@@ -50,8 +50,8 @@ protected:
     /// </summary>
     /// <param name="idx">Индекс полюса, от <c>0</c> до значения, возвращаемого <see cref="getPoleCount()"/>.</param>
     /// <returns>Полюс с указанным индексом, или <c>nullptr</c>, если такой полюс не существует.</returns>
-    Pole* getPole(size_t idx) { /* TODO */ return nullptr; }
-
+    //Pole* getPole(size_t idx) { /* TODO */ return nullptr; }
+      Pole* getPole(size_t idx) {return const_cast<Pole*>(const_cast<const Object*>(this)->getPole(idx));}
     /// <summary>
     /// Возвращает полюс по внутреннему индексу устройства.
     /// </summary>
@@ -120,7 +120,7 @@ public:
 /// </summary>
 class Switch : public Object {
 public:
-    Pole a1, a2;
+    Pole s1, s2;
 
     Switch(const std::string& name = "");
 
@@ -131,7 +131,30 @@ public:
 protected:
     virtual const Pole* getPole(size_t idx) const;
 };
+class Lamp : public Object {
+public:
+  Pole l1, l2;
 
+  Lamp(const std::string& name = "");
+
+  virtual size_t getPoleCount() const { return 2; }
+
+  virtual const Pole* getPole(const std::string& name) const;
+protected:
+  virtual const Pole* getPole(size_t idx) const;
+};
 // TODO: класс светильника с двумя полюсами
+class Generator : public Object {
+public:
+  Pole p,m,g;
 
+  Generator(const std::string& name = "");
+
+  virtual size_t getPoleCount() const { return 3; }
+
+  virtual const Pole* getPole(const std::string& name) const;
+
+protected:
+  virtual const Pole* getPole(size_t idx) const;
+};
 // TODO: класс генератора с тремя полюсами (фаза, нейтраль, земпя).
