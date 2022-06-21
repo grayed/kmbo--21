@@ -1,0 +1,27 @@
+
+#include " animals1"
+
+#include <string>
+using namespace std;
+
+int main() {
+	return 0;
+} 
+int main() 
+{
+	Dog Vlad("brown");
+	Vlad.setСoat_color("black");
+	string aboutDog = Vlad.about();
+	cout << "Vlad : " << aboutDog << endl;
+
+	Snake Gleb(true);
+	Gleb.setMolt(false);
+	string MoltGleb = Gleb.about();
+	cout << "Snake : " << MoltGleb << endl;
+
+	Frog Vasya(26, 40);
+	Vasya.setAge(137);
+	Vasya.setNumber_life(752);
+	string truth_about_Vasya = Vasya.about();
+	cout << Vasya : " << truth_about_Vasya << endl;
+}  
