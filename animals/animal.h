@@ -3,16 +3,13 @@
 #include <iostream>
 
 class Animal {
-public:
-	float weight;				// kg
-};
+	private:
+		float weight;				// kg
 
-class Mammal : public Animal {
-public:
-	float pregnancyDuration;	// days
-};
+	public:
+		const float getWeight() const { return weight; }
+		void setWeight(const float v) { weight = v; }
 
-class Cat : public Mammal {
-public:
-	float vibrissaLength;		// meters
+	protected:
+		Animal(const float w) { weight = w; }
 };
